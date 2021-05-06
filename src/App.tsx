@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {FC} from 'react';
+import './App.scss';
+import {Col, Container, Row} from "react-bootstrap";
+import libraryImg from './assets/images/anna-hunko-ajE5goOGzZc-unsplash.jpg';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const App: FC = () => {
+  return(
+      <Container className="App px-0" fluid>
+        <h1 className="text-center py-2">My Library</h1>
+        <img src={libraryImg} alt="Library" />
+        <Row>
+            <Col xs={9}></Col>
+            <Col xs={3}>
+                Photo by
+                <a href="https://unsplash.com/@annahunko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+                Anna Hunko</a>
+                on
+                <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+                    Unsplash
+                </a>
+            </Col>
+        </Row>
+      </Container>
   );
 }
 
