@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
-import { Row, Col } from "react-bootstrap";
+import {Row, Col} from "react-bootstrap";
 import '../../assets/styles/Books.scss';
+import AddBookForm from "./AddBookForm";
 import { Plus, Trash2, Edit } from 'react-feather';
 
 const Books: FC = () => {
@@ -16,6 +17,20 @@ const Books: FC = () => {
                         <Col><Trash2 className="delete-btn" /></Col>
                     </Row>
                 </li>
+                <li>
+                    <Row>
+                        <Col xs={10}>2. Book 2 title</Col>
+                        <Col><Edit className="edit-btn" /></Col>
+                        <Col><Trash2 className="delete-btn" /></Col>
+                    </Row>
+                </li>
+                <li>
+                    <Row>
+                        <Col xs={10}>3. Book 3 title</Col>
+                        <Col><Edit className="edit-btn" /></Col>
+                        <Col><Trash2 className="delete-btn" /></Col>
+                    </Row>
+                </li>
             </ul>
             <p className="add-book pt-3">
                 <Plus color="#034fa5" className="plus" />
@@ -23,6 +38,9 @@ const Books: FC = () => {
                     Add Book
                 </span>
             </p>
+            <div>
+                <AddBookForm />
+            </div>
         </Col>
     );
 }
