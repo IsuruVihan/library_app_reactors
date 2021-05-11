@@ -51,43 +51,6 @@ const Authors: FC = () => {
                     <AddAuthorForm />
                 </Col>
             </Row>
-
-            {/*<Col className="Authors">*/}
-            {/*    <p className="title">Authors</p>*/}
-            {/*    /!*<span className="no-authors"><i>No authors listed here</i></span>*!/*/}
-            {/*    <ul className="author-list px-0">*/}
-            {/*        <li>*/}
-            {/*            <Row>*/}
-            {/*                <Col xs={10}>1. Author 1</Col>*/}
-            {/*                <Col><Edit className="edit-btn" /></Col>*/}
-            {/*                <Col><Trash2 className="delete-btn" /></Col>*/}
-            {/*            </Row>*/}
-            {/*        </li>*/}
-            {/*        <li>*/}
-            {/*            <Row>*/}
-            {/*                <Col xs={10}>2. Author 2</Col>*/}
-            {/*                <Col><Edit className="edit-btn" /></Col>*/}
-            {/*                <Col><Trash2 className="delete-btn" /></Col>*/}
-            {/*            </Row>*/}
-            {/*        </li>*/}
-            {/*        <li>*/}
-            {/*            <Row>*/}
-            {/*                <Col xs={10}>3. Author 3</Col>*/}
-            {/*                <Col><Edit className="edit-btn" /></Col>*/}
-            {/*                <Col><Trash2 className="delete-btn" /></Col>*/}
-            {/*            </Row>*/}
-            {/*        </li>*/}
-            {/*    </ul>*/}
-            {/*    <p className="add-author pt-3">*/}
-            {/*        <Plus color="#034fa5" className="plus" />*/}
-            {/*        <span className="add-author-text">*/}
-            {/*            Add Book*/}
-            {/*        </span>*/}
-            {/*    </p>*/}
-            {/*    <div>*/}
-            {/*        <AddAuthorForm />*/}
-            {/*    </div>*/}
-            {/*</Col>*/}
         </Container>
     );
 }
