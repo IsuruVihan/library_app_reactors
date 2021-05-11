@@ -6,8 +6,8 @@ import { Plus, Trash2, Edit } from 'react-feather';
 
 const Books: FC = () => {
     return(
-        <Container>
-            <Row className="Books px-5">
+        <Container fluid>
+            <Row className="Books">
                 <Col xs={12}>
                     <p className="title">Books</p>
                 </Col>

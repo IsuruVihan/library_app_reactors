@@ -12,10 +12,13 @@ $credits_font_color: #2d2d2d;
     width: 100%;
     height: auto;
   }
-}
-
-.credits {
-  .photo-credits {
-    color: $credits_font_color;
+  .credits {
+    .photo-credits {
+      padding-right: 6em;
+      color: $credits_font_color;
+    }
+  }
+  .book-container {
+    padding-left: 0;
   }
 }

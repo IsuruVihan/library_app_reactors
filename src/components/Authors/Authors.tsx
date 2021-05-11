@@ -6,7 +6,7 @@ import { Plus, Trash2, Edit } from 'react-feather';
 
 const Authors: FC = () => {
     return(
-        <Col className="Authors px-5">
+        <Col className="Authors">
             <p className="title">Authors</p>
             {/*<span className="no-authors"><i>No authors listed here</i></span>*/}
             <ul className="author-list px-0">
