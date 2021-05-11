@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {Row, Col} from "react-bootstrap";
-import '../../assets/styles/Authors.scss';
+import '../../assets/styles/partials/Authors.scss';
 import AddAuthorForm from "./AddAuthorForm";
 import { Plus, Trash2, Edit } from 'react-feather';
 
