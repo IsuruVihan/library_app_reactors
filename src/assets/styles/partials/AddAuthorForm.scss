@@ -36,13 +36,16 @@ $create_btn_color: #00579c;
             font-weight: 500;
         }
         .author-name-input {
-            width: 27em;
+            width: 31em;
             border: 2px solid $input_field_border_color;
+            border-radius: 0;
         }
         .create-btn-container {
             padding-left: 1.5em;
             margin-top: 2em;
             margin-bottom: 17em;
+            float: right;
+            margin-right: 3em;
 
             .create-btn {
                 border-radius: 6px;
