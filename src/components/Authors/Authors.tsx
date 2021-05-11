@@ -1,10 +1,22 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import {Row, Col, Container} from "react-bootstrap";
 import '../../assets/styles/partials/Authors.scss';
 import AddAuthorForm from "./AddAuthorForm";
 import { Plus, Trash2, Edit } from 'react-feather';
 
 const Authors: FC = () => {
+    // Visibility of 'AddAuthor' form
+    const [isVisibleAuthorForm, setIsVisibleAuthorForm] = useState<boolean>(false);
+
+    // Set 'AddAuthor' form visible
+    const handleClickAddAuthorEvent = () => {
+        setIsVisibleAuthorForm(true);
+    }
+    // Set 'AddAuthor' form invisible
+    const handleClickCloseFormEvent = () => {
+        setIsVisibleAuthorForm(false);
+    }
+
     return(
         <Container fluid>
             <Row className="Authors">
@@ -41,14 +53,14 @@ const Authors: FC = () => {
                 </Col>
                 <Col xs={12}>
                     <p className="add-author pt-3">
-                        <Plus color="#034fa5" className="plus" />
-                        <span className="add-author-text">
+                        <Plus color="#034fa5" className="plus" onClick={() => handleClickAddAuthorEvent()} />
+                        <span className="add-author-text" onClick={() => handleClickAddAuthorEvent()} >
                             Add Author
                         </span>
                     </p>
                 </Col>
                 <Col xs={12}>
-                    <AddAuthorForm />
+                    {isVisibleAuthorForm && <AddAuthorForm closeForm={handleClickCloseFormEvent} />}
                 </Col>
             </Row>
         </Container>
