@@ -3,14 +3,18 @@ import {Col, Container, Row, Button, Form} from "react-bootstrap";
 import '../../assets/styles/partials/AddAuthorForm.scss';
 import { XCircle } from 'react-feather';
 
-const AddAuthorForm: FC = () => {
+type AddAuthorFormProps = {
+    closeForm: () => void
+};
+
+const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
     return(
         <Container className="aa-form-container" fluid={true}>
             <Row>
                 <Col xs={9}>
                     <Row>
                         <Col className="ca-title" xs={11}><p className="ca-title-text">Create Author</p></Col>
-                        <Col className="close-btn" xs={1}><XCircle className="close-icon" /></Col>
+                        <Col className="close-btn" xs={1}><XCircle className="close-icon" onClick={() => props.closeForm()} /></Col>
                     </Row>
                 </Col>
                 <Col xs={3} />
