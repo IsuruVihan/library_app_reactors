@@ -3,10 +3,13 @@ import {Row, Col, Container} from "react-bootstrap";
 import '../../assets/styles/partials/Authors.scss';
 import AddAuthorForm from "./AddAuthorForm";
 import { Plus, Trash2, Edit } from 'react-feather';
+import IAuthor from '../../interfaces/IAuthor';
 
 const Authors: FC = () => {
     // Visibility of 'AddAuthor' form
     const [isVisibleAuthorForm, setIsVisibleAuthorForm] = useState<boolean>(false);
+    // Authors
+    const [authorsList, setAuthorsList] = useState<IAuthor[]>([]);
 
     // Set 'AddAuthor' form visible
     const handleClickAddAuthorEvent = () => {
@@ -15,6 +18,14 @@ const Authors: FC = () => {
     // Set 'AddAuthor' form invisible
     const handleClickCloseFormEvent = () => {
         setIsVisibleAuthorForm(false);
+    }
+    // Add an 'Author'
+    const handleCreateAuthorEvent = (name: string) => {
+        const newAuthor: IAuthor = { authorName: name };
+        const authors = authorsList.slice();
+        authors.push(newAuthor);
+        setAuthorsList(authors);
+        console.log(authorsList);
     }
 
     return(
@@ -60,7 +71,14 @@ const Authors: FC = () => {
                     </p>
                 </Col>
                 <Col xs={12}>
-                    {isVisibleAuthorForm && <AddAuthorForm closeForm={handleClickCloseFormEvent} />}
+                    {
+                        isVisibleAuthorForm
+                            &&
+                        <AddAuthorForm
+                            closeForm={handleClickCloseFormEvent}
+                            createAuthor={handleCreateAuthorEvent}
+                        />
+                    }
                 </Col>
             </Row>
         </Container>

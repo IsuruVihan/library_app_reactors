@@ -4,7 +4,8 @@ import '../../assets/styles/partials/AddAuthorForm.scss';
 import { XCircle } from 'react-feather';
 
 type AddAuthorFormProps = {
-    closeForm: () => void
+    closeForm: () => void,
+    createAuthor: (name: string) => void
 };
 
 const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
@@ -20,7 +21,7 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
                 <Col xs={3} />
                 <Col xs={1} />
                 <Col xs={9}>
-                    <Form className="aa-form">
+                    <Form className="aa-form" onSubmit={() => props.createAuthor("Isuru")}>
                         <Form.Group>
                             <Form.Label className="author-name-label">Name of Author</Form.Label>
                             <Form.Control className="author-name-input" type="text" size="sm" />
