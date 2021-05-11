@@ -1,0 +1,84 @@
+import React, {FC} from 'react';
+import {Col, Container, Row, Button, Form} from "react-bootstrap";
+import '../../assets/styles/partials/AddBookForm.scss';
+import { XCircle } from 'react-feather';
+
+const AddBookForm: FC = () => {
+    return(
+        <Container className="ab-form-container" style={{border: '1px solid black'}} fluid={true}>
+            <Row>
+                <Col xs={9}>
+                    <Row>
+                        <Col className="cb-title" xs={11}><p className="cb-title-text">Create Book</p></Col>
+                        <Col className="close-btn" xs={1}><XCircle className="close-icon" /></Col>
+                    </Row>
+                </Col>
+                <Col xs={3} />
+                <Col xs={1} />
+                <Col xs={9}>
+                    <Form className="ab-form" style={{border: '1px solid black'}}>
+                        <Form.Group>
+                            <Form.Label className="book-title-label">Title of the Book</Form.Label>
+                            <Form.Control className="book-title-input" type="text" size="sm" />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label className="book-isbn-label">ISBN</Form.Label>
+                            <Form.Control className="book-isbn-input" type="text" size="sm" />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label className="book-author-label">Author</Form.Label>
+                            <Form.Control className="book-author-input" size="sm" as="select">
+                                <option>Author 1</option>
+                                <option>Author 2</option>
+                                <option>Author 3</option>
+                            </Form.Control>
+                        </Form.Group>
+                        <Form.Group className="create-btn-container">
+                            <Button className="create-btn" variant="primary" type="submit" size="sm" >
+                                Create
+                            </Button>
+                        </Form.Group>
+                    </Form>
+                </Col>
+            </Row>
+
+
+            {/*<Row>*/}
+            {/*    <Col xs={9}>*/}
+            {/*        <Row>*/}
+            {/*            <Col className="cb-title" xs={11}><p className="cb-title-text">Create Book</p></Col>*/}
+            {/*            <Col className="close-btn" xs={1}><XCircle className="close-icon" /></Col>*/}
+            {/*        </Row>*/}
+            {/*        <Row className="ab-form">*/}
+            {/*            <Col xs={1} />*/}
+            {/*            <Col xs={11}><label className="book-title-label">Title of the Book</label></Col>*/}
+            {/*            <Col xs={1} />*/}
+            {/*            <Col xs={11}><input className="book-title-input" type="text" /></Col>*/}
+            {/*            <Col xs={1} />*/}
+            {/*            <Col xs={11}><label className="book-isbn-label">ISBN</label></Col>*/}
+            {/*            <Col xs={1} />*/}
+            {/*            <Col xs={11}><input className="book-isbn-input" type="text" /></Col>*/}
+            {/*            <Col xs={1} />*/}
+            {/*            <Col xs={11}><label className="book-author-label">Author</label></Col>*/}
+            {/*            <Col xs={1} />*/}
+            {/*            <Col xs={11}>*/}
+            {/*                <select className="book-author-input">*/}
+            {/*                    <option>Author 1</option>*/}
+            {/*                    <option>Author 2</option>*/}
+            {/*                    <option>Author 3</option>*/}
+            {/*                </select>*/}
+            {/*            </Col>*/}
+            {/*            <Col xs={9} />*/}
+            {/*            <Col xs={3} className="create-btn-container">*/}
+            {/*                <Button variant="primary" size="sm" className="create-btn">*/}
+            {/*                    Create*/}
+            {/*                </Button>*/}
+            {/*            </Col>*/}
+            {/*        </Row>*/}
+            {/*    </Col>*/}
+            {/*</Row>*/}
+        </Container>
+    );
+}
+
+export default AddBookForm;

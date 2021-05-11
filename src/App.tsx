@@ -1,12 +1,17 @@
-import React, {FC, Fragment} from 'react';
+import React, {FC} from 'react';
 import './assets/styles/App.scss';
 import Library from "./Views/Library";
+import {Container, Row, Col} from "react-bootstrap";
 
 const App: FC = () => {
     return(
-        <Fragment>
-            <Library />
-        </Fragment>
+        <Container className="px-0" fluid>
+            <Row>
+                <Col>
+                    <Library />
+                </Col>
+            </Row>
+        </Container>
   );
 }
 
