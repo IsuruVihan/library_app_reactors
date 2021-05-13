@@ -2,10 +2,14 @@ import React, {FC, useState} from 'react';
 import {Row, Col, Container} from "react-bootstrap";
 import '../../assets/styles/partials/Authors.scss';
 import AddAuthorForm from "./AddAuthorForm";
-import { Plus, Trash2, Edit } from 'react-feather';
+import { Plus } from 'react-feather';
 import IAuthor from '../../interfaces/IAuthor';
+import AuthorListLine from "./AuthorListLine";
+import NoAuthors from "./NoAuthors";
 
 const Authors: FC = () => {
+    let authorId: number = 1;
+
     // Visibility of 'AddAuthor' form
     const [isVisibleAuthorForm, setIsVisibleAuthorForm] = useState<boolean>(false);
     // Authors
@@ -35,32 +39,14 @@ const Authors: FC = () => {
                 <Col xs={12}>
                     <p className="title">Authors</p>
                 </Col>
-                {/*<Col xs={12}>*/}
-                {/*    <p className="no-authors"><i>No authors listed here</i></p>*/}
-                {/*</Col>*/}
+                {(authorsList.length === 0) && <NoAuthors />}
                 <Col xs={12}>
                     <ul className="author-list px-0">
-                        <li>
-                            <Row>
-                                <Col xs={10}>1. Author 1</Col>
-                                <Col><Edit className="edit-btn" /></Col>
-                                <Col><Trash2 className="delete-btn" /></Col>
-                            </Row>
-                        </li>
-                        <li>
-                            <Row>
-                                <Col xs={10}>2. Author 2</Col>
-                                <Col><Edit className="edit-btn" /></Col>
-                                <Col><Trash2 className="delete-btn" /></Col>
-                            </Row>
-                        </li>
-                        <li>
-                            <Row>
-                                <Col xs={10}>3. Author 3</Col>
-                                <Col><Edit className="edit-btn" /></Col>
-                                <Col><Trash2 className="delete-btn" /></Col>
-                            </Row>
-                        </li>
+                        {authorsList.map(
+                            (author: IAuthor) => {
+                                return <AuthorListLine name={author.authorName} id={authorId++} key={authorId} />
+                            }
+                        )}
                     </ul>
                 </Col>
                 <Col xs={12}>
