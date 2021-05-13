@@ -20,11 +20,12 @@ const Authors: FC = () => {
         setIsVisibleAuthorForm(false);
     }
     // Add an 'Author'
-    const handleCreateAuthorEvent = (name: string) => {
+    const handleCreateAuthorEvent = (event: React.FormEvent, name: string) => {
         const newAuthor: IAuthor = { authorName: name };
         const authors = authorsList.slice();
         authors.push(newAuthor);
         setAuthorsList(authors);
+        event.preventDefault();
         console.log(authorsList);
     }
 
