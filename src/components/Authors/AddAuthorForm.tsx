@@ -18,6 +18,10 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
     }
     // submit add author form
     const submitAuthorForm = (event: React.FormEvent) => {
+        if(enteredAuthor === "") {
+            return;
+        }
+
         const authorToBeAdded = enteredAuthor;
         setEnteredAuthor("");
         return props.createAuthor(event, authorToBeAdded);
