@@ -1,7 +1,8 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {Row, Col, Container} from "react-bootstrap";
 import '../../assets/styles/partials/Authors.scss';
 import AddAuthorForm from "./AddAuthorForm";
+import UpdateAuthorForm from "./UpdateAuthorForm";
 import { Plus } from 'react-feather';
 import IAuthor from '../../interfaces/IAuthor';
 import AuthorListLine from "./AuthorListLine";
@@ -13,16 +14,25 @@ const Authors: FC = () => {
 
     // Visibility of 'AddAuthor' form
     const [isVisibleAuthorForm, setIsVisibleAuthorForm] = useState<boolean>(false);
+    // Visibility of 'UpdateAuthor' form
+    const [isVisibleUpdateAuthorForm, setIsVisibleUpdateAuthorForm] = useState<boolean>(false);
     // Authors
     const [authorsList, setAuthorsList] = useState<IAuthor[]>([]);
+    // Author to be update
+    const [authorToBeUpdate, setAuthorToBeUpdate] = useState<number | null>(null);
 
     // Set 'AddAuthor' form visible
     const handleClickAddAuthorEvent = () => {
+        setIsVisibleUpdateAuthorForm(false);
         setIsVisibleAuthorForm(true);
     }
     // Set 'AddAuthor' form invisible
     const handleClickCloseFormEvent = () => {
         setIsVisibleAuthorForm(false);
+    }
+    // Set 'UpdateAuthor' form invisible
+    const handleClickCloseUpdateFormEvent = () => {
+        setIsVisibleUpdateAuthorForm(false);
     }
     // Add an 'Author'
     const handleCreateAuthorEvent = (event: React.FormEvent, name: string) => {
@@ -37,6 +47,32 @@ const Authors: FC = () => {
         const authors: IAuthor[] = authorsList.slice();
         authors.splice(id-1, 1);
         setAuthorsList(authors);
+    }
+    // Update an 'Author'
+    const handleUpdateAuthorRequestEvent = (id: number) => {
+        setIsVisibleAuthorForm(false);
+        setIsVisibleUpdateAuthorForm(true);
+        setAuthorToBeUpdate(id);
+    }
+    useEffect(() => {
+        if(authorToBeUpdate === null) {
+            return;
+        }
+
+        console.log(authorToBeUpdate);
+    }, [authorToBeUpdate]);
+    const handleUpdateAuthorEvent = (event: React.FormEvent, name: string) => {
+        if(authorToBeUpdate === null) {
+            return;
+        }
+
+        const authors = authorsList.slice();
+        const newAuthor: IAuthor = {authorName: name};
+        authors.splice(authorToBeUpdate-1, 1, newAuthor);
+        setAuthorsList(authors);
+        setAuthorToBeUpdate(null);
+        setIsVisibleUpdateAuthorForm(false);
+        event.preventDefault();
     }
 
     return(
@@ -56,6 +92,7 @@ const Authors: FC = () => {
                                         id={authorId++}
                                         key={authorId}
                                         delete={handleDeleteAuthorEvent}
+                                        updateRequest={handleUpdateAuthorRequestEvent}
                                     />
                                 );
                             }
@@ -77,6 +114,14 @@ const Authors: FC = () => {
                         <AddAuthorForm
                             closeForm={handleClickCloseFormEvent}
                             createAuthor={handleCreateAuthorEvent}
+                        />
+                    }
+                    {
+                        isVisibleUpdateAuthorForm
+                            &&
+                        <UpdateAuthorForm
+                            closeForm={handleClickCloseUpdateFormEvent}
+                            updateAuthor={handleUpdateAuthorEvent}
                         />
                     }
                 </Col>
