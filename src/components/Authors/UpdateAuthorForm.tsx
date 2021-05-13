@@ -1,14 +1,14 @@
 import React, {FC, useState} from 'react';
 import {Col, Container, Row, Button, Form} from "react-bootstrap";
-import '../../assets/styles/partials/AddAuthorForm.scss';
+import '../../assets/styles/partials/UpdateAuthorForm.scss';
 import { XCircle } from 'react-feather';
 
-type AddAuthorFormProps = {
+type UpdateAuthorFormProps = {
     closeForm: () => void,
-    createAuthor: (event: React.FormEvent, name: string) => void
+    updateAuthor: (event: React.FormEvent, name: string) => void
 };
 
-const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
+const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
     // Entered author
     const [enteredAuthor, setEnteredAuthor] = useState<string>("");
     // Handling the changes of author name field
@@ -16,23 +16,24 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
         const authorName = event.target.value;
         setEnteredAuthor(authorName);
     }
-    // submit add author form
-    const submitAuthorForm = (event: React.FormEvent) => {
+    // submit update author form
+    const submitUpdateAuthorForm = (event: React.FormEvent) => {
+        event.preventDefault();
         if(enteredAuthor === "") {
             return;
         }
 
-        const authorToBeAdded = enteredAuthor;
+        const authorToBeUpdated = enteredAuthor;
         setEnteredAuthor("");
-        return props.createAuthor(event, authorToBeAdded);
+        return props.updateAuthor(event, authorToBeUpdated);
     }
 
     return(
-        <Container className="aa-form-container" fluid={true}>
+        <Container className="ua-form-container" fluid={true}>
             <Row>
                 <Col xs={9}>
                     <Row>
-                        <Col className="ca-title" xs={11}><p className="ca-title-text">Create Author</p></Col>
+                        <Col className="ua-title" xs={11}><p className="ua-title-text">Update Author</p></Col>
                         <Col className="close-btn" xs={1}>
                             <XCircle className="close-icon" onClick={() => props.closeForm()} />
                         </Col>
@@ -41,7 +42,7 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
                 <Col xs={3} />
                 <Col xs={1} />
                 <Col xs={9}>
-                    <Form className="aa-form" onSubmit={(event: React.FormEvent) => submitAuthorForm(event)}>
+                    <Form className="ua-form" onSubmit={(event: React.FormEvent) => submitUpdateAuthorForm(event)}>
                         <Form.Group>
                             <Form.Label className="author-name-label">Name of Author</Form.Label>
                             <Form.Control
@@ -55,9 +56,9 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
                                 }
                             />
                         </Form.Group>
-                        <Form.Group className="create-btn-container">
-                            <Button className="create-btn" variant="primary" type="submit" size="sm" >
-                                Create
+                        <Form.Group className="update-btn-container">
+                            <Button className="update-btn" variant="primary" type="submit" size="sm" >
+                                Update
                             </Button>
                         </Form.Group>
                     </Form>
@@ -67,4 +68,4 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
     );
 }
 
-export default AddAuthorForm;
+export default UpdateAuthorForm;
