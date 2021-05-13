@@ -8,6 +8,7 @@ import AuthorListLine from "./AuthorListLine";
 import NoAuthors from "./NoAuthors";
 
 const Authors: FC = () => {
+    // Author list number in the list (key)
     let authorId: number = 1;
 
     // Visibility of 'AddAuthor' form
@@ -30,7 +31,12 @@ const Authors: FC = () => {
         authors.push(newAuthor);
         setAuthorsList(authors);
         event.preventDefault();
-        console.log(authorsList);
+    }
+    // Delete an 'Author'
+    const handleDeleteAuthorEvent = (id: number) => {
+        const authors: IAuthor[] = authorsList.slice();
+        authors.splice(id-1, 1);
+        setAuthorsList(authors);
     }
 
     return(
@@ -44,7 +50,14 @@ const Authors: FC = () => {
                     <ul className="author-list px-0">
                         {authorsList.map(
                             (author: IAuthor) => {
-                                return <AuthorListLine name={author.authorName} id={authorId++} key={authorId} />
+                                return(
+                                    <AuthorListLine
+                                        name={author.authorName}
+                                        id={authorId++}
+                                        key={authorId}
+                                        delete={handleDeleteAuthorEvent}
+                                    />
+                                );
                             }
                         )}
                     </ul>

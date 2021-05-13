@@ -1,4 +1,4 @@
-import React, {FC, FormEvent, useState} from 'react';
+import React, {FC, useState} from 'react';
 import {Col, Container, Row, Button, Form} from "react-bootstrap";
 import '../../assets/styles/partials/AddAuthorForm.scss';
 import { XCircle } from 'react-feather';
