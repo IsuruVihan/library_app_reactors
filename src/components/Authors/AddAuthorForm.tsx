@@ -11,6 +11,8 @@ type AddAuthorFormProps = {
 const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
     // Entered author
     const [enteredAuthor, setEnteredAuthor] = useState<string>("");
+    // Validate
+    const [validated, setValidated] = useState<boolean>(false);
     // Handling the changes of author name field
     const handleEnterAuthorChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => {
         const authorName = event.target.value;
@@ -18,10 +20,13 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
     }
     // submit add author form
     const submitAuthorForm = (event: React.FormEvent) => {
+        event.preventDefault();
+        event.stopPropagation();
+        setValidated(true);
+
         if(enteredAuthor === "") {
             return;
         }
-
         const authorToBeAdded = enteredAuthor;
         setEnteredAuthor("");
         return props.createAuthor(event, authorToBeAdded);
@@ -41,7 +46,7 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
                 <Col xs={3} />
                 <Col xs={1} />
                 <Col xs={9}>
-                    <Form className="aa-form" onSubmit={(event: React.FormEvent) => submitAuthorForm(event)}>
+                    <Form noValidate className="aa-form" validated={validated} onSubmit={(event: React.FormEvent) => submitAuthorForm(event)}>
                         <Form.Group>
                             <Form.Label className="author-name-label">Name of Author</Form.Label>
                             <Form.Control
@@ -53,7 +58,11 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
                                     (event: React.ChangeEvent<HTMLInputElement>) =>
                                         handleEnterAuthorChangeEvent(event)
                                 }
+                                required
                             />
+                            <Form.Control.Feedback type="invalid">
+                                Please provide an author name.
+                            </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group className="create-btn-container">
                             <Button className="create-btn" variant="primary" type="submit" size="sm" >
