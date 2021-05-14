@@ -36,11 +36,12 @@ const Authors: FC = () => {
     }
     // Add an 'Author'
     const handleCreateAuthorEvent = (event: React.FormEvent, name: string) => {
+        event.preventDefault();
         const newAuthor: IAuthor = { authorName: name };
         const authors = authorsList.slice();
         authors.push(newAuthor);
         setAuthorsList(authors);
-        event.preventDefault();
+        setIsVisibleAuthorForm(false);
     }
     // Delete an 'Author'
     const handleDeleteAuthorEvent = (id: number) => {

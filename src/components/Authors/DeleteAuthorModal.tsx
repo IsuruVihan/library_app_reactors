@@ -16,8 +16,8 @@ const DeleteAuthorModal: FC<DeleteAuthorModalProps> = (props) => {
             backdrop="static"
             keyboard={false}
         >
-            <Modal.Header closeButton>
-                <Modal.Title>Modal title</Modal.Title>
+            <Modal.Header>
+                <Modal.Title>Confirm delete action</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 Are you sure that you want to delete <b>{props.authorToDelete}</b>?
