@@ -28,9 +28,14 @@ const AuthorListLine: FC<AuthorListLineProps> = (props) => {
         props.delete(props.id);
         setShowDeleteAuthorModal(false);
     }
-    const renderTooltip = (props) => (
+    const showEditOverlay = (props) => (
         <Tooltip id="button-tooltip" {...props}>
-            Simple tooltip
+            Edit author name
+        </Tooltip>
+    );
+    const showDeleteOverlay = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+            Delete author name
         </Tooltip>
     );
     return(
@@ -41,7 +46,7 @@ const AuthorListLine: FC<AuthorListLineProps> = (props) => {
                     <OverlayTrigger
                         placement="left"
                         delay={{ show: 250, hide: 400 }}
-                        overlay={renderTooltip}>
+                        overlay={showEditOverlay}>
                         <Edit className="edit-btn" onClick={() => props.updateRequest(props.id)} />
                     </OverlayTrigger>
                 </Col>
@@ -49,12 +54,11 @@ const AuthorListLine: FC<AuthorListLineProps> = (props) => {
                     <OverlayTrigger
                         placement="bottom"
                         delay={{ show: 250, hide: 400 }}
-                        overlay={renderTooltip}>
+                        overlay={showDeleteOverlay}>
                         <Trash2 className="delete-btn" onClick={() => openDeleteAuthorModal()} />
                     </OverlayTrigger>
                     </Col>
             </Row>
-
             <DeleteAuthorModal
                 authorToDelete={props.name}
                 isVisible={showDeleteAuthorModal}
