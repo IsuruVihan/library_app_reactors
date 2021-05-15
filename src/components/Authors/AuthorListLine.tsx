@@ -1,5 +1,5 @@
 import React, {FC, useState} from 'react';
-import {Col, Row} from "react-bootstrap";
+import {Col, OverlayTrigger, Row, Tooltip} from "react-bootstrap";
 import {Edit, Trash2} from "react-feather";
 import '../../assets/styles/partials/AuthorListLine.scss';
 import DeleteAuthorModal from "./DeleteAuthorModal";
@@ -28,15 +28,37 @@ const AuthorListLine: FC<AuthorListLineProps> = (props) => {
         props.delete(props.id);
         setShowDeleteAuthorModal(false);
     }
-
+    const showEditOverlay = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+            Edit author name
+        </Tooltip>
+    );
+    const showDeleteOverlay = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+            Delete author name
+        </Tooltip>
+    );
     return(
         <li>
             <Row>
                 <Col xs={10}>{props.id}. {props.name}</Col>
-                <Col><Edit className="edit-btn" onClick={() => props.updateRequest(props.id)} /></Col>
-                <Col><Trash2 className="delete-btn" onClick={() => openDeleteAuthorModal()} /></Col>
+                <Col>
+                    <OverlayTrigger
+                        placement="left"
+                        delay={{ show: 250, hide: 400 }}
+                        overlay={showEditOverlay}>
+                        <Edit className="edit-btn" onClick={() => props.updateRequest(props.id)} />
+                    </OverlayTrigger>
+                </Col>
+                <Col>
+                    <OverlayTrigger
+                        placement="bottom"
+                        delay={{ show: 250, hide: 400 }}
+                        overlay={showDeleteOverlay}>
+                        <Trash2 className="delete-btn" onClick={() => openDeleteAuthorModal()} />
+                    </OverlayTrigger>
+                    </Col>
             </Row>
-
             <DeleteAuthorModal
                 authorToDelete={props.name}
                 isVisible={showDeleteAuthorModal}
