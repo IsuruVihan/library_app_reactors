@@ -1,12 +1,10 @@
 import React, {FC} from 'react';
 import {Col, Row} from "react-bootstrap";
 import {Edit, Trash2} from "react-feather";
-import '../../assets/styles/partials/AuthorListLine.scss';
+import '../../assets/styles/partials/BookListLine.css';
 
 type BookListLineProps = {
     title: string,
-    isbn:string,
-    authorname:string,
     id: number,
     delete: (id: number) => void,
 };
