@@ -48,6 +48,7 @@ const Authors: FC = () => {
         const authors: IAuthor[] = authorsList.slice();
         authors.splice(id-1, 1);
         setAuthorsList(authors);
+        setIsVisibleUpdateAuthorForm(false);
     }
     // Update an 'Author'
     const handleUpdateAuthorRequestEvent = (id: number) => {
