@@ -11,6 +11,8 @@ type UpdateAuthorFormProps = {
 const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
     // Entered author
     const [enteredAuthor, setEnteredAuthor] = useState<string>("");
+    // Validate
+    const [validated, setValidated] = useState<boolean>(false);
     // Handling the changes of author name field
     const handleEnterAuthorChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => {
         const authorName = event.target.value;
@@ -19,6 +21,8 @@ const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
     // submit update author form
     const submitUpdateAuthorForm = (event: React.FormEvent) => {
         event.preventDefault();
+        event.stopPropagation()
+        setValidated(true);
         if(enteredAuthor === "") {
             return;
         }
@@ -42,7 +46,7 @@ const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
                 <Col xs={3} />
                 <Col xs={1} />
                 <Col xs={9}>
-                    <Form className="ua-form" onSubmit={(event: React.FormEvent) => submitUpdateAuthorForm(event)}>
+                    <Form noValidate validated={validated} className="ua-form" onSubmit={(event: React.FormEvent) => submitUpdateAuthorForm(event)}>
                         <Form.Group>
                             <Form.Label className="author-name-label">Name of Author</Form.Label>
                             <Form.Control
@@ -54,7 +58,11 @@ const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
                                     (event: React.ChangeEvent<HTMLInputElement>) =>
                                         handleEnterAuthorChangeEvent(event)
                                 }
+                                required
                             />
+                            <Form.Control.Feedback type="invalid">
+                                Please provide an author name.
+                            </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group className="update-btn-container">
                             <Button className="update-btn" variant="primary" type="submit" size="sm" >
