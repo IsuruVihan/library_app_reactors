@@ -1,11 +1,24 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
 import libraryImg from "../assets/images/anna-hunko-ajE5goOGzZc-unsplash.jpg";
 import Books from "../components/Books/Books";
 import Authors from "../components/Authors/Authors";
 import '../assets/styles/partials/Library.scss';
+import IAuthor from "../interfaces/IAuthor";
 
 const Library: FC = () => {
+    // Author list to be rendered inside add book form
+    const [fullAuthorList, setFullAuthorList] = useState<IAuthor[]>([]);
+
+    // Get all available authors from the authors section
+    const getAvailableAuthors = (authors: IAuthor[]) => {
+        setFullAuthorList(authors);
+    }
+    // Send all available authors into books section
+    const sendAvailableAuthors = (): IAuthor[] => {
+        return fullAuthorList;
+    }
+
     return(
         <Container className="Library px-0" fluid>
             <Row>
@@ -35,10 +48,14 @@ const Library: FC = () => {
             </Row>
             <Row>
                 <Col xs={6} className="book-container">
-                    <Books />
+                    <Books
+                        authorsAvailable={sendAvailableAuthors}
+                    />
                 </Col>
                 <Col xs={6}>
-                    <Authors />
+                    <Authors
+                        returnAvailableAuthors={getAvailableAuthors}
+                    />
                 </Col>
             </Row>
         </Container>

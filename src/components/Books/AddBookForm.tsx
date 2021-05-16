@@ -1,11 +1,14 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {Col, Container, Row, Button, Form} from "react-bootstrap";
 import '../../assets/styles/partials/AddBookForm.scss';
 import { XCircle } from 'react-feather';
+import IAuthor from "../../interfaces/IAuthor";
+import NoAuthorsAdded from "./NoAuthorsAdded";
 
 type AddBookFormProps = {
     closeForm: () => void,
-    createBook: (event: React.FormEvent, name: string, isbn: string, author: string) => void
+    createBook: (event: React.FormEvent, name: string, isbn: string, author: string) => void,
+    authors: () => IAuthor[]
 };
 
 const AddBookForm: FC<AddBookFormProps> = (props) => {
@@ -39,7 +42,7 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
         event.stopPropagation();
         setValidated(true);
 
-        if(bookTitle === "" || bookIsbn === "") {
+        if(bookTitle === "" || bookIsbn === "" || bookAuthor === "") {
             return;
         }
         const bookTitleToBeAdded = bookTitle;
@@ -63,6 +66,7 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                 <Col xs={1} />
                 <Col xs={9}>
                     <Form noValidate className="ab-form" validated={validated} onSubmit={(event: React.FormEvent) => submitBookForm(event)}>
+
                         <Form.Group>
                             <Form.Label className="book-title-label">Title of the Book</Form.Label>
                             <Form.Control
@@ -100,9 +104,21 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                 onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {handleBookAuthorChangeEvent(event)}}
                                 value={bookAuthor}
                             >
-                                <option selected value="Author 1">Author 1</option>
-                                <option value="Author 2">Author 2</option>
-                                <option value="Author 3">Author 3</option>
+                                {props.authors().map(
+                                    (author: IAuthor) => {
+                                        return(
+                                            <option
+                                                value={author.authorName}
+                                                key={author.authorName}
+                                            >
+                                                {author.authorName}
+                                            </option>
+                                        );
+                                    }
+                                )}
+                                {/*<option selected value="Author 1">Author 1</option>*/}
+                                {/*<option value="Author 2">Author 2</option>*/}
+                                {/*<option value="Author 3">Author 3</option>*/}
                             </Form.Control>
                         </Form.Group>
                         <Form.Group className="create-btn-container">

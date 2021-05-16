@@ -8,7 +8,11 @@ import IAuthor from '../../interfaces/IAuthor';
 import AuthorListLine from "./AuthorListLine";
 import NoAuthors from "./NoAuthors";
 
-const Authors: FC = () => {
+type AuthorsProps = {
+    returnAvailableAuthors: (authors: IAuthor[]) => void
+};
+
+const Authors: FC<AuthorsProps> = (props) => {
     // Author list number in the list (key)
     let authorId: number = 1;
 
@@ -42,6 +46,9 @@ const Authors: FC = () => {
         authors.push(newAuthor);
         setAuthorsList(authors);
         setIsVisibleAuthorForm(false);
+
+        // Sending to books section
+        props.returnAvailableAuthors(authors);
     }
     // Delete an 'Author'
     const handleDeleteAuthorEvent = (id: number) => {
@@ -49,6 +56,9 @@ const Authors: FC = () => {
         authors.splice(id-1, 1);
         setAuthorsList(authors);
         setIsVisibleUpdateAuthorForm(false);
+
+        // Sending to books section
+        props.returnAvailableAuthors(authors);
     }
     // Update an 'Author'
     const handleUpdateAuthorRequestEvent = (id: number) => {
@@ -75,6 +85,9 @@ const Authors: FC = () => {
         setAuthorToBeUpdate(null);
         setIsVisibleUpdateAuthorForm(false);
         event.preventDefault();
+
+        // Sending to books section
+        props.returnAvailableAuthors(authors);
     }
 
     return(

@@ -2,10 +2,12 @@ import React, {FC, useState} from 'react';
 import {Col, Container, Row, Button, Form} from "react-bootstrap";
 import '../../assets/styles/partials/UpdateBookForm.scss';
 import { XCircle } from 'react-feather';
+import IAuthor from "../../interfaces/IAuthor";
 
 type UpdateBookFormProps = {
     closeForm: () => void,
-    updateBook: (event: React.FormEvent, title: string, isbn: string, author: string) => void
+    updateBook: (event: React.FormEvent, title: string, isbn: string, author: string) => void,
+    authors: () => IAuthor[]
 };
 
 const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
@@ -34,7 +36,7 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
     // submit update book form
     const submitUpdateBookForm = (event: React.FormEvent) => {
         event.preventDefault();
-        if(enteredAuthor === "" || enteredIsbn === "" || enteredAuthor === "") {
+        if(enteredTitle === "" || enteredIsbn === "") {
             return;
         }
 
@@ -97,9 +99,21 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                                         handleEnterAuthorChangeEvent(event)
                                 }
                             >
-                                <option value="Author 1">Author 1</option>
-                                <option value="Author 2">Author 2</option>
-                                <option value="Author 3">Author 3</option>
+                                {props.authors().map(
+                                    (author: IAuthor) => {
+                                        return(
+                                            <option
+                                                value={author.authorName}
+                                                key={author.authorName}
+                                            >
+                                                {author.authorName}
+                                            </option>
+                                        );
+                                    }
+                                )}
+                                {/*<option value="Author 1">Author 1</option>*/}
+                                {/*<option value="Author 2">Author 2</option>*/}
+                                {/*<option value="Author 3">Author 3</option>*/}
                             </Form.Control>
                         </Form.Group>
                         <Form.Group className="update-btn-container">
