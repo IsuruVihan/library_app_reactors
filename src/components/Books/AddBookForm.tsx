@@ -1,13 +1,55 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import {Col, Container, Row, Button, Form} from "react-bootstrap";
 import '../../assets/styles/partials/AddBookForm.scss';
 import { XCircle } from 'react-feather';
 
 type AddBookFormProps = {
-    closeForm: () => void
+    closeForm: () => void,
+    createBook: (event: React.FormEvent, name: string, isbn: string, author: string) => void
 };
 
 const AddBookForm: FC<AddBookFormProps> = (props) => {
+    // Book title
+    const[bookTitle, setBookTitle] = useState<string>("");
+    // Book ISBN
+    const[bookIsbn, setBookIsbn] = useState<string>("");
+    // Book Author
+    const[bookAuthor, setBookAuthor] = useState<string>("Author 1");
+    // Validate
+    const [validated, setValidated] = useState<boolean>(false);
+
+    // Change book title
+    const handleBookTitleChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newBookTitle = event.target.value;
+        setBookTitle(newBookTitle);
+    }
+    // Change book ISBN
+    const handleBookIsbnChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newBookIsbn = event.target.value;
+        setBookIsbn(newBookIsbn);
+    }
+    // Change book Author
+    const handleBookAuthorChangeEvent = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const newBookAuthor = event.target.value;
+        setBookAuthor(newBookAuthor);
+    }
+    // submit add book form
+    const submitBookForm = (event: React.FormEvent) => {
+        event.preventDefault();
+        event.stopPropagation();
+        setValidated(true);
+
+        if(bookTitle === "" || bookIsbn === "") {
+            return;
+        }
+        const bookTitleToBeAdded = bookTitle;
+        const bookIsbnToBeAdded = bookIsbn;
+        const bookAuthorToBeAdded = bookAuthor;
+        setBookTitle("");
+        setBookIsbn("");
+        return props.createBook(event, bookTitleToBeAdded, bookIsbnToBeAdded, bookAuthorToBeAdded);
+    }
+
     return(
         <Container className="ab-form-container" fluid={true}>
             <Row>
@@ -20,21 +62,47 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                 <Col xs={3} />
                 <Col xs={1} />
                 <Col xs={9}>
-                    <Form className="ab-form">
+                    <Form noValidate className="ab-form" validated={validated} onSubmit={(event: React.FormEvent) => submitBookForm(event)}>
                         <Form.Group>
                             <Form.Label className="book-title-label">Title of the Book</Form.Label>
-                            <Form.Control className="book-title-input" type="text" size="sm" />
+                            <Form.Control
+                                className="book-title-input"
+                                type="text"
+                                size="sm"
+                                value={bookTitle}
+                                onChange={(event: React.ChangeEvent<HTMLInputElement>) => handleBookTitleChangeEvent(event)}
+                                required
+                            />
+                            <Form.Control.Feedback type="invalid">
+                                Please provide a book title.
+                            </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label className="book-isbn-label">ISBN</Form.Label>
-                            <Form.Control className="book-isbn-input" type="text" size="sm" />
+                            <Form.Control
+                                className="book-isbn-input"
+                                type="text"
+                                size="sm"
+                                value={bookIsbn}
+                                onChange={(event: React.ChangeEvent<HTMLInputElement>) => handleBookIsbnChangeEvent(event)}
+                                required
+                            />
+                            <Form.Control.Feedback type="invalid">
+                                Please provide an ISBN number.
+                            </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label className="book-author-label">Author</Form.Label>
-                            <Form.Control className="book-author-input" size="sm" as="select">
-                                <option>Author 1</option>
-                                <option>Author 2</option>
-                                <option>Author 3</option>
+                            <Form.Control
+                                className="book-author-input"
+                                size="sm"
+                                as="select"
+                                onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {handleBookAuthorChangeEvent(event)}}
+                                value={bookAuthor}
+                            >
+                                <option selected value="Author 1">Author 1</option>
+                                <option value="Author 2">Author 2</option>
+                                <option value="Author 3">Author 3</option>
                             </Form.Control>
                         </Form.Group>
                         <Form.Group className="create-btn-container">
