@@ -48,7 +48,8 @@ const BookListLine: FC<BookListLineProps> = (props) => {
                     <OverlayTrigger
                         placement="left"
                         delay={{ show: 250, hide: 400 }}
-                        overlay={showEditOverlay}>
+                        overlay={showEditOverlay}
+                    >
                         <Edit className="edit-btn" onClick={() => props.updateRequest(props.id)} />
                     </OverlayTrigger>
                 </Col>
@@ -56,7 +57,8 @@ const BookListLine: FC<BookListLineProps> = (props) => {
                     <OverlayTrigger
                         placement="bottom"
                         delay={{ show: 250, hide: 400 }}
-                        overlay={showDeleteOverlay}>
+                        overlay={showDeleteOverlay}
+                    >
                         <Trash2 className="delete-btn" onClick={() => openDeleteBookModal()} />
                     </OverlayTrigger>
                 </Col>

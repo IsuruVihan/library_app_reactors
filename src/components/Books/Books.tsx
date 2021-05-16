@@ -7,8 +7,13 @@ import UpdateBookForm from './UpdateBookForm';
 import BookListLine from './BookListLine';
 import IBook from '../../interfaces/IBook';
 import NoBooks from './NoBooks';
+import IAuthor from "../../interfaces/IAuthor";
 
-const Books: FC = () => {
+type BooksProps = {
+    authorsAvailable: () => IAuthor[]
+};
+
+const Books: FC<BooksProps> = (props) => {
     // Book list number in the list (key)
     let bookId: number = 1;
 
@@ -59,8 +64,6 @@ const Books: FC = () => {
         if(bookToBeUpdate === null) {
             return;
         }
-
-        console.log(bookToBeUpdate);
     }, [bookToBeUpdate]);
     const handleUpdateBookEvent = (event: React.FormEvent, title: string, isbn: string, author: string) => {
         if(bookToBeUpdate === null) {
@@ -100,13 +103,6 @@ const Books: FC = () => {
                                 );
                             }
                         )}
-                        {/*<li>*/}
-                        {/*    <Row>*/}
-                        {/*        <Col xs={10}>1. Book 1 title</Col>*/}
-                        {/*        <Col><Edit className="edit-btn" /></Col>*/}
-                        {/*        <Col><Trash2 className="delete-btn" /></Col>*/}
-                        {/*    </Row>*/}
-                        {/*</li>*/}
                     </ul>
                 </Col>
                 <Col xs={12}>
@@ -124,6 +120,7 @@ const Books: FC = () => {
                         <AddBookForm
                             closeForm={handleClickCloseFormEvent}
                             createBook={handleCreateBookEvent}
+                            authors={props.authorsAvailable}
                         />
                     }
                     {
@@ -132,6 +129,7 @@ const Books: FC = () => {
                         <UpdateBookForm
                             closeForm={handleClickCloseUpdateFormEvent}
                             updateBook={handleUpdateBookEvent}
+                            authors={props.authorsAvailable}
                         />
                     }
                 </Col>
