@@ -47,6 +47,7 @@ const Books: FC = () => {
         const books: IBook[] = booksList.slice();
         books.splice(id-1, 1);
         setBooksList(books);
+        setIsVisibleUpdateBookForm(false);
     }
     // Update a 'Book'
     const handleUpdateBookRequestEvent = (id: number) => {
