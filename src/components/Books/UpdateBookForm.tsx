@@ -17,6 +17,8 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
     const [enteredIsbn, setEnteredIsbn] = useState<string>("");
     // Book Author
     const [enteredAuthor, setEnteredAuthor] = useState<string>("");
+    // Validate
+    const [validated, setValidated] = useState<boolean>(false);
 
     // Handling changes of book author field
     const handleEnterAuthorChangeEvent = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -35,7 +37,9 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
     }
     // submit update book form
     const submitUpdateBookForm = (event: React.FormEvent) => {
-        event.preventDefault();
+        event.preventDefault()
+        event.stopPropagation()
+        setValidated(true);
         if(enteredTitle === "" || enteredIsbn === "") {
             return;
         }
@@ -61,7 +65,7 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                 <Col xs={3} />
                 <Col xs={1} />
                 <Col xs={9}>
-                    <Form className="ub-form"  onSubmit={(event: React.FormEvent) => submitUpdateBookForm(event)}>
+                    <Form noValidate validated={validated} className="ub-form"  onSubmit={(event: React.FormEvent) => submitUpdateBookForm(event)}>
                         <Form.Group>
                             <Form.Label className="book-title-label">Title of the Book</Form.Label>
                             <Form.Control
@@ -73,7 +77,11 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                                     (event: React.ChangeEvent<HTMLInputElement>) =>
                                         handleEnterTitleChangeEvent(event)
                                 }
+                                required
                             />
+                            <Form.Control.Feedback type="invalid">
+                                Please provide a book title.
+                            </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label className="book-isbn-label">ISBN</Form.Label>
@@ -86,7 +94,11 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                                     (event: React.ChangeEvent<HTMLInputElement>) =>
                                         handleEnterIsbnChangeEvent(event)
                                 }
+                                required
                             />
+                            <Form.Control.Feedback type="invalid">
+                                Please provide an ISBN number.
+                            </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label className="book-author-label">Author</Form.Label>
@@ -98,23 +110,28 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                                     (event: React.ChangeEvent<HTMLSelectElement>) =>
                                         handleEnterAuthorChangeEvent(event)
                                 }
+                                required
                             >
-                                {props.authors().map(
-                                    (author: IAuthor) => {
-                                        return(
-                                            <option
-                                                value={author.authorName}
-                                                key={author.authorName}
-                                            >
-                                                {author.authorName}
-                                            </option>
-                                        );
-                                    }
-                                )}
-                                {/*<option value="Author 1">Author 1</option>*/}
-                                {/*<option value="Author 2">Author 2</option>*/}
-                                {/*<option value="Author 3">Author 3</option>*/}
+                                {
+                                    (props.authors().length !== 0)
+                                        &&
+                                    props.authors().map(
+                                        (author: IAuthor) => {
+                                            return(
+                                                <option
+                                                    value={author.authorName}
+                                                    key={author.authorName}
+                                                >
+                                                    {author.authorName}
+                                                </option>
+                                            );
+                                        }
+                                    )
+                                }
                             </Form.Control>
+                            <Form.Control.Feedback type="invalid">
+                                Please select an author.
+                            </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group className="update-btn-container">
                             <Button className="update-btn" variant="primary" type="submit" size="sm" >
