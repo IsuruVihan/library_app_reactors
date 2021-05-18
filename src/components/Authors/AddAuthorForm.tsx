@@ -46,7 +46,12 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
                 <Col xs={3} />
                 <Col xs={1} />
                 <Col xs={9}>
-                    <Form noValidate className="aa-form" validated={validated} onSubmit={(event: React.FormEvent) => submitAuthorForm(event)}>
+                    <Form
+                        noValidate
+                        className="aa-form"
+                        validated={validated}
+                        onSubmit={(event: React.FormEvent) => submitAuthorForm(event)}
+                    >
                         <Form.Group>
                             <Form.Label className="author-name-label">Name of Author</Form.Label>
                             <Form.Control

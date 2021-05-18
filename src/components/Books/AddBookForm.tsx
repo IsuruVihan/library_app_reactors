@@ -1,9 +1,8 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useState} from 'react';
 import {Col, Container, Row, Button, Form} from "react-bootstrap";
 import '../../assets/styles/partials/AddBookForm.scss';
 import { XCircle } from 'react-feather';
 import IAuthor from "../../interfaces/IAuthor";
-import NoAuthorsAdded from "./NoAuthorsAdded";
 
 type AddBookFormProps = {
     closeForm: () => void,
@@ -59,14 +58,23 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                 <Col xs={9}>
                     <Row>
                         <Col className="cb-title" xs={11}><p className="cb-title-text">Create Book</p></Col>
-                        <Col className="close-btn" xs={1}><XCircle className="close-icon" onClick={() => props.closeForm()} /></Col>
+                        <Col
+                            className="close-btn"
+                            xs={1}
+                        >
+                            <XCircle className="close-icon" onClick={() => props.closeForm()} />
+                        </Col>
                     </Row>
                 </Col>
                 <Col xs={3} />
                 <Col xs={1} />
                 <Col xs={9}>
-                    <Form noValidate className="ab-form" validated={validated} onSubmit={(event: React.FormEvent) => submitBookForm(event)}>
-
+                    <Form
+                        noValidate
+                        className="ab-form"
+                        validated={validated}
+                        onSubmit={(event: React.FormEvent) => submitBookForm(event)}
+                    >
                         <Form.Group>
                             <Form.Label className="book-title-label">Title of the Book</Form.Label>
                             <Form.Control
@@ -74,7 +82,9 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                 type="text"
                                 size="sm"
                                 value={bookTitle}
-                                onChange={(event: React.ChangeEvent<HTMLInputElement>) => handleBookTitleChangeEvent(event)}
+                                onChange={
+                                    (event: React.ChangeEvent<HTMLInputElement>) => handleBookTitleChangeEvent(event)
+                                }
                                 required
                             />
                             <Form.Control.Feedback type="invalid">
@@ -88,7 +98,9 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                 type="text"
                                 size="sm"
                                 value={bookIsbn}
-                                onChange={(event: React.ChangeEvent<HTMLInputElement>) => handleBookIsbnChangeEvent(event)}
+                                onChange={
+                                    (event: React.ChangeEvent<HTMLInputElement>) => handleBookIsbnChangeEvent(event)
+                                }
                                 required
                             />
                             <Form.Control.Feedback type="invalid">
@@ -101,7 +113,9 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                 className="book-author-input"
                                 size="sm"
                                 as="select"
-                                onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {handleBookAuthorChangeEvent(event)}}
+                                onChange={
+                                    (event: React.ChangeEvent<HTMLSelectElement>) => handleBookAuthorChangeEvent(event)
+                                }
                                 value={bookAuthor}
                             >
                                 {props.authors().map(
@@ -116,9 +130,6 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                         );
                                     }
                                 )}
-                                {/*<option selected value="Author 1">Author 1</option>*/}
-                                {/*<option value="Author 2">Author 2</option>*/}
-                                {/*<option value="Author 3">Author 3</option>*/}
                             </Form.Control>
                         </Form.Group>
                         <Form.Group className="create-btn-container">
