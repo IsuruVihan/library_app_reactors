@@ -4,13 +4,14 @@ import '../../assets/styles/partials/UpdateAuthorForm.scss';
 import { XCircle } from 'react-feather';
 
 type UpdateAuthorFormProps = {
+    currentAuthorName: string,
     closeForm: () => void,
     updateAuthor: (event: React.FormEvent, name: string) => void
 };
 
 const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
     // Entered author
-    const [enteredAuthor, setEnteredAuthor] = useState<string>("");
+    const [enteredAuthor, setEnteredAuthor] = useState<string>(props.currentAuthorName);
     // Validate
     const [validated, setValidated] = useState<boolean>(false);
     // Handling the changes of author name field

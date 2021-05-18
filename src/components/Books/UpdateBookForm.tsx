@@ -30,7 +30,7 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
         const isbn = event.target.value;
         setEnteredIsbn(isbn);
     }
-    // Handling changes of book isbn field
+    // Handling changes of book title field
     const handleEnterTitleChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => {
         const title = event.target.value;
         setEnteredTitle(title);

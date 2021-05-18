@@ -1,9 +1,8 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useState} from 'react';
 import {Col, Container, Row, Button, Form} from "react-bootstrap";
 import '../../assets/styles/partials/AddBookForm.scss';
 import { XCircle } from 'react-feather';
 import IAuthor from "../../interfaces/IAuthor";
-import NoAuthorsAdded from "./NoAuthorsAdded";
 
 type AddBookFormProps = {
     closeForm: () => void,
