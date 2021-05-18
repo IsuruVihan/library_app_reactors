@@ -11,8 +11,8 @@ const UpdateInProgressModal: FC<UpdateInProgressModalProps> = (props) => {
         <Modal
             show={props.isVisible}
             onHide={() => props.closeModal()}
-            keyboard={false}
-            class="main-container"
+            keyboard={true}
+            className="main-container"
         >
             <Modal.Header>
                 <Modal.Title>Update in progress</Modal.Title>

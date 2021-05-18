@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useState} from 'react';
 import {Row, Col, Container} from "react-bootstrap";
 import '../../assets/styles/partials/Authors.scss';
 import AddAuthorForm from "./AddAuthorForm";
@@ -78,13 +78,6 @@ const Authors: FC<AuthorsProps> = (props) => {
         setIsVisibleUpdateAuthorForm(true);
         setAuthorToBeUpdate(id);
     }
-    // useEffect(() => {
-    //     if(authorToBeUpdate === null) {
-    //         return;
-    //     }
-    //
-    //     console.log(authorToBeUpdate);
-    // }, [authorToBeUpdate]);
     const handleUpdateAuthorEvent = (event: React.FormEvent, name: string) => {
         if(authorToBeUpdate === null) {
             return;

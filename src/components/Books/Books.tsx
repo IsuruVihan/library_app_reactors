@@ -8,6 +8,7 @@ import BookListLine from './BookListLine';
 import IBook from '../../interfaces/IBook';
 import NoBooks from './NoBooks';
 import IAuthor from "../../interfaces/IAuthor";
+import UpdateInProgressModal from "../UpdateInProgressModal";
 
 type BooksProps = {
     authorsAvailable: () => IAuthor[]
@@ -17,6 +18,8 @@ const Books: FC<BooksProps> = (props) => {
     // Book list number in the list (key)
     let bookId: number = 1;
 
+    // Visibility of Update in progress modal
+    const [isVisibleUpdateInProgressModal, setIsVisibleUpdateInProgressModal] = useState<boolean>(false);
     // Visibility of 'AddBook' form
     const [isVisibleBookForm, setIsVisibleBookForm] = useState<boolean>(false);
     // Visibility of 'UpdateBook' form
@@ -26,6 +29,10 @@ const Books: FC<BooksProps> = (props) => {
     // Book to be update
     const [bookToBeUpdate, setBookToBeUpdate] = useState<number | null>(null);
 
+    // Close update in progress modal
+    const closeUpdateInProgressModal = () => {
+        setIsVisibleUpdateInProgressModal(false);
+    }
     // Set 'AddBook' form visible
     const handleClickAddBookEvent = () => {
         setIsVisibleBookForm(true);
@@ -57,6 +64,10 @@ const Books: FC<BooksProps> = (props) => {
     // Update a 'Book'
     const handleUpdateBookRequestEvent = (id: number) => {
         setIsVisibleBookForm(false);
+        if(isVisibleUpdateBookForm) {
+            setIsVisibleUpdateInProgressModal(true);
+            return;
+        }
         setIsVisibleUpdateBookForm(true);
         setBookToBeUpdate(id);
     }
@@ -81,6 +92,10 @@ const Books: FC<BooksProps> = (props) => {
 
     return(
         <Container fluid>
+            <UpdateInProgressModal
+                isVisible={isVisibleUpdateInProgressModal}
+                closeModal={closeUpdateInProgressModal}
+            />
             <Row className="Books">
                 <Col xs={12}>
                     <p className="title">Books</p>
@@ -127,6 +142,9 @@ const Books: FC<BooksProps> = (props) => {
                         isVisibleUpdateBookForm
                             &&
                         <UpdateBookForm
+                            currentTitle={bookToBeUpdate === null ? "" : booksList[bookToBeUpdate-1].bookTitle}
+                            currentIsbn={bookToBeUpdate === null ? "" : booksList[bookToBeUpdate-1].bookIsbn}
+                            currentAuthor={bookToBeUpdate === null ? "" : booksList[bookToBeUpdate-1].bookAuthor}
                             closeForm={handleClickCloseUpdateFormEvent}
                             updateBook={handleUpdateBookEvent}
                             authors={props.authorsAvailable}
