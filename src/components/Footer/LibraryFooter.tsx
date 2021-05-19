@@ -1,10 +1,9 @@
 import React from "react";
-import {MDBCol, MDBContainer, MDBFooter, MDBRow} from "mdbreact";
 import {Card} from "react-bootstrap";
 
 const LibraryFooter:React.FC = () => {
     return(
-        <Card className="text-center">
+        <Card className="text-center mt-lg-5">
             <Card.Footer className="text-muted">
                 <Card.Title>My Library</Card.Title>
                 <Card.Text>
