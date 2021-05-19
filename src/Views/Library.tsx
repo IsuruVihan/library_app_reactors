@@ -38,7 +38,7 @@ const Library: FC = () => {
                     >Photo by Anna Hunko on Unsplash</a>
                 </Col>
             </Row>
-            <Row style={{width: '100%'}}>
+            <Row>
                 <Col md={6} xs={12} className="book-container">
                     <Books
                         authorsAvailable={sendAvailableAuthors}

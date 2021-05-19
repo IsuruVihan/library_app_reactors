@@ -10,7 +10,7 @@
   height: auto;
 }
 .Library .credits .photo-credits {
-  padding-right: 1em;
+  padding-right: 2em;
   color: #2d2d2d;
 }
 
@@ -72,7 +72,6 @@
   }
 
   .Books .title {
-    color: orangered;
     font-size: 1.6em;
   }
   .Books .no-books {
@@ -87,6 +86,13 @@
   .Books .ab-form-container .ab-form .book-title-input, .Books .ab-form-container .ab-form .book-isbn-input, .Books .ab-form-container .ab-form .book-author-input {
     width: 70vw;
     font-size: 10px;
+  }
+  .Books .ab-form-container .ab-form .create-btn-container {
+    padding-left: 0.5em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    float: right;
+    margin-right: 6.5em;
   }
 }
 

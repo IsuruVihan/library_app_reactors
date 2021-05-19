@@ -1,0 +1,28 @@
+.Authors {
+  font-family: "Raleway", sans-serif;
+  margin-left: 1vw;
+}
+.Authors .title {
+  color: #2c302f;
+  font-weight: 600;
+  font-size: 2em;
+  border-bottom: 2px solid #2c302f;
+  padding-left: 0;
+  margin-bottom: 0.7em;
+}
+.Authors .add-author {
+  color: #1f2024;
+  font-weight: 500;
+}
+.Authors .add-author .add-author-text {
+  cursor: pointer;
+}
+.Authors .add-author .plus {
+  cursor: pointer;
+  margin-right: 8px;
+}
+.Authors .author-list {
+  list-style-type: none;
+}
+
+/*# sourceMappingURL=Authors.css.map */

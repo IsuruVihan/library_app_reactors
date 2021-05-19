@@ -12,7 +12,6 @@
   }
   .Books{
     .title{
-      color: orangered;
       font-size: 1.6em;
     }
     .no-books {
@@ -28,6 +27,14 @@
         .book-title-input, .book-isbn-input, .book-author-input {
           width: 70vw;
           font-size: 10px;
+
+        }
+        .create-btn-container {
+          padding-left: 0.5em;
+          margin-top: 2em;
+          margin-bottom: 2em;
+          float: right;
+          margin-right: 6.5em;
         }
       }
     }

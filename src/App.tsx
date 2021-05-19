@@ -6,9 +6,9 @@ import {Container, Row, Col} from "react-bootstrap";
 const App: FC = () => {
     return(
         <Container className="px-0" fluid>
-            <Row style={{width: '100%'}}>
+            <Row className="g-0" style={{width: '100%'}}>
                 <Col>
-                    <Library />
+                    <Library/>
                 </Col>
             </Row>
         </Container>
