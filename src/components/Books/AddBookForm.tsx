@@ -4,18 +4,19 @@ import '../../assets/styles/partials/AddBookForm.scss';
 import { XCircle } from 'react-feather';
 import IAuthor from "../../interfaces/IAuthor";
 import NoAuthorsAdded from "./NoAuthorsAdded";
+import * as CurrencyFormat from 'react-currency-format';
 
 type AddBookFormProps = {
     closeForm: () => void,
-    createBook: (event: React.FormEvent, name: string, isbn: string, author: string) => void,
+    createBook: (event: React.FormEvent, name: string, price: string, author: string) => void,
     authors: () => IAuthor[]
 };
 
 const AddBookForm: FC<AddBookFormProps> = (props) => {
     // Book title
     const[bookTitle, setBookTitle] = useState<string>("");
-    // Book ISBN
-    const[bookIsbn, setBookIsbn] = useState<string>("");
+    // Book Price
+    const[price, setPrice] = useState<string>("");
     // Book Author
     const[bookAuthor, setBookAuthor] = useState<string>("Author 1");
     // Validate
@@ -26,11 +27,11 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
         const newBookTitle = event.target.value;
         setBookTitle(newBookTitle);
     }
-    // Change book ISBN
-    const handleBookIsbnChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const newBookIsbn = event.target.value;
-        setBookIsbn(newBookIsbn);
-    }
+    // Change Book Price
+    // const handlePriceChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => {
+    //     const newPrice = event.target.value;
+    //     setPrice(newPrice);
+    // }
     // Change book Author
     const handleBookAuthorChangeEvent = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const newBookAuthor = event.target.value;
@@ -42,15 +43,15 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
         event.stopPropagation();
         setValidated(true);
 
-        if(bookTitle === "" || bookIsbn === "" || bookAuthor === "") {
+        if(bookTitle === "" || price === "" || bookAuthor === "") {
             return;
         }
         const bookTitleToBeAdded = bookTitle;
-        const bookIsbnToBeAdded = bookIsbn;
+        const priceToBeAdded = price;
         const bookAuthorToBeAdded = bookAuthor;
         setBookTitle("");
-        setBookIsbn("");
-        return props.createBook(event, bookTitleToBeAdded, bookIsbnToBeAdded, bookAuthorToBeAdded);
+        setPrice("");
+        return props.createBook(event, bookTitleToBeAdded, priceToBeAdded, bookAuthorToBeAdded);
     }
 
     return(
@@ -66,7 +67,6 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                 <Col xs={1} />
                 <Col xs={9}>
                     <Form noValidate className="ab-form" validated={validated} onSubmit={(event: React.FormEvent) => submitBookForm(event)}>
-
                         <Form.Group>
                             <Form.Label className="book-title-label">Title of the Book</Form.Label>
                             <Form.Control
@@ -81,18 +81,18 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                 Please provide a book title.
                             </Form.Control.Feedback>
                         </Form.Group>
+                        <Form.Label className="book-price-label">Price</Form.Label>
                         <Form.Group>
-                            <Form.Label className="book-isbn-label">ISBN</Form.Label>
-                            <Form.Control
-                                className="book-isbn-input"
-                                type="text"
-                                size="sm"
-                                value={bookIsbn}
-                                onChange={(event: React.ChangeEvent<HTMLInputElement>) => handleBookIsbnChangeEvent(event)}
-                                required
+                             {/*Book Price currency-format*/}
+                            <CurrencyFormat className="book-price-input" size="sm" inputMode="numeric"
+                                            thousandSeparator={true} prefix={'$'}
+                                            onValueChange={(values) => {
+                                                const {formattedValue, value} = values;
+                                                setPrice(value);
+                                                console.log("This is formated price: "+ value);}}
                             />
                             <Form.Control.Feedback type="invalid">
-                                Please provide an ISBN number.
+                                Please provide a Price.
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group>
