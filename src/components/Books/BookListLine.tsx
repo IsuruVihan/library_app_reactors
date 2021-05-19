@@ -30,12 +30,12 @@ const BookListLine: FC<BookListLineProps> = (props) => {
         props.delete(props.id);
         setShowDeleteBookModal(false);
     }
-    const showEditOverlay = (props) => (
+    const showEditOverlay = (props:any) => (
         <Tooltip id="button-tooltip" {...props}>
             Edit book details
         </Tooltip>
     );
-    const showDeleteOverlay = (props) => (
+    const showDeleteOverlay = (props:any) => (
         <Tooltip id="button-tooltip" {...props}>
             Delete book
         </Tooltip>
@@ -43,8 +43,8 @@ const BookListLine: FC<BookListLineProps> = (props) => {
     return(
         <li>
             <Row>
-                <Col xs={10}>{props.id}. {props.title}</Col>
-                <Col>
+                <Col xs={8}>{props.id}. {props.title}</Col>
+                <Col xs={2}>
                     <OverlayTrigger
                         placement="left"
                         delay={{ show: 250, hide: 400 }}
@@ -53,7 +53,7 @@ const BookListLine: FC<BookListLineProps> = (props) => {
                         <Edit className="edit-btn" onClick={() => props.updateRequest(props.id)} />
                     </OverlayTrigger>
                 </Col>
-                <Col>
+                <Col xs={2}>
                     <OverlayTrigger
                         placement="bottom"
                         delay={{ show: 250, hide: 400 }}
