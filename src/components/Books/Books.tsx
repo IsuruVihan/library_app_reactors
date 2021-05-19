@@ -89,7 +89,6 @@ const Books: FC<BooksProps> = (props) => {
         }
         setIsVisibleBookForm(false);
         console.log("Hello");
-        setIsVisibleUpdateInProgressModal(false);
         setIsVisibleUpdateBookForm(true);
         setBookToBeUpdate(id);
     }

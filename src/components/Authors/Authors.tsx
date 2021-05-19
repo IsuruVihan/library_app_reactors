@@ -8,6 +8,7 @@ import IAuthor from '../../interfaces/IAuthor';
 import AuthorListLine from "./AuthorListLine";
 import NoAuthors from "./NoAuthors";
 import UpdateInProgressModal from "../UpdateInProgressModal";
+import CreateInProgressModal from "../CreateInProgressModal";
 
 type AuthorsProps = {
     returnAvailableAuthors: (authors: IAuthor[]) => void
@@ -25,12 +26,21 @@ const Authors: FC<AuthorsProps> = (props) => {
     const [authorsList, setAuthorsList] = useState<IAuthor[]>([]);
     // Author to be update
     const [authorToBeUpdate, setAuthorToBeUpdate] = useState<number | null>(null);
+    // Visibility of Create in progress modal
+    const [isVisibleCreateInProgressModal, setIsVisibleCreateInProgressModal] = useState<boolean>(false);
     // Visibility of 'Update in progress modal'
     const [isVisibleUpdateInProgressModal, setIsVisibleUpdateInProgressModal] = useState<boolean>(false);
 
     // Set 'AddAuthor' form visible
     const handleClickAddAuthorEvent = () => {
-        setIsVisibleUpdateAuthorForm(false);
+        if(isVisibleAuthorForm) {
+            setIsVisibleCreateInProgressModal(true);
+            return;
+        }
+        if(isVisibleUpdateAuthorForm) {
+            setIsVisibleUpdateInProgressModal(true);
+            return;
+        }
         setIsVisibleAuthorForm(true);
     }
     // Set 'AddAuthor' form invisible
@@ -41,9 +51,13 @@ const Authors: FC<AuthorsProps> = (props) => {
     const handleClickCloseUpdateFormEvent = () => {
         setIsVisibleUpdateAuthorForm(false);
     }
-    // Set 'UpdateAuthor' form invisible
+    // Set 'UpdateInProgress' modal invisible
     const closeUpdateInProgressModal = () => {
         setIsVisibleUpdateInProgressModal(false);
+    }
+    // Set 'CreateInProgress' modal invisible
+    const closeCreateInProgressModal = () => {
+        setIsVisibleCreateInProgressModal(false);
     }
     // Add an 'Author'
     const handleCreateAuthorEvent = (event: React.FormEvent, name: string) => {
@@ -69,12 +83,14 @@ const Authors: FC<AuthorsProps> = (props) => {
     }
     // Update an 'Author'
     const handleUpdateAuthorRequestEvent = (id: number) => {
-        setIsVisibleAuthorForm(false);
         if(isVisibleUpdateAuthorForm) {
             setIsVisibleUpdateInProgressModal(true);
             return;
         }
-        setIsVisibleUpdateInProgressModal(false);
+        if(isVisibleAuthorForm) {
+            setIsVisibleCreateInProgressModal(true);
+            return;
+        }
         setIsVisibleUpdateAuthorForm(true);
         setAuthorToBeUpdate(id);
     }
@@ -100,6 +116,10 @@ const Authors: FC<AuthorsProps> = (props) => {
             <UpdateInProgressModal
                 isVisible={isVisibleUpdateInProgressModal}
                 closeModal={closeUpdateInProgressModal}
+            />
+            <CreateInProgressModal
+                isVisible={isVisibleCreateInProgressModal}
+                closeModal={closeCreateInProgressModal}
             />
             <Row className="Authors">
                 <Col xs={12}>
