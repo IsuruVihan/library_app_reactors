@@ -61,8 +61,10 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
             <Row>
                 <Col xs={9}>
                     <Row>
-                        <Col className="ub-title" xs={11}><p className="ub-title-text">Update Book</p></Col>
-                        <Col className="close-btn" xs={1} onClick={() => props.closeForm()}>
+                        <Col className="ub-title" md={11} xs={10}>
+                            <p className="ub-title-text">Update Book</p>
+                        </Col>
+                        <Col className="close-btn" md={1} xs={1} onClick={() => props.closeForm()}>
                             <XCircle className="close-icon" />
                         </Col>
                     </Row>

@@ -94,6 +94,17 @@
     float: right;
     margin-right: 6.5em;
   }
+  .Books .ub-form-container .ub-form .book-title-input, .Books .ub-form-container .ub-form .book-isbn-input, .Books .ub-form-container .ub-form .book-author-input {
+    width: 70vw;
+    font-size: 10px;
+  }
+  .Books .ub-form-container .ub-form .update-btn-container {
+    padding-left: 0.5em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    float: right;
+    margin-right: 6.5em;
+  }
 
   .Authors {
     font-family: "Raleway", sans-serif;
@@ -110,6 +121,17 @@
     font-size: 10px;
   }
   .Authors .aa-form-container .aa-form .create-btn-container {
+    padding-left: 0.5em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    float: right;
+    margin-right: 6.5em;
+  }
+  .Authors .ua-form-container .ua-form .author-name-input {
+    width: 70vw;
+    font-size: 10px;
+  }
+  .Authors .ua-form-container .ua-form .update-btn-container {
     padding-left: 0.5em;
     margin-top: 2em;
     margin-bottom: 2em;
