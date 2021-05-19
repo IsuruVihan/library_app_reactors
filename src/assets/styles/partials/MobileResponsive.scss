@@ -39,4 +39,41 @@
       }
     }
   }
+
+  .Authors {
+    font-family: 'Raleway', sans-serif;
+    margin-left: 1vw;
+
+    .title {
+      font-size: 1.6em;
+    }
+    .no-authors{
+      //color: $no_books_listed_font_color;
+      font-size: 0.9em;
+    }
+
+    .aa-form-container {
+         .aa-form{
+           .author-name-input{
+             width: 70vw;
+             font-size: 10px;
+           }
+
+           .create-btn-container{
+             padding-left: 0.5em;
+             margin-top: 2em;
+             margin-bottom: 2em;
+             float: right;
+             margin-right: 6.5em;
+           }
+         }
+        .ca-title {
+          .ca-title-text{
+
+          }
+        }
+
+
+      }
+  }
 }

@@ -1,7 +1,7 @@
 import React, {FC, useState} from 'react';
 import {Row, Col, Container} from "react-bootstrap";
 import '../../assets/styles/partials/Authors.scss';
-import AddAuthorForm from "./AddAuthorForm";
+import AddAuthorForm from"./AddAuthorForm"
 import UpdateAuthorForm from "./UpdateAuthorForm";
 import { Plus } from 'react-feather';
 import IAuthor from '../../interfaces/IAuthor';

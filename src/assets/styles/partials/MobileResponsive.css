@@ -94,6 +94,28 @@
     float: right;
     margin-right: 6.5em;
   }
+
+  .Authors {
+    font-family: "Raleway", sans-serif;
+    margin-left: 1vw;
+  }
+  .Authors .title {
+    font-size: 1.6em;
+  }
+  .Authors .no-authors {
+    font-size: 0.9em;
+  }
+  .Authors .aa-form-container .aa-form .author-name-input {
+    width: 70vw;
+    font-size: 10px;
+  }
+  .Authors .aa-form-container .aa-form .create-btn-container {
+    padding-left: 0.5em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    float: right;
+    margin-right: 6.5em;
+  }
 }
 
 /*# sourceMappingURL=MobileResponsive.css.map */

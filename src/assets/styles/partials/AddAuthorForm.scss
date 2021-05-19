@@ -17,7 +17,9 @@ $create_btn_color: #00579c;
             border-bottom: 3px solid $ca_title_color;
             margin: 0;
             max-height: 1.35em;
-            max-width: 6.6em;
+            max-width: 8em;
+            min-width: 6em;
+
         }
     }
     .close-btn {

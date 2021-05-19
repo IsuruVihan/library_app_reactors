@@ -44,7 +44,7 @@ const Library: FC = () => {
                         authorsAvailable={sendAvailableAuthors}
                     />
                 </Col>
-                <Col md={6} xs={12}>
+                <Col md={6}  xs={12}>
                     <Authors
                         returnAvailableAuthors={getAvailableAuthors}
                     />
