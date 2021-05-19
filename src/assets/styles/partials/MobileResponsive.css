@@ -1,0 +1,93 @@
+.Library {
+  font-family: "Raleway", sans-serif;
+}
+.Library h1 {
+  color: #253439;
+  font-weight: 700;
+}
+.Library img {
+  width: 100%;
+  height: auto;
+}
+.Library .credits .photo-credits {
+  padding-right: 1em;
+  color: #2d2d2d;
+}
+
+.Books {
+  font-family: "Raleway", sans-serif;
+  margin-left: 1vw;
+}
+.Books .book-list li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 500;
+  font-size: x-large;
+}
+.Books .book-list li .delete-btn, .Books .book-list li .edit-btn {
+  display: none;
+}
+.Books .book-list li:hover {
+  background-color: #f5f5f5;
+}
+.Books .book-list li:hover .delete-btn {
+  display: inline;
+  color: #9d292a;
+  cursor: pointer;
+}
+.Books .book-list li:hover .edit-btn {
+  display: inline;
+  color: #ef921b;
+  cursor: pointer;
+}
+.Books .title {
+  color: #2c302f;
+  font-weight: 600;
+  font-size: 2em;
+  border-bottom: 2px solid #2c302f;
+  padding-left: 0;
+  margin-bottom: 0.7em;
+}
+.Books .no-books {
+  color: #25292c;
+}
+.Books .add-book {
+  color: #1f2024;
+  font-weight: 500;
+}
+.Books .add-book .add-book-text {
+  cursor: pointer;
+}
+.Books .add-book .plus {
+  cursor: pointer;
+  margin-right: 8px;
+}
+.Books .book-list {
+  list-style-type: none;
+}
+
+@media screen and (max-width: 576px) {
+  .Library .credits .photo-credits {
+    font-size: 0.7em;
+  }
+
+  .Books .title {
+    color: orangered;
+    font-size: 1.6em;
+  }
+  .Books .no-books {
+    font-size: 0.9em;
+  }
+  .Books .ab-form-container {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    flex-basis: fit-content;
+  }
+  .Books .ab-form-container .ab-form .book-title-input, .Books .ab-form-container .ab-form .book-isbn-input, .Books .ab-form-container .ab-form .book-author-input {
+    width: 70vw;
+    font-size: 10px;
+  }
+}
+
+/*# sourceMappingURL=MobileResponsive.css.map */

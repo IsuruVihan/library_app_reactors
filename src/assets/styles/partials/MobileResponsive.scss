@@ -1,0 +1,35 @@
+@import "Library";
+@import "Books";
+
+@media screen and (max-width: 576px) {
+  .Library{
+    .credits {
+      .photo-credits{
+        font-size: 0.7em;
+      }
+    }
+
+  }
+  .Books{
+    .title{
+      color: orangered;
+      font-size: 1.6em;
+    }
+    .no-books {
+      //color: $no_books_listed_font_color;
+      font-size: 0.9em;
+    }
+    .ab-form-container{
+      width: 100%;
+      height:100%;
+      display: inline-block;
+      flex-basis: fit-content;
+      .ab-form {
+        .book-title-input, .book-isbn-input, .book-author-input {
+          width: 70vw;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}

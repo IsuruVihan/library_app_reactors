@@ -4,6 +4,7 @@ import libraryImg from "../assets/images/anna-hunko-ajE5goOGzZc-unsplash.jpg";
 import Books from "../components/Books/Books";
 import Authors from "../components/Authors/Authors";
 import '../assets/styles/partials/Library.scss';
+import '../assets/styles/partials/MobileResponsive.scss';
 import IAuthor from "../interfaces/IAuthor";
 
 const Library: FC = () => {
@@ -21,7 +22,7 @@ const Library: FC = () => {
 
     return(
         <Container className="Library px-0" fluid>
-            <Row style={{width: '100vw'}}>
+            <Row>
                 <Col className="px-0" xs={12}>
                     <h1 className="text-center py-2">My Library</h1>
                 </Col>
@@ -29,30 +30,21 @@ const Library: FC = () => {
                     <img src={libraryImg} alt="Library" />
                 </Col>
             </Row>
-            <Row className="credits" style={{width: '100%'}}>
-                <Col xs={9} />
-                <Col xs={3} className="text-end photo-credits">
-                    Photo by
+            <Row className="credits">
+                <Col md={true}/>
+                <Col md={true} xs={12} className="text-end photo-credits">
                     <a href="https://unsplash.com/@annahunko?
                        utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                    >
-                        Anna Hunko
-                    </a>
-                    on
-                    <a href="https://unsplash.com/?
-                       utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                    >
-                        Unsplash
-                    </a>
+                    >Photo by Anna Hunko on Unsplash</a>
                 </Col>
             </Row>
             <Row style={{width: '100%'}}>
-                <Col xs={6} className="book-container">
+                <Col md={6} xs={12} className="book-container">
                     <Books
                         authorsAvailable={sendAvailableAuthors}
                     />
                 </Col>
-                <Col xs={6}>
+                <Col md={6} xs={12}>
                     <Authors
                         returnAvailableAuthors={getAvailableAuthors}
                     />
