@@ -5,6 +5,7 @@ import Books from "../components/Books/Books";
 import Authors from "../components/Authors/Authors";
 import '../assets/styles/partials/Library.scss';
 import IAuthor from "../interfaces/IAuthor";
+import LibraryFooter from "../components/Footer/LibraryFooter";
 
 const Library: FC = () => {
     // Author list to be rendered inside add book form
@@ -57,6 +58,9 @@ const Library: FC = () => {
                         returnAvailableAuthors={getAvailableAuthors}
                     />
                 </Col>
+            </Row>
+            <Row>
+                <LibraryFooter></LibraryFooter>
             </Row>
         </Container>
     );
