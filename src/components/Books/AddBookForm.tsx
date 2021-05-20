@@ -28,10 +28,10 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
         setBookTitle(newBookTitle);
     }
     // Change Book Price
-    // const handlePriceChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => {
-    //     const newPrice = event.target.value;
-    //     setPrice(newPrice);
-    // }
+    const handlePriceChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newPrice = event.target.value;
+        setPrice(newPrice);
+    }
     // Change book Author
     const handleBookAuthorChangeEvent = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const newBookAuthor = event.target.value;
@@ -94,27 +94,32 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Label className="book-price-label">Price</Form.Label>
-                        <Form.Group>
-
+                            <Form.Group>
                              {/*Book Price currency-format*/}
-                            <CurrencyFormat className="book-price-input" size="sm" inputMode="numeric"
-                                            thousandSeparator={true} prefix={'$'}
-                                            onValueChange={(values) => {
-                                                const {formattedValue, value} = values;
-                                                setPrice(value);
-                                                console.log("This is formated price: "+ value);}}
-                            />
-                            <Form.Label className="book-isbn-label">ISBN</Form.Label>
-                            <Form.Control
-                                className="book-isbn-input"
-                                type="text"
+                            <CurrencyFormat
+                                className="book-price-input"
                                 size="sm"
-                                value={bookIsbn}
-                                onChange={
-                                    (event: React.ChangeEvent<HTMLInputElement>) => handleBookIsbnChangeEvent(event)
+                                inputMode="numeric"
+                                thousandSeparator={true} prefix={'$'}
+                                value={price}
+                                onValueChange={
+                                    (values) => {
+                                        const {formattedValue, value} = values;
+                                        setPrice(value);
+                                    }
                                 }
-                                required
                             />
+                            {/*<Form.Label className="book-price-label">Price</Form.Label>*/}
+                            {/*<Form.Control*/}
+                            {/*    className="book-price-input"*/}
+                            {/*    type="text"*/}
+                            {/*    size="sm"*/}
+                            {/*    value={price}*/}
+                            {/*    onChange={*/}
+                            {/*        (event: React.ChangeEvent<HTMLInputElement>) => handlePriceChangeEvent(event)*/}
+                            {/*    }*/}
+                            {/*    required*/}
+                            {/*/>*/}
                             <Form.Control.Feedback type="invalid">
                                 Please provide a Price.
                             </Form.Control.Feedback>
