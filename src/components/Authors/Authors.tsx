@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useState} from 'react';
 import {Row, Col, Container} from "react-bootstrap";
 import '../../assets/styles/partials/Authors.scss';
 import AddAuthorForm from "./AddAuthorForm";
@@ -7,6 +7,8 @@ import { Plus } from 'react-feather';
 import IAuthor from '../../interfaces/IAuthor';
 import AuthorListLine from "./AuthorListLine";
 import NoAuthors from "./NoAuthors";
+import UpdateInProgressModal from "../UpdateInProgressModal";
+import CreateInProgressModal from "../CreateInProgressModal";
 
 type AuthorsProps = {
     returnAvailableAuthors: (authors: IAuthor[]) => void
@@ -24,10 +26,21 @@ const Authors: FC<AuthorsProps> = (props) => {
     const [authorsList, setAuthorsList] = useState<IAuthor[]>([]);
     // Author to be update
     const [authorToBeUpdate, setAuthorToBeUpdate] = useState<number | null>(null);
+    // Visibility of Create in progress modal
+    const [isVisibleCreateInProgressModal, setIsVisibleCreateInProgressModal] = useState<boolean>(false);
+    // Visibility of 'Update in progress modal'
+    const [isVisibleUpdateInProgressModal, setIsVisibleUpdateInProgressModal] = useState<boolean>(false);
 
     // Set 'AddAuthor' form visible
     const handleClickAddAuthorEvent = () => {
-        setIsVisibleUpdateAuthorForm(false);
+        if(isVisibleAuthorForm) {
+            setIsVisibleCreateInProgressModal(true);
+            return;
+        }
+        if(isVisibleUpdateAuthorForm) {
+            setIsVisibleUpdateInProgressModal(true);
+            return;
+        }
         setIsVisibleAuthorForm(true);
     }
     // Set 'AddAuthor' form invisible
@@ -37,6 +50,14 @@ const Authors: FC<AuthorsProps> = (props) => {
     // Set 'UpdateAuthor' form invisible
     const handleClickCloseUpdateFormEvent = () => {
         setIsVisibleUpdateAuthorForm(false);
+    }
+    // Set 'UpdateInProgress' modal invisible
+    const closeUpdateInProgressModal = () => {
+        setIsVisibleUpdateInProgressModal(false);
+    }
+    // Set 'CreateInProgress' modal invisible
+    const closeCreateInProgressModal = () => {
+        setIsVisibleCreateInProgressModal(false);
     }
     // Add an 'Author'
     const handleCreateAuthorEvent = (event: React.FormEvent, name: string) => {
@@ -62,17 +83,17 @@ const Authors: FC<AuthorsProps> = (props) => {
     }
     // Update an 'Author'
     const handleUpdateAuthorRequestEvent = (id: number) => {
-        setIsVisibleAuthorForm(false);
+        if(isVisibleUpdateAuthorForm) {
+            setIsVisibleUpdateInProgressModal(true);
+            return;
+        }
+        if(isVisibleAuthorForm) {
+            setIsVisibleCreateInProgressModal(true);
+            return;
+        }
         setIsVisibleUpdateAuthorForm(true);
         setAuthorToBeUpdate(id);
     }
-    useEffect(() => {
-        if(authorToBeUpdate === null) {
-            return;
-        }
-
-        console.log(authorToBeUpdate);
-    }, [authorToBeUpdate]);
     const handleUpdateAuthorEvent = (event: React.FormEvent, name: string) => {
         if(authorToBeUpdate === null) {
             return;
@@ -92,6 +113,14 @@ const Authors: FC<AuthorsProps> = (props) => {
 
     return(
         <Container fluid>
+            <UpdateInProgressModal
+                isVisible={isVisibleUpdateInProgressModal}
+                closeModal={closeUpdateInProgressModal}
+            />
+            <CreateInProgressModal
+                isVisible={isVisibleCreateInProgressModal}
+                closeModal={closeCreateInProgressModal}
+            />
             <Row className="Authors">
                 <Col xs={12}>
                     <p className="title">Authors</p>
@@ -135,6 +164,7 @@ const Authors: FC<AuthorsProps> = (props) => {
                         isVisibleUpdateAuthorForm
                             &&
                         <UpdateAuthorForm
+                            currentAuthorName={authorToBeUpdate ? authorsList[authorToBeUpdate-1].authorName : ""}
                             closeForm={handleClickCloseUpdateFormEvent}
                             updateAuthor={handleUpdateAuthorEvent}
                         />

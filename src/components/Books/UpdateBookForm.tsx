@@ -7,17 +7,22 @@ import * as CurrencyFormat from 'react-currency-format';
 
 type UpdateBookFormProps = {
     closeForm: () => void,
-    updateBook: (event: React.FormEvent, title: string, price: string, author: string) => void,
-    authors: () => IAuthor[]
+    updateBook: (event: React.FormEvent, title: string, isbn: string, author: string) => void,
+    authors: () => IAuthor[],
+    currentTitle: string,
+    currentIsbn: string,
+    currentAuthor: string
 };
 
 const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
     // Book title
-    const [enteredTitle, setEnteredTitle] = useState<string>("");
     // Book Price
     const [enteredPrice, setEnteredPrice] = useState<string>("");
+    const [enteredTitle, setEnteredTitle] = useState<string>(props.currentTitle);
+    // Book ISBN
+    const [enteredIsbn, setEnteredIsbn] = useState<string>(props.currentIsbn);
     // Book Author
-    const [enteredAuthor, setEnteredAuthor] = useState<string>("");
+    const [enteredAuthor, setEnteredAuthor] = useState<string>(props.currentAuthor);
     // Validate
     const [validated, setValidated] = useState<boolean>(false);
 
@@ -60,13 +65,20 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                 <Col xs={9}>
                     <Row>
                         <Col className="ub-title" xs={11}><p className="ub-title-text">Update Book</p></Col>
-                        <Col className="close-btn" xs={1}><XCircle className="close-icon" /></Col>
+                        <Col className="close-btn" xs={1} onClick={() => props.closeForm()}>
+                            <XCircle className="close-icon" />
+                        </Col>
                     </Row>
                 </Col>
                 <Col xs={3} />
                 <Col xs={1} />
                 <Col xs={9}>
-                    <Form noValidate validated={validated} className="ub-form"  onSubmit={(event: React.FormEvent) => submitUpdateBookForm(event)}>
+                    <Form
+                        noValidate
+                        validated={validated}
+                        className="ub-form"
+                        onSubmit={(event: React.FormEvent) => submitUpdateBookForm(event)}
+                    >
                         <Form.Group>
                             <Form.Label className="book-title-label">Title of the Book</Form.Label>
                             <Form.Control

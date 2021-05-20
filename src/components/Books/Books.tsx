@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useState} from 'react';
 import {Row, Col, Container} from "react-bootstrap";
 import '../../assets/styles/partials/Books.scss';
 import AddBookForm from "./AddBookForm";
@@ -8,6 +8,8 @@ import BookListLine from './BookListLine';
 import IBook from '../../interfaces/IBook';
 import NoBooks from './NoBooks';
 import IAuthor from "../../interfaces/IAuthor";
+import UpdateInProgressModal from "../UpdateInProgressModal";
+import CreateInProgressModal from "../CreateInProgressModal";
 
 type BooksProps = {
     authorsAvailable: () => IAuthor[]
@@ -17,6 +19,10 @@ const Books: FC<BooksProps> = (props) => {
     // Book list number in the list (key)
     let bookId: number = 1;
 
+    // Visibility of Update in progress modal
+    const [isVisibleUpdateInProgressModal, setIsVisibleUpdateInProgressModal] = useState<boolean>(false);
+    // Visibility of Create in progress modal
+    const [isVisibleCreateInProgressModal, setIsVisibleCreateInProgressModal] = useState<boolean>(false);
     // Visibility of 'AddBook' form
     const [isVisibleBookForm, setIsVisibleBookForm] = useState<boolean>(false);
     // Visibility of 'UpdateBook' form
@@ -26,8 +32,24 @@ const Books: FC<BooksProps> = (props) => {
     // Book to be update
     const [bookToBeUpdate, setBookToBeUpdate] = useState<number | null>(null);
 
+    // Close update in progress modal
+    const closeUpdateInProgressModal = () => {
+        setIsVisibleUpdateInProgressModal(false);
+    }
+    // Close create in progress modal
+    const closeCreateInProgressModal = () => {
+        setIsVisibleCreateInProgressModal(false);
+    }
     // Set 'AddBook' form visible
     const handleClickAddBookEvent = () => {
+        if (isVisibleUpdateBookForm) {
+            setIsVisibleUpdateInProgressModal(true);
+            return;
+        }
+        if (isVisibleBookForm) {
+            setIsVisibleCreateInProgressModal(true);
+            return;
+        }
         setIsVisibleBookForm(true);
     }
     // Set 'AddBook' form invisible
@@ -46,6 +68,7 @@ const Books: FC<BooksProps> = (props) => {
         books.push(newBook);
         setBooksList(books);
         setIsVisibleBookForm(false);
+        setIsVisibleUpdateBookForm(false);
     }
     // Delete a 'Book'
     const handleDeleteBookEvent = (id: number) => {
@@ -56,15 +79,19 @@ const Books: FC<BooksProps> = (props) => {
     }
     // Update a 'Book'
     const handleUpdateBookRequestEvent = (id: number) => {
+        if(isVisibleUpdateBookForm) {
+            setIsVisibleUpdateInProgressModal(true);
+            return;
+        }
+        if(isVisibleBookForm) {
+            setIsVisibleCreateInProgressModal(true);
+            return;
+        }
         setIsVisibleBookForm(false);
+        console.log("Hello");
         setIsVisibleUpdateBookForm(true);
         setBookToBeUpdate(id);
     }
-    useEffect(() => {
-        if(bookToBeUpdate === null) {
-            return;
-        }
-    }, [bookToBeUpdate]);
     const handleUpdateBookEvent = (event: React.FormEvent, title: string, isbn: string, author: string) => {
         if(bookToBeUpdate === null) {
             return;
@@ -81,6 +108,14 @@ const Books: FC<BooksProps> = (props) => {
 
     return(
         <Container fluid>
+            <UpdateInProgressModal
+                isVisible={isVisibleUpdateInProgressModal}
+                closeModal={closeUpdateInProgressModal}
+            />
+            <CreateInProgressModal
+                isVisible={isVisibleCreateInProgressModal}
+                closeModal={closeCreateInProgressModal}
+            />
             <Row className="Books">
                 <Col xs={12}>
                     <p className="title">Books</p>
@@ -127,6 +162,9 @@ const Books: FC<BooksProps> = (props) => {
                         isVisibleUpdateBookForm
                             &&
                         <UpdateBookForm
+                            currentTitle={bookToBeUpdate === null ? "" : booksList[bookToBeUpdate-1].bookTitle}
+                            currentIsbn={bookToBeUpdate === null ? "" : booksList[bookToBeUpdate-1].bookIsbn}
+                            currentAuthor={bookToBeUpdate === null ? "" : booksList[bookToBeUpdate-1].bookAuthor}
                             closeForm={handleClickCloseUpdateFormEvent}
                             updateBook={handleUpdateBookEvent}
                             authors={props.authorsAvailable}
