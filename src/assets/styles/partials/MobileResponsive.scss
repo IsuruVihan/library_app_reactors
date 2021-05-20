@@ -188,8 +188,8 @@
       }
     .ua-form-container {
       .ua-title{
-        padding-left: 1em;
-        padding-right: 3em;
+        //padding-left: 1em;
+        //padding-right: 1em;
         font-size: large;
         .cb-title-text{
           font-size: large;
@@ -199,6 +199,8 @@
       }
       .close-btn {
         //padding-bottom: 0.8em;
+        //margin-right: 5px;
+
         font-size: .75em;
         .close-icon {
           cursor: pointer;
