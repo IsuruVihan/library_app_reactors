@@ -59,10 +59,12 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
             <Row>
                 <Col xs={9}>
                     <Row>
-                        <Col className="cb-title" xs={11}><p className="cb-title-text">Create Book</p></Col>
+                        <Col className="cb-title" md={11} xs={7}>
+                            <p className="cb-title-text">Create Book</p>
+                        </Col>
                         <Col
                             className="close-btn"
-                            xs={1}
+                            md={1} xs={1}
                         >
                             <XCircle className="close-icon" onClick={() => props.closeForm()} />
                         </Col>

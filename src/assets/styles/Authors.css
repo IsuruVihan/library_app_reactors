@@ -1,0 +1,53 @@
+.Authors {
+  font-family: "Raleway", sans-serif;
+  margin-left: 1vw;
+}
+.Authors .author-list li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 500;
+  font-size: x-large;
+}
+.Authors .author-list li .delete-btn, .Authors .author-list li .edit-btn {
+  display: none;
+}
+.Authors .author-list li:hover {
+  background-color: #f5f5f5;
+}
+.Authors .author-list li:hover .delete-btn {
+  display: inline;
+  color: #9d292a;
+  cursor: pointer;
+}
+.Authors .author-list li:hover .edit-btn {
+  display: inline;
+  color: #ef921b;
+  cursor: pointer;
+}
+.Authors .title {
+  color: #2c302f;
+  font-weight: 600;
+  font-size: 2em;
+  border-bottom: 2px solid #2c302f;
+  padding-left: 0;
+  margin-bottom: 0.7em;
+}
+.Authors .no-authors {
+  color: #25292c;
+}
+.Authors .add-author {
+  color: #1f2024;
+  font-weight: 500;
+}
+.Authors .add-author .add-author-text {
+  cursor: pointer;
+}
+.Authors .add-author .plus {
+  cursor: pointer;
+  margin-right: 8px;
+}
+.Authors .author-list {
+  list-style-type: none;
+}
+
+/*# sourceMappingURL=Authors.css.map */

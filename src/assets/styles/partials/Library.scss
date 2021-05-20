@@ -3,7 +3,6 @@ $credits_font_color: #2d2d2d;
 
 .Library {
   font-family: 'Raleway', sans-serif;
-
   h1 {
     color: $title_font_color;
     font-weight: 700;
@@ -15,7 +14,7 @@ $credits_font_color: #2d2d2d;
   .credits {
 
     .photo-credits {
-      padding-right: 6em;
+      padding-right: 2em;
       color: $credits_font_color;
     }
   }

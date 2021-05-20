@@ -36,15 +36,15 @@ const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
     return(
         <Container className="ua-form-container" fluid={true}>
             <Row>
-                <Col xs={9}>
+                <Col xs={10}>
                     <Row>
-                        <Col className="ua-title" xs={11}><p className="ua-title-text">Update Author</p></Col>
-                        <Col className="close-btn" xs={1}>
+                        <Col className="ua-title" md={11} xs={10}><p className="ua-title-text">Update Author</p></Col>
+                        <Col className="close-btn" md={1} xs={1}>
                             <XCircle className="close-icon" onClick={() => props.closeForm()} />
                         </Col>
                     </Row>
                 </Col>
-                <Col xs={3} />
+                <Col xs={1} />
                 <Col xs={1} />
                 <Col xs={9}>
                     <Form
