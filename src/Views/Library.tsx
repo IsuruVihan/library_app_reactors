@@ -22,7 +22,7 @@ const Library: FC = () => {
 
     return(
         <Container className="Library px-0" fluid>
-            <Row style={{width: '100vw'}}>
+            <Row style={{width: '100%'}}>
                 <Col className="px-0" xs={12}>
                     <h1 className="text-center py-2">My Library</h1>
                 </Col>
