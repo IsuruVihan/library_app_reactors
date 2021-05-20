@@ -40,7 +40,7 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
                         <Col className="ca-title" md={11} xs={10}>
                             <p className="ca-title-text">Create Author</p>
                         </Col>
-                        <Col className="close-btn" xs={1} >
+                        <Col className="close-btn" md={1} xs={1} >
                             <XCircle className="close-icon" onClick={() => props.closeForm()} />
                         </Col>
                     </Row>
