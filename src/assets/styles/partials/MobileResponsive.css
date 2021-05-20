@@ -77,22 +77,40 @@
   .Books .no-books {
     font-size: 0.9em;
   }
-  .Books .ab-form-container {
-    width: 100%;
-    height: 100%;
-    display: inline-block;
-    flex-basis: fit-content;
+  .Books .ab-form-container .cb-title {
+    padding-left: 1em;
+    padding-right: 3em;
+    font-size: large;
+  }
+  .Books .ab-form-container .cb-title .cb-title-text {
+    font-size: large;
+    max-width: 8em;
+    min-width: 6em;
+  }
+  .Books .ab-form-container .close-btn {
+    font-size: 0.75em;
+  }
+  .Books .ab-form-container .close-btn .close-icon {
+    cursor: pointer;
+    width: 1.5em;
+    height: 1.5em;
+  }
+  .Books .ab-form-container .ab-form .book-title-label, .Books .ab-form-container .ab-form .book-isbn-label, .Books .ab-form-container .ab-form .book-author-label {
+    font-size: 9px;
   }
   .Books .ab-form-container .ab-form .book-title-input, .Books .ab-form-container .ab-form .book-isbn-input, .Books .ab-form-container .ab-form .book-author-input {
     width: 70vw;
     font-size: 10px;
   }
   .Books .ab-form-container .ab-form .create-btn-container {
-    padding-left: 0.5em;
+    width: 70vw;
+    padding-left: 10em;
     margin-top: 2em;
     margin-bottom: 2em;
     float: right;
-    margin-right: 6.5em;
+  }
+  .Books .ab-form-container .ab-form .create-btn-container .create-btn {
+    margin-left: 100px;
   }
   .Books .ub-form-container .ub-form .book-title-input, .Books .ub-form-container .ub-form .book-isbn-input, .Books .ub-form-container .ub-form .book-author-input {
     width: 70vw;
