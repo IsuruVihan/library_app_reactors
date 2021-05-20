@@ -15,9 +15,9 @@ type UpdateBookFormProps = {
 };
 
 const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
-    // Book title
     // Book Price
-    const [enteredPrice, setEnteredPrice] = useState<string>("");
+    const [enteredPrice, setEnteredPrice] = useState<string>(props.currentIsbn);
+    // Book title
     const [enteredTitle, setEnteredTitle] = useState<string>(props.currentTitle);
     // Book ISBN
     const [enteredIsbn, setEnteredIsbn] = useState<string>(props.currentIsbn);
@@ -98,12 +98,19 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                         </Form.Group>
                         <Form.Label className="book-price-label">Price</Form.Label>
                         <Form.Group>
-                            <CurrencyFormat className="book-price-input" size="sm" inputMode="numeric"
-                                            thousandSeparator={true} prefix={'$'}
-                                            onValueChange={(values) => {
-                                                const {formattedValue, value} = values;
-                                                setEnteredPrice(value);
-                                                console.log("This is updated price: "+ value);}}
+                            <CurrencyFormat
+                                className="book-price-input"
+                                size="sm"
+                                inputMode="numeric"
+                                thousandSeparator={true}
+                                prefix={'$'}
+                                value={props.currentIsbn}
+                                onValueChange={
+                                    (values) => {
+                                        const {formattedValue, value} = values;
+                                        setEnteredPrice(value);
+                                    }
+                                }
                             />
                             <Form.Control.Feedback type="invalid">
                                 Please provide an price number.
