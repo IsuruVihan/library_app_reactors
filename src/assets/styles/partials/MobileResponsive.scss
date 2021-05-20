@@ -45,7 +45,7 @@
       .ab-form {
 
         .book-title-label, .book-isbn-label, .book-author-label {
-          font-size: 9px;
+          font-size: 10px;
         }
 
         .book-title-input, .book-isbn-input, .book-author-input {
@@ -69,6 +69,25 @@
 
     //Update Book
     .ub-form-container {
+      .ub-title{
+        padding-left: 1em;
+        padding-right: 3em;
+        font-size: large;
+        .cb-title-text{
+          font-size: large;
+          max-width: 8em;
+          min-width: 6em;
+        }
+      }
+      .close-btn {
+        //padding-bottom: 0.8em;
+        font-size: .75em;
+        .close-icon {
+          cursor: pointer;
+          width: 1.5em;
+          height: 1.5em;
+        }
+      }
       .ub-form {
 
         .book-title-input, .book-isbn-input, .book-author-input {
@@ -76,15 +95,36 @@
           font-size: 10px;
         }
         .update-btn-container {
-          padding-left: 0.5em;
+          width: 70vw;
+          padding-left: 10em;
           margin-top: 2em;
           margin-bottom: 2em;
           float: right;
-          margin-right: 6.5em;
+          //margin-left: 16em;
+          .update-btn{
+            margin-left: 100px;
+          }
         }
 
       }
     }
+    .book-list{
+      .AddedBook{
+        //color: #d63384;
+        font-size: 0.7em;
+      }
+      .delete-btn{
+        width: .9em;
+        height: .9em;
+        padding-bottom: .1em;
+      }
+      .edit-btn{
+        width: .9em;
+        height: .9em;
+        padding-bottom: .1em;
+      }
+    }
+
   }
 
   //Authors Section
@@ -101,36 +141,107 @@
       }
 
       .aa-form-container {
-           .aa-form{
 
+        .ca-title{
+          padding-left: 1em;
+          padding-right: 3em;
+          font-size: large;
+          .ca-title-text{
+            font-size: large;
+            max-width: 8em;
+            min-width: 6em;
+          }
+        }
+        .close-btn {
+
+          //padding-bottom: 0.8em;
+          font-size: .75em;
+          .close-icon {
+            cursor: pointer;
+            //margin-right: 150px;
+            width: 1.5em;
+            height: 1.5em;
+          }
+        }
+           .aa-form{
+             .author-name-label{
+               font-size: 10px;
+             }
              .author-name-input{
                width: 70vw;
                font-size: 10px;
              }
 
-             .create-btn-container{
-               padding-left: 0.5em;
+             .create-btn-container {
+               width: 70vw;
+               padding-left: 10em;
                margin-top: 2em;
                margin-bottom: 2em;
                float: right;
-               margin-right: 6.5em;
+               //margin-left: 16em;
+               .create-btn{
+                 margin-left: 100px;
+               }
              }
 
            }
       }
     .ua-form-container {
+      .ua-title{
+        padding-left: 1em;
+        padding-right: 3em;
+        font-size: large;
+        .cb-title-text{
+          font-size: large;
+          max-width: 8em;
+          min-width: 6em;
+        }
+      }
+      .close-btn {
+        //padding-bottom: 0.8em;
+        font-size: .75em;
+        .close-icon {
+          cursor: pointer;
+          width: 1.5em;
+          height: 1.5em;
+        }
+      }
       .ua-form {
+        .author-name-label{
+          font-size: 10px;
+        }
         .author-name-input {
           width: 70vw;
           font-size: 10px;
         }
         .update-btn-container {
-          padding-left: 0.5em;
+          width: 70vw;
+          padding-left: 10em;
           margin-top: 2em;
           margin-bottom: 2em;
           float: right;
-          margin-right: 6.5em;
+          //margin-left: 16em;
+          .update-btn{
+            margin-left: 100px;
+          }
         }
+      }
+    }
+
+    .author-list{
+      .AddedAuthor{
+        //color: #d63384;
+        font-size: 0.7em;
+      }
+      .delete-btn{
+        width: .9em;
+        height: .9em;
+        padding-bottom: .1em;
+      }
+      .edit-btn{
+        width: .9em;
+        height: .9em;
+        padding-bottom: .1em;
       }
     }
 
