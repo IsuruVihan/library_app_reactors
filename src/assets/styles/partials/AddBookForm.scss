@@ -29,13 +29,13 @@ $create_btn_color: #00579c;
     }
 
     .ab-form {
-        .book-title-label, .book-isbn-label, .book-author-label {
+        .book-title-label, .book-price-label, .book-author-label {
             margin-top: 1.5em;
             margin-bottom: 0.5em;
             font-size: 12px;
             font-weight: 500;
         }
-        .book-title-input, .book-isbn-input, .book-author-input {
+        .book-title-input, .book-price-input, .book-author-input {
             width: 28vw;
             border: 2px solid $input_field_border_color;
             border-radius: 0;
