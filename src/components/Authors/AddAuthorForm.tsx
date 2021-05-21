@@ -35,17 +35,15 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
     return(
         <Container className="aa-form-container" fluid={true}>
             <Row>
-                <Col xs={10}>
+                <Col xs={9}>
                     <Row>
-                        <Col className="ca-title" md={11} xs={10}>
-                            <p className="ca-title-text">Create Author</p>
-                        </Col>
-                        <Col className="close-btn" md={1} xs={1} >
+                        <Col className="ca-title" lg={11} md={11} xs={10}><p className="ca-title-text">Create Author</p></Col>
+                        <Col className="close-btn" lg={1} md={1} xs={1}>
                             <XCircle className="close-icon" onClick={() => props.closeForm()} />
                         </Col>
                     </Row>
                 </Col>
-                <Col xs={1} />
+                <Col xs={3} />
                 <Col xs={1} />
                 <Col xs={9}>
                     <Form

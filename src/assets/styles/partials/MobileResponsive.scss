@@ -1,6 +1,9 @@
 @import "Library";
-@import "Books";
-
+ @import "./MobileResponsive/LibraryResponsive";
+ @import "./MobileResponsive/Authors/AuthorTitleResponsive";
+ @import "./MobileResponsive/Authors/AuthorFormResponsive.css";
+ @import "./MobileResponsive/Authors/AuthorListResponsive";
+/*
 @media screen and (max-width: 576px) {
 
   //Library Section (Root)
@@ -250,4 +253,4 @@
 
   }
 }
-
+*/
