@@ -39,7 +39,7 @@ const Library: FC = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md={6} xs={12} className="book-container">
+                <Col md={6} xs={{ order: 'last',span:12 }} className="book-container">
                     <Books
                         authorsAvailable={sendAvailableAuthors}
                     />
