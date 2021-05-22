@@ -1,23 +1,23 @@
 
 @media screen and (max-width: 365px) {
-  .Authors {
+  .Books  {
     .title {
       font-size: 1.6rem;
     }
 
-    .no-authors {
+    .no-books {
       font-size: 0.9em;
     }
   }
 }
 
 @media screen and (max-width: 576px) {
-  .Authors {
+  .Books {
     .title {
       font-size: 1.7em;
     }
 
-    .no-authors {
+    .no-books {
       font-size: 0.95em;
     }
   }
@@ -25,12 +25,12 @@
 
 
 @media screen and (min-width: 992px) {
-  .Authors {
+  .Books {
     .title {
       font-size: 2em;
     }
 
-    .no-authors {
+    .no-books {
       font-size: 1em;
     }
   }
