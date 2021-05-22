@@ -38,8 +38,8 @@ const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
             <Row>
                 <Col xs={10}>
                     <Row>
-                        <Col className="ua-title" md={11} xs={10}><p className="ua-title-text">Update Author</p></Col>
-                        <Col className="close-btn" md={1} xs={1}>
+                        <Col className="ua-title" md={8} xs={9}><p className="ua-title-text">Update Author</p></Col>
+                        <Col className="close-btn" md={2} xs={1}>
                             <XCircle className="close-icon" onClick={() => props.closeForm()} />
                         </Col>
                     </Row>

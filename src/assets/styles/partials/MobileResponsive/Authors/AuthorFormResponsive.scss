@@ -1,163 +1,131 @@
 //Author Add Form
 
-//Max width:768px
-@media screen and (max-width:767px) {
-  .aa-form-container {
-    .aa-form{
-      .author-name-label{
-        font-size: 10px;
-      }
-      .author-name-input{
-        width: 70vw;
-        font-size: 10px;
-      }
+// Desktop
+@media screen and (min-width: 970px) {
+	.aa-form-container {
+		.align-1 {
 
-      .create-btn-container {
-        width: 8vw;
-        padding-left: 5em;
-        margin-top: 2em;
-        margin-bottom: 10em;
-        float: right;
-        .create-btn{
-          margin-left: 5px;
-        }
-      }
-
-    }
-  }
-}
-@media screen and (max-width:1023px) and (min-width: 760px) {
-  .aa-form-container {
-    .aa-form {
-
-      .ca-title {
-        .ca-title-text {
-          width: 175vw;
-          color: #9d292a;
-        }
-      }
-      .author-name-label {
-        font-size: 10px;
-      }
-
-      .author-name-input {
-        width: 35vw;
-        font-size: 10px;
-      }
-
-      .create-btn-container {
-        width: 8vw;
-        padding-left: 5em;
-        margin-top: 2em;
-        margin-bottom: 10em;
-        float: right;
-
-        .create-btn {
-          margin-left: 5px;
-        }
-      }
-
-    }
-  }
+		}
+	}
 }
 
-//max width 325px
-@media screen and (max-width:365px) {
-  .aa-form-container {
-    .ca-title {
-      font-size: medium;
-      .ca-title-text {
-        max-width: 7em;
-        min-width: 6em;
-      }
-    }
-    .aa-form{
-      .author-name-label{
-        font-size: 10px;
-      }
-      .author-name-input{
-        width: 70vw;
-        font-size: 10px;
-      }
+//max width 376px (iPhone 6/7/8 Horizontal)
+@media screen and (max-width: 376px) {
+	.aa-form-container {
+		.top {
+			border: 1px solid red;
 
-      .create-btn-container {
-        width: 8vw;
-        padding-left: 5em;
-        margin-top: 2em;
-        margin-bottom: 10em;
-        float: right;
-        .create-btn{
-          margin-left: 5px;
-        }
-      }
+			.ca-title {
+				border: 1px solid black;
+				font-size: medium;
 
-    }
-  }
+				.ca-title-text {
+					min-width: 8em;
+				}
+			}
+
+			.close-btn {
+				border: 1px solid black;
+				min-width: 10vw;
+
+				.close-icon {
+					margin-left: 19vw;
+				}
+			}
+		}
+
+		.aa-form {
+			.author-name-label {
+				font-size: 10px;
+			}
+
+			.author-name-input {
+				width: 70vw;
+				font-size: 10px;
+			}
+
+			.create-btn-container {
+				width: 8vw;
+				padding-left: 5em;
+				margin-top: 2em;
+				margin-bottom: 10em;
+				float: right;
+
+				.create-btn {
+					margin-left: 5px;
+				}
+			}
+		}
+	}
 }
 
 //Author Update Form
 
 //Max width:768px
-@media screen and (max-width:767px) {
-  .ua-form-container {
-    .ua-form{
-      .author-name-label{
-        font-size: 10px;
-      }
-      .author-name-input{
-        width: 70vw;
-        font-size: 10px;
-      }
+@media screen and (max-width: 767px) {
+	.ua-form-container {
+		.ua-form {
+			.author-name-label {
+				font-size: 10px;
+			}
 
-      .update-btn-container {
-        width: 8vw;
-        padding-left: 5em;
-        margin-top: 2em;
-        margin-bottom: 10em;
-        float: right;
-        .update-btn{
-          margin-left: 5px;
-        }
-      }
+			.author-name-input {
+				width: 70vw;
+				font-size: 10px;
+			}
 
-    }
-  }
+			.update-btn-container {
+				width: 8vw;
+				padding-left: 5em;
+				margin-top: 2em;
+				margin-bottom: 10em;
+				float: right;
+
+				.update-btn {
+					margin-left: 5px;
+				}
+			}
+
+		}
+	}
 }
 
 //max width 325px
-@media screen and (max-width:325px) {
-  .ua-form-container {
-    .ua-title {
-      font-size: medium;
+@media screen and (max-width: 325px) {
+	.ua-form-container {
+		.ua-title {
+			font-size: medium;
 
-      .ua-title-text {
-        max-width: 7em;
-        min-width: 6em;
-      }
-    }
+			.ua-title-text {
+				max-width: 7em;
+				min-width: 6em;
+			}
+		}
 
-    .ua-form{
-      .author-name-label{
-        font-size: 10px;
-      }
-      .author-name-input{
-        width: 70vw;
-        font-size: 10px;
-      }
+		.ua-form {
+			.author-name-label {
+				font-size: 10px;
+			}
 
-      .update-btn-container {
-        width: 8vw;
-        padding-left: 5em;
-        margin-top: 2em;
-        margin-bottom: 10em;
-        float: right;
-        .create-btn{
-          margin-left: 5px;
-        }
-      }
+			.author-name-input {
+				width: 70vw;
+				font-size: 10px;
+			}
 
-    }
-  }
+			.update-btn-container {
+				width: 8vw;
+				padding-left: 5em;
+				margin-top: 2em;
+				margin-bottom: 10em;
+				float: right;
+
+				.create-btn {
+					margin-left: 5px;
+				}
+			}
+
+		}
+	}
 }
 
 

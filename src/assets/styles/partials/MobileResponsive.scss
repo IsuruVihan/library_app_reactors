@@ -1,9 +1,9 @@
 @import "Library";
- @import "./MobileResponsive/LibraryResponsive";
- @import "./MobileResponsive/Authors/AuthorTitleResponsive";
- @import "./MobileResponsive/Authors/AuthorFormResponsive.css";
- @import "./MobileResponsive/Authors/AuthorListResponsive";
- @import "./MobileResponsive/Book/BookTitleResponsiveness";
+@import "./MobileResponsive/LibraryResponsive";
+@import "./MobileResponsive/Authors/AuthorTitleResponsive";
+@import "./MobileResponsive/Authors/AuthorFormResponsive";
+@import "./MobileResponsive/Authors/AuthorListResponsive";
+@import "./MobileResponsive/Book/BookTitleResponsiveness";
 /*
 @media screen and (max-width: 576px) {
 
@@ -109,7 +109,6 @@
             margin-left: 100px;
           }
         }
-
       }
     }
     .book-list{
@@ -234,7 +233,6 @@
         }
       }
     }
-
     .author-list{
       .AddedAuthor{
         //color: #d63384;
@@ -251,7 +249,6 @@
         padding-bottom: .1em;
       }
     }
-
   }
 }
 */
