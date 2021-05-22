@@ -41,8 +41,8 @@ const AuthorListLine: FC<AuthorListLineProps> = (props) => {
     return(
         <li>
             <Row>
-                <Col className="AddedAuthor" xs={10}>{props.id}. {props.name}</Col>
-                <Col xs={2}>
+                <Col className="AddedAuthor" xs={8} md={10}>{props.id}. {props.name}</Col>
+                <Col xs={4} md={2}>
                     <OverlayTrigger
                         placement="left"
                         delay={{ show: 250, hide: 400 }}
