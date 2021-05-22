@@ -122,11 +122,11 @@ const Authors: FC<AuthorsProps> = (props) => {
                 closeModal={closeCreateInProgressModal}
             />
             <Row className="Authors">
-                <Col xs={12}>
+                <Col md={12}>
                     <p className="title">Authors</p>
                 </Col>
                 {(authorsList.length === 0) && <NoAuthors />}
-                <Col xs={12}>
+                <Col md={12}>
                     <ul className="author-list px-0">
                         {authorsList.map(
                             (author: IAuthor) => {
@@ -143,7 +143,7 @@ const Authors: FC<AuthorsProps> = (props) => {
                         )}
                     </ul>
                 </Col>
-                <Col xs={12}>
+                <Col md={12}>
                     <p className="add-author pt-3">
                         <Plus color="#034fa5" className="plus" onClick={() => handleClickAddAuthorEvent()} />
                         <span className="add-author-text" onClick={() => handleClickAddAuthorEvent()} >
@@ -151,7 +151,7 @@ const Authors: FC<AuthorsProps> = (props) => {
                         </span>
                     </p>
                 </Col>
-                <Col xs={12}>
+                <Col md={12}>
                     {
                         isVisibleAuthorForm
                             &&

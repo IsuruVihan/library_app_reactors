@@ -43,17 +43,15 @@ const BookListLine: FC<BookListLineProps> = (props) => {
     return(
         <li>
             <Row>
-                <Col className="AddedBook" xs={8}>{props.id}. {props.title}</Col>
-                <Col xs={2}>
+                <Col className="AddedBook" xs={8} md={10}>{props.id}. {props.title}</Col>
+                <Col xs={4} md={2}>
                     <OverlayTrigger
                         placement="left"
                         delay={{ show: 250, hide: 400 }}
                         overlay={showEditOverlay}
                     >
-                        <Edit className="edit-btn" onClick={() => props.updateRequest(props.id)} />
+                        <Edit className="edit-btn mx-3" onClick={() => props.updateRequest(props.id)} />
                     </OverlayTrigger>
-                </Col>
-                <Col xs={2}>
                     <OverlayTrigger
                         placement="bottom"
                         delay={{ show: 250, hide: 400 }}

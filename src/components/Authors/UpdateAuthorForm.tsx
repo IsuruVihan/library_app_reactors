@@ -2,6 +2,7 @@ import React, {FC, useState} from 'react';
 import {Col, Container, Row, Button, Form} from "react-bootstrap";
 import '../../assets/styles/partials/UpdateAuthorForm.scss';
 import { XCircle } from 'react-feather';
+import '../../assets/styles/partials/MobileResponsive/Authors/UpdateAuthorFormResponsive.scss';
 
 type UpdateAuthorFormProps = {
     currentAuthorName: string,
@@ -36,17 +37,17 @@ const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
     return(
         <Container className="ua-form-container" fluid={true}>
             <Row>
-                <Col xs={10}>
+                <Col className="top" md={8}>
                     <Row>
-                        <Col className="ua-title" md={11} xs={10}><p className="ua-title-text">Update Author</p></Col>
+                        <Col className="ua-title" md={11} xs={10}>
+                            <p className="ua-title-text">Update Author</p>
+                        </Col>
                         <Col className="close-btn" md={1} xs={1}>
                             <XCircle className="close-icon" onClick={() => props.closeForm()} />
                         </Col>
                     </Row>
                 </Col>
-                <Col xs={1} />
-                <Col xs={1} />
-                <Col xs={9}>
+                <Col md={9}>
                     <Form
                         noValidate
                         validated={validated}
@@ -71,7 +72,7 @@ const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group className="update-btn-container">
-                            <Button className="update-btn" variant="primary" type="submit" size="sm" >
+                            <Button className="update-btn" variant="primary" type="submit" size="sm">
                                 Update
                             </Button>
                         </Form.Group>

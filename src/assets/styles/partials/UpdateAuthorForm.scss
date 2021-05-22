@@ -16,7 +16,7 @@ $update_btn_color: #00579c;
 		.ua-title-text {
 			border-bottom: 3px solid $ua_title_color;
 			margin: 0;
-			max-height: 1.35em;
+			max-height: 1.6em;
 			max-width: 7em;
 		}
 	}
@@ -24,28 +24,30 @@ $update_btn_color: #00579c;
 		padding-top: 0.4em;
 
 		.close-icon {
+			margin-left: 2em;
 			cursor: pointer;
 		}
 	}
 
 	.ua-form {
+		margin-right: 1em;
 		.author-name-label {
 			margin-top: 1.5em;
 			margin-bottom: 0.5em;
 			font-size: 12px;
 			font-weight: 500;
+			margin-left: 2.7em;
 		}
 		.author-name-input {
-			width: 28vw;
+			width: 30.5em;
 			border: 2px solid $input_field_border_color;
 			border-radius: 0;
+			margin-left: 2.4em;
 		}
 		.update-btn-container {
-			padding-left: 1.5em;
 			margin-top: 2em;
 			margin-bottom: 10em;
 			float: right;
-			margin-right: 3em;
 
 			.update-btn {
 				border-radius: 6px;

@@ -19,8 +19,6 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
     const [enteredPrice, setEnteredPrice] = useState<string>(props.currentIsbn);
     // Book title
     const [enteredTitle, setEnteredTitle] = useState<string>(props.currentTitle);
-    // Book ISBN
-    const [enteredIsbn, setEnteredIsbn] = useState<string>(props.currentIsbn);
     // Book Author
     const [enteredAuthor, setEnteredAuthor] = useState<string>(props.currentAuthor);
     // Validate
@@ -62,19 +60,19 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
     return(
         <Container className="ub-form-container" fluid={true}>
             <Row>
-                <Col xs={9}>
+                <Col md={9} xs={12}>
                     <Row>
                         <Col className="ub-title" md={11} xs={10}>
                             <p className="ub-title-text">Update Book</p>
                         </Col>
-                        <Col className="close-btn" md={1} xs={1} onClick={() => props.closeForm()}>
+                        <Col className="close-btn" md={1} xs={2} onClick={() => props.closeForm()}>
                             <XCircle className="close-icon" />
                         </Col>
                     </Row>
                 </Col>
-                <Col xs={3} />
-                <Col xs={1} />
-                <Col xs={9}>
+                <Col md={3} />
+                <Col md={1} />
+                <Col md={9} xs={12}>
                     <Form
                         noValidate
                         validated={validated}
@@ -106,13 +104,12 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                                 inputMode="numeric"
                                 thousandSeparator={true}
                                 prefix={'$'}
-                                value={props.currentIsbn}
-                                onValueChange={
-                                    (values) => {
-                                        const {formattedValue, value} = values;
-                                        setEnteredPrice(value);
-                                    }
+                                value={enteredPrice}
+                                onChange={
+                                    (event: React.ChangeEvent<HTMLInputElement>) =>
+                                        handleEnterPriceChangeEvent(event)
                                 }
+                                required
                             />
                             <Form.Control.Feedback type="invalid">
                                 Please provide an price number.

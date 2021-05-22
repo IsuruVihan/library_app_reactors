@@ -41,17 +41,15 @@ const AuthorListLine: FC<AuthorListLineProps> = (props) => {
     return(
         <li>
             <Row>
-                <Col className="AddedAuthor" xs={8}>{props.id}. {props.name}</Col>
-                <Col xs={2}>
+                <Col className="AddedAuthor" xs={8} md={10}>{props.id}. {props.name}</Col>
+                <Col xs={4} md={2}>
                     <OverlayTrigger
                         placement="left"
                         delay={{ show: 250, hide: 400 }}
                         overlay={showEditOverlay}
                     >
-                        <Edit className="edit-btn" onClick={() => props.updateRequest(props.id)} />
+                        <Edit className="edit-btn mx-3" onClick={() => props.updateRequest(props.id)} />
                     </OverlayTrigger>
-                </Col>
-                <Col xs={2}>
                     <OverlayTrigger
                         placement="bottom"
                         delay={{ show: 250, hide: 400 }}
@@ -59,7 +57,7 @@ const AuthorListLine: FC<AuthorListLineProps> = (props) => {
                     >
                         <Trash2 className="delete-btn" onClick={() => openDeleteAuthorModal()} />
                     </OverlayTrigger>
-                    </Col>
+                </Col>
             </Row>
             <DeleteAuthorModal
                 authorToDelete={props.name}

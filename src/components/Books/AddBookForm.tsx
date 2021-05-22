@@ -1,7 +1,7 @@
 import React, {FC, useState} from 'react';
 import {Col, Container, Row, Button, Form} from "react-bootstrap";
 import '../../assets/styles/partials/AddBookForm.scss';
-import { XCircle } from 'react-feather';
+import {XCircle} from 'react-feather';
 import IAuthor from "../../interfaces/IAuthor";
 import NoAuthorsAdded from "./NoAuthorsAdded";
 import * as CurrencyFormat from 'react-currency-format';
@@ -14,11 +14,11 @@ type AddBookFormProps = {
 
 const AddBookForm: FC<AddBookFormProps> = (props) => {
     // Book title
-    const[bookTitle, setBookTitle] = useState<string>("");
+    const [bookTitle, setBookTitle] = useState<string>("");
     // Book Price
-    const[price, setPrice] = useState<string>("");
+    const [price, setPrice] = useState<string>("");
     // Book Author
-    const[bookAuthor, setBookAuthor] = useState<string>("Author 1");
+    const [bookAuthor, setBookAuthor] = useState<string>("Author 1");
     // Validate
     const [validated, setValidated] = useState<boolean>(false);
 
@@ -43,7 +43,7 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
         event.stopPropagation();
         setValidated(true);
 
-        if(bookTitle === "" || price === "" || bookAuthor === "") {
+        if (bookTitle === "" || price === "" || bookAuthor === "") {
             return;
         }
         const bookTitleToBeAdded = bookTitle;
@@ -54,25 +54,25 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
         return props.createBook(event, bookTitleToBeAdded, priceToBeAdded, bookAuthorToBeAdded);
     }
 
-    return(
+    return (
         <Container className="ab-form-container" fluid={true}>
             <Row>
-                <Col xs={9}>
+                <Col md={9} xs={12}>
                     <Row>
-                        <Col className="cb-title" md={11} xs={7}>
+                        <Col className="cb-title" md={11} xs={10}>
                             <p className="cb-title-text">Create Book</p>
                         </Col>
                         <Col
                             className="close-btn"
-                            md={1} xs={1}
+                            md={1} xs={2}
                         >
-                            <XCircle className="close-icon" onClick={() => props.closeForm()} />
+                            <XCircle className="close-icon" onClick={() => props.closeForm()}/>
                         </Col>
                     </Row>
                 </Col>
-                <Col xs={3} />
-                <Col xs={1} />
-                <Col xs={9}>
+                <Col md={3}/>
+                <Col md={1}/>
+                <Col md={9} xs={12}>
                     <Form
                         noValidate
                         className="ab-form"
@@ -96,13 +96,14 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Label className="book-price-label">Price</Form.Label>
-                            <Form.Group>
-                             {/*Book Price currency-format*/}
+                        <Form.Group>
+                            {/*Book Price currency-format*/}
                             <CurrencyFormat
                                 className="book-price-input"
                                 size="sm"
                                 inputMode="numeric"
-                                thousandSeparator={true} prefix={'$'}
+                                thousandSeparator={true}
+                                prefix={'$'}
                                 value={price}
                                 onValueChange={
                                     (values) => {
@@ -110,18 +111,8 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                         setPrice(value);
                                     }
                                 }
+                                required
                             />
-                            {/*<Form.Label className="book-price-label">Price</Form.Label>*/}
-                            {/*<Form.Control*/}
-                            {/*    className="book-price-input"*/}
-                            {/*    type="text"*/}
-                            {/*    size="sm"*/}
-                            {/*    value={price}*/}
-                            {/*    onChange={*/}
-                            {/*        (event: React.ChangeEvent<HTMLInputElement>) => handlePriceChangeEvent(event)*/}
-                            {/*    }*/}
-                            {/*    required*/}
-                            {/*/>*/}
                             <Form.Control.Feedback type="invalid">
                                 Please provide a Price.
                             </Form.Control.Feedback>
@@ -136,10 +127,11 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                     (event: React.ChangeEvent<HTMLSelectElement>) => handleBookAuthorChangeEvent(event)
                                 }
                                 value={bookAuthor}
+                                required
                             >
                                 {props.authors().map(
                                     (author: IAuthor) => {
-                                        return(
+                                        return (
                                             <option
                                                 value={author.authorName}
                                                 key={author.authorName}
@@ -150,9 +142,12 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                     }
                                 )}
                             </Form.Control>
+                            <Form.Control.Feedback type="invalid">
+                                Please select a book author.
+                            </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group className="create-btn-container">
-                            <Button className="create-btn" variant="primary" type="submit" size="sm" >
+                            <Button className="create-btn" variant="primary" type="submit" size="sm">
                                 Create
                             </Button>
                         </Form.Group>
