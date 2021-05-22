@@ -22,13 +22,13 @@
 .ab-form-container .close-btn .close-icon {
   cursor: pointer;
 }
-.ab-form-container .ab-form .book-title-label, .ab-form-container .ab-form .book-isbn-label, .ab-form-container .ab-form .book-author-label {
+.ab-form-container .ab-form .book-title-label, .ab-form-container .ab-form .book-price-label, .ab-form-container .ab-form .book-author-label {
   margin-top: 1.5em;
   margin-bottom: 0.5em;
   font-size: 12px;
   font-weight: 500;
 }
-.ab-form-container .ab-form .book-title-input, .ab-form-container .ab-form .book-isbn-input, .ab-form-container .ab-form .book-author-input {
+.ab-form-container .ab-form .book-title-input, .ab-form-container .ab-form .book-price-input, .ab-form-container .ab-form .book-author-input {
   width: 28vw;
   border: 2px solid #959595;
   border-radius: 0;
