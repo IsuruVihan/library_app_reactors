@@ -1,50 +1,45 @@
-//Author Add Form
+//Author Update Form
 
-//Max width:376px
+//max width 376px (iPhone 6/7/8 Vertical)
 @media screen and (max-width: 376px) {
 	.ua-form-container {
+		padding-right: 0;
+
 		.top {
+			padding-right: 3.8em;
+
 			.ua-title {
 				font-size: medium;
-				width: 79%;
+				padding-top: 7px;
+				margin-bottom: 3px;
 
 				.ua-title-text {
-					min-width: 8em;
 				}
 			}
 
 			.close-btn {
-				min-width: 10vw;
-
 				.close-icon {
-					margin-left: 19vw;
 				}
 			}
 		}
 
 		.ua-form {
-
 			.author-name-label {
 				font-size: 10px;
-				margin-left: 25px;
 			}
 
 			.author-name-input {
-				width: 70vw;
+				width: 27em;
 				font-size: 10px;
-				margin-left: 25px;
 			}
 
 			.update-btn-container {
-				width: 8vw;
-				padding-left: 0em;
+				min-width: 10em;
 				margin-top: 2em;
 				margin-bottom: 10em;
-				float: right;
-				margin-left: 4px;
 
 				.update-btn {
-					margin-left: 55px;
+					float: right;
 				}
 			}
 		}

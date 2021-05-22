@@ -4,6 +4,7 @@
 @media screen and (max-width: 376px) {
 	.aa-form-container {
 		.top {
+			width: 17em;
 			.ca-title {
 				font-size: medium;
 				width: 79%;
@@ -17,7 +18,7 @@
 				min-width: 10vw;
 
 				.close-icon {
-					margin-left: 19vw;
+					margin-left: 3em;
 				}
 			}
 		}
@@ -25,25 +26,22 @@
 		.aa-form {
 			.author-name-label {
 				font-size: 10px;
-				margin-left: 25px;
+				margin-left: 25px
 			}
 
 			.author-name-input {
-				width: 70vw;
+				width: 26em;
 				font-size: 10px;
 				margin-left: 25px;
 			}
 
 			.create-btn-container {
-				width: 8vw;
-				padding-left: 1em;
+				width: 100%;
 				margin-top: 2em;
 				margin-bottom: 10em;
-				float: right;
-				margin-left: 4px;
 
 				.create-btn {
-					//margin-left: 5px;
+					float: right;
 				}
 			}
 		}
