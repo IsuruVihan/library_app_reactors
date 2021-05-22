@@ -39,19 +39,19 @@ $create_btn_color: #00579c;
             width: 28vw;
             border: 2px solid $input_field_border_color;
             border-radius: 0;
+            margin-left: 25px;
         }
         .create-btn-container {
             padding-left: 1.5em;
             margin-top: 2em;
             margin-bottom: 10em;
             float: right;
-            margin-right: 3em;
-
             .create-btn {
                 border-radius: 6px;
                 background-color: $create_btn_color;
                 height: 2em;
                 width: 6.8em;
+
             }
         }
     }

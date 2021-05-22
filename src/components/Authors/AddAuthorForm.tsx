@@ -45,8 +45,8 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
                         </Col>
                     </Row>
                 </Col>
-                <Col className="align-3"/>
-                <Col className="align-1" />
+                {/*<Col className="align-3"/>*/}
+                <Col className="col-9" />
                 {/*<Col xs={3} />*/}
                 {/*<Col xs={1} />*/}
                 <Col xs={9}>

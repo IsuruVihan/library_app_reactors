@@ -2,6 +2,7 @@ import React, {FC, useState} from 'react';
 import {Col, Container, Row, Button, Form} from "react-bootstrap";
 import '../../assets/styles/partials/UpdateAuthorForm.scss';
 import { XCircle } from 'react-feather';
+import '../../assets/styles/partials/MobileResponsive/Authors/UpdateAuthorFormResponsive.scss';
 
 type UpdateAuthorFormProps = {
     currentAuthorName: string,
@@ -36,16 +37,19 @@ const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
     return(
         <Container className="ua-form-container" fluid={true}>
             <Row>
-                <Col xs={10}>
+                <Col className="top" xs={10}>
                     <Row>
-                        <Col className="ua-title" md={8} xs={9}><p className="ua-title-text">Update Author</p></Col>
-                        <Col className="close-btn" md={2} xs={1}>
+                        <Col className="ua-title" lg={11} md={11} xs={10}>
+                            <p className="ua-title-text">Update Author</p>
+                        </Col>
+                        <Col className="close-btn" lg={1} md={1} xs={2}>
                             <XCircle className="close-icon" onClick={() => props.closeForm()} />
                         </Col>
                     </Row>
                 </Col>
-                <Col xs={1} />
-                <Col xs={1} />
+                {/*<Col xs={1} />*/}
+                {/*<Col xs={1} />*/}
+                <Col className="col-9" />
                 <Col xs={9}>
                     <Form
                         noValidate

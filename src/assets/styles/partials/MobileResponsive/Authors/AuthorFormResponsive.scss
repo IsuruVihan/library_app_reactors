@@ -9,23 +9,19 @@
 	}
 }
 
-//max width 376px (iPhone 6/7/8 Horizontal)
+//max width 376px (iPhone 6/7/8 Vertical)
 @media screen and (max-width: 376px) {
 	.aa-form-container {
 		.top {
-			border: 1px solid red;
-
 			.ca-title {
-				border: 1px solid black;
 				font-size: medium;
-
+				width: 79%;
 				.ca-title-text {
 					min-width: 8em;
 				}
 			}
 
 			.close-btn {
-				border: 1px solid black;
 				min-width: 10vw;
 
 				.close-icon {
@@ -37,22 +33,25 @@
 		.aa-form {
 			.author-name-label {
 				font-size: 10px;
+				margin-left: 25px;
 			}
 
 			.author-name-input {
 				width: 70vw;
 				font-size: 10px;
+				margin-left: 25px;
 			}
 
 			.create-btn-container {
 				width: 8vw;
-				padding-left: 5em;
+				padding-left: 1em;
 				margin-top: 2em;
 				margin-bottom: 10em;
 				float: right;
+				margin-left: 4px;
 
 				.create-btn {
-					margin-left: 5px;
+					//margin-left: 5px;
 				}
 			}
 		}
@@ -63,69 +62,69 @@
 
 //Max width:768px
 @media screen and (max-width: 767px) {
-	.ua-form-container {
-		.ua-form {
-			.author-name-label {
-				font-size: 10px;
-			}
-
-			.author-name-input {
-				width: 70vw;
-				font-size: 10px;
-			}
-
-			.update-btn-container {
-				width: 8vw;
-				padding-left: 5em;
-				margin-top: 2em;
-				margin-bottom: 10em;
-				float: right;
-
-				.update-btn {
-					margin-left: 5px;
-				}
-			}
-
-		}
-	}
+	//.ua-form-container {
+	//	.ua-form {
+	//		.author-name-label {
+	//			font-size: 10px;
+	//		}
+	//
+	//		.author-name-input {
+	//			width: 70vw;
+	//			font-size: 10px;
+	//		}
+	//
+	//		.update-btn-container {
+	//			width: 8vw;
+	//			padding-left: 5em;
+	//			margin-top: 2em;
+	//			margin-bottom: 10em;
+	//			float: right;
+	//
+	//			.update-btn {
+	//				margin-left: 5px;
+	//			}
+	//		}
+	//
+	//	}
+	//}
 }
 
 //max width 325px
 @media screen and (max-width: 325px) {
-	.ua-form-container {
-		.ua-title {
-			font-size: medium;
-
-			.ua-title-text {
-				max-width: 7em;
-				min-width: 6em;
-			}
-		}
-
-		.ua-form {
-			.author-name-label {
-				font-size: 10px;
-			}
-
-			.author-name-input {
-				width: 70vw;
-				font-size: 10px;
-			}
-
-			.update-btn-container {
-				width: 8vw;
-				padding-left: 5em;
-				margin-top: 2em;
-				margin-bottom: 10em;
-				float: right;
-
-				.create-btn {
-					margin-left: 5px;
-				}
-			}
-
-		}
-	}
+	//.ua-form-container {
+	//	.ua-title {
+	//		font-size: medium;
+	//
+	//		.ua-title-text {
+	//			max-width: 7em;
+	//			min-width: 6em;
+	//		}
+	//	}
+	//
+	//	.ua-form {
+	//		.author-name-label {
+	//			font-size: 10px;
+	//		}
+	//
+	//		.author-name-input {
+	//			width: 70vw;
+	//			font-size: 10px;
+	//		}
+	//
+	//		.update-btn-container {
+	//			width: 8vw;
+	//			padding-left: 5em;
+	//			margin-top: 2em;
+	//			margin-bottom: 10em;
+	//			float: right;
+	//
+	//			.create-btn {
+	//				margin-left: 5px;
+	//			}
+	//		}
+	//
+	//	}
+	//}
 }
 
 
