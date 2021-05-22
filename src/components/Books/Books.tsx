@@ -88,7 +88,6 @@ const Books: FC<BooksProps> = (props) => {
             return;
         }
         setIsVisibleBookForm(false);
-        console.log("Hello");
         setIsVisibleUpdateBookForm(true);
         setBookToBeUpdate(id);
     }

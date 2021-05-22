@@ -62,19 +62,19 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
     return(
         <Container className="ub-form-container" fluid={true}>
             <Row>
-                <Col xs={9}>
+                <Col md={9} xs={12}>
                     <Row>
                         <Col className="ub-title" md={11} xs={10}>
                             <p className="ub-title-text">Update Book</p>
                         </Col>
-                        <Col className="close-btn" md={1} xs={1} onClick={() => props.closeForm()}>
+                        <Col className="close-btn" md={1} xs={2} onClick={() => props.closeForm()}>
                             <XCircle className="close-icon" />
                         </Col>
                     </Row>
                 </Col>
-                <Col xs={3} />
-                <Col xs={1} />
-                <Col xs={9}>
+                <Col md={3} />
+                <Col md={1} />
+                <Col md={9} xs={12}>
                     <Form
                         noValidate
                         validated={validated}
