@@ -22,9 +22,9 @@ const Library: FC = () => {
     }
 
     return(
-        <Container className="Library px-0" fluid>
+        <Container className="Library px-0 mx-0" fluid={true}>
             <Row>
-                <Col className="px-0" xs={12}>
+                <Col xs={12}>
                     <h1 className="text-center py-2">My Library</h1>
                 </Col>
                 <Col className="px-0" xs={12}>
@@ -45,14 +45,16 @@ const Library: FC = () => {
                         authorsAvailable={sendAvailableAuthors}
                     />
                 </Col>
-                <Col md={6}  xs={12}>
+                <Col md={6} xs={12}>
                     <Authors
                         returnAvailableAuthors={getAvailableAuthors}
                     />
                 </Col>
             </Row>
             <Row>
-                <LibraryFooter></LibraryFooter>
+                <Col md={12}>
+                    <LibraryFooter></LibraryFooter>
+                </Col>
             </Row>
         </Container>
     );
