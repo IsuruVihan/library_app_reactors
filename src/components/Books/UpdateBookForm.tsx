@@ -19,8 +19,6 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
     const [enteredPrice, setEnteredPrice] = useState<string>(props.currentIsbn);
     // Book title
     const [enteredTitle, setEnteredTitle] = useState<string>(props.currentTitle);
-    // Book ISBN
-    const [enteredIsbn, setEnteredIsbn] = useState<string>(props.currentIsbn);
     // Book Author
     const [enteredAuthor, setEnteredAuthor] = useState<string>(props.currentAuthor);
     // Validate
@@ -106,13 +104,12 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                                 inputMode="numeric"
                                 thousandSeparator={true}
                                 prefix={'$'}
-                                value={props.currentIsbn}
-                                onValueChange={
-                                    (values) => {
-                                        const {formattedValue, value} = values;
-                                        setEnteredPrice(value);
-                                    }
+                                value={enteredPrice}
+                                onChange={
+                                    (event: React.ChangeEvent<HTMLInputElement>) =>
+                                        handleEnterPriceChangeEvent(event)
                                 }
+                                required
                             />
                             <Form.Control.Feedback type="invalid">
                                 Please provide an price number.

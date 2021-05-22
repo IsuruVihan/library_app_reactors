@@ -102,7 +102,8 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                 className="book-price-input"
                                 size="sm"
                                 inputMode="numeric"
-                                thousandSeparator={true} prefix={'$'}
+                                thousandSeparator={true}
+                                prefix={'$'}
                                 value={price}
                                 onValueChange={
                                     (values) => {
@@ -110,6 +111,7 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                         setPrice(value);
                                     }
                                 }
+                                required
                             />
                             <Form.Control.Feedback type="invalid">
                                 Please provide a Price.
@@ -125,6 +127,7 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                     (event: React.ChangeEvent<HTMLSelectElement>) => handleBookAuthorChangeEvent(event)
                                 }
                                 value={bookAuthor}
+                                required
                             >
                                 {props.authors().map(
                                     (author: IAuthor) => {
@@ -139,6 +142,9 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                     }
                                 )}
                             </Form.Control>
+                            <Form.Control.Feedback type="invalid">
+                                Please select a book author.
+                            </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group className="create-btn-container">
                             <Button className="create-btn" variant="primary" type="submit" size="sm">
