@@ -1,14 +1,5 @@
 //Author Add Form
 
-// Desktop
-@media screen and (min-width: 970px) {
-	//.aa-form-container {
-	//	.align-1 {
-	//
-	//	}
-	//}
-}
-
 //Max width:376px
 @media screen and (max-width: 376px) {
 	.ua-form-container {
@@ -16,10 +7,12 @@
 			.ua-title {
 				font-size: medium;
 				width: 79%;
+
 				.ua-title-text {
 					min-width: 8em;
 				}
 			}
+
 			.close-btn {
 				min-width: 10vw;
 
@@ -28,71 +21,32 @@
 				}
 			}
 		}
-			.ua-form {
 
-				.author-name-label {
-					font-size: 10px;
-					margin-left: 25px;
-				}
+		.ua-form {
 
-				.author-name-input {
-					width: 70vw;
-					font-size: 10px;
-					margin-left: 25px;
-				}
+			.author-name-label {
+				font-size: 10px;
+				margin-left: 25px;
+			}
 
-				.update-btn-container {
-					width:8vw;
-					padding-left: 0em;
-					margin-top: 2em;
-					margin-bottom: 10em;
-					float: right;
-					margin-left: 4px;
+			.author-name-input {
+				width: 70vw;
+				font-size: 10px;
+				margin-left: 25px;
+			}
 
-					.update-btn {
-						margin-left: 55px;
-					}
+			.update-btn-container {
+				width: 8vw;
+				padding-left: 0em;
+				margin-top: 2em;
+				margin-bottom: 10em;
+				float: right;
+				margin-left: 4px;
+
+				.update-btn {
+					margin-left: 55px;
 				}
 			}
+		}
 	}
 }
-
-//max width 325px
-//@media screen and (max-width: 325px) {
-//	.ua-form-container {
-//		.ua-title {
-//			font-size: medium;
-//
-//			.ua-title-text {
-//				max-width: 7em;
-//				min-width: 6em;
-//			}
-//		}
-//
-//		.ua-form {
-//			.author-name-label {
-//				font-size: 10px;
-//			}
-//
-//			.author-name-input {
-//				width: 70vw;
-//				font-size: 10px;
-//			}
-//
-//			.update-btn-container {
-//				width: 8vw;
-//				padding-left: 5em;
-//				margin-top: 2em;
-//				margin-bottom: 10em;
-//				float: right;
-//
-//				.create-btn {
-//					margin-left: 5px;
-//				}
-//			}
-//
-//		}
-//	}
-//}
-
-

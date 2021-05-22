@@ -35,7 +35,7 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
     return(
         <Container className="aa-form-container" fluid={true}>
             <Row>
-                <Col className="top" xs={9}>
+                <Col className="top" md={9}>
                     <Row>
                         <Col className="ca-title" lg={11} md={11} xs={10}>
                             <p className="ca-title-text">Create Author</p>
@@ -45,11 +45,9 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
                         </Col>
                     </Row>
                 </Col>
-                {/*<Col className="align-3"/>*/}
-                <Col className="col-9" />
-                {/*<Col xs={3} />*/}
-                {/*<Col xs={1} />*/}
-                <Col xs={9}>
+                <Col md={3} />
+                <Col md={1} />
+                <Col md={8}>
                     <Form
                         noValidate
                         className="aa-form"
