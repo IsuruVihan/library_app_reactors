@@ -1,50 +1,102 @@
+//max width 1199px
+@media screen and (max-width: 1199px) {
+  .book-list {
+
+    .AddedBook {
+      font-size: 0.8em;
+    }
+
+    .delete-btn {
+      width: .8em;
+      height: .8em;
+      padding-bottom: .1em;
+      margin-bottom: .4em;
+    }
+
+    .edit-btn {
+      width: .8em;
+      height: .8em;
+      padding-bottom: .1em;
+      margin-bottom: .4em;
+    }
+
+  }
+
+}
+
+//max width 991px
+@media screen and (max-width: 991px) {
+  .book-list {
+
+    .AddedBook {
+      font-size: 0.7em;
+    }
+
+    .delete-btn {
+      width: .8em;
+      height: .8em;
+      padding-bottom: .1em;
+      margin-bottom: .4em;
+    }
+
+    .edit-btn {
+      width: .8em;
+      height: .8em;
+      padding-bottom: .1em;
+      margin-bottom: .4em;
+    }
+
+  }
+
+}
+
 //max width 767px
 @media screen and (max-width: 767px) {
-	.book-list {
+  .book-list {
 
-		.AddedBook {
-			font-size: 0.7em;
-		}
+    .AddedBook {
+      font-size: 0.7em;
+    }
 
-		.delete-btn {
-			width: .9em;
-			height: .9em;
-			padding-bottom: .1em;
-			margin-bottom: .4em;
-		}
+    .delete-btn {
+      width: .9em;
+      height: .9em;
+      padding-bottom: .1em;
+      margin-bottom: .4em;
+    }
 
-		.edit-btn {
-			width: .9em;
-			height: .9em;
-			padding-bottom: .1em;
-			margin-bottom: .4em;
-		}
+    .edit-btn {
+      width: .9em;
+      height: .9em;
+      padding-bottom: .1em;
+      margin-bottom: .4em;
+    }
 
-	}
+  }
 
 }
 
 //max width 325px
 @media screen and (max-width: 365px) {
 
-	.book-list {
-		.AddedBook {
-			font-size: 0.7em;
-		}
+  .book-list {
+    .AddedBook {
+      font-size: 0.7em;
+    }
 
-		.delete-btn {
-			width: .8em;
-			height: .8em;
-			padding-bottom: .2em;
-			margin-bottom: .4em;
-		}
+    .delete-btn {
+      width: .8em;
+      height: .8em;
+      padding-bottom: .2em;
+      margin-bottom: .4em;
+    }
 
-		.edit-btn {
-			width: .8em;
-			height: .8em;
-			padding-bottom: .2em;
-			margin-bottom: .4em;
-		}
+    .edit-btn {
+      width: .8em;
+      height: .8em;
+      padding-bottom: .2em;
+      margin-bottom: .4em;
+    }
 
-	}
+  }
 }

@@ -1,3 +1,55 @@
+//max width 1199px
+@media screen and (max-width: 1199px) {
+	.author-list {
+
+		.AddedAuthor {
+			font-size: 0.8em;
+		}
+
+		.delete-btn {
+			width: .8em;
+			height: .8em;
+			padding-bottom: .1em;
+			margin-bottom: .4em;
+		}
+
+		.edit-btn {
+			width: .8em;
+			height: .8em;
+			padding-bottom: .1em;
+			margin-bottom: .4em;
+		}
+
+	}
+
+}
+
+//max width 991px
+@media screen and (max-width: 991px) {
+	.author-list {
+
+		.AddedAuthor {
+			font-size: 0.7em;
+		}
+
+		.delete-btn {
+			width: .8em;
+			height: .8em;
+			padding-bottom: .1em;
+			margin-bottom: .4em;
+		}
+
+		.edit-btn {
+			width: .8em;
+			height: .8em;
+			padding-bottom: .1em;
+			margin-bottom: .4em;
+		}
+
+	}
+
+}
+
 //max width 767px
 @media screen and (max-width: 767px) {
 	.author-list {
