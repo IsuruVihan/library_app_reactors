@@ -43,8 +43,10 @@ const BookListLine: FC<BookListLineProps> = (props) => {
     return(
         <li>
             <Row>
-                <Col className="AddedBook" xs={8} md={10}>{props.id}. {props.title}</Col>
-                <Col xs={4} md={2}>
+                <Col className="AddedBook" xs={6} sm={6} md={6} lg={6} xl={6}>
+                    {props.id}. {props.title}
+                </Col>
+                <Col xs={{offset: 2}} sm={{offset: 3}} md={{offset: 2}} lg={{offset: 3}} xl={{offset: 3}}>
                     <OverlayTrigger
                         placement="left"
                         delay={{ show: 250, hide: 400 }}

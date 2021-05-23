@@ -1,19 +1,4 @@
-//@import "./src/assets/styles/partials/Library";
-
-@media screen and (max-width: 576px) {
-
-  //Library Section (Root)
-  .Library {
-    .credits {
-      .photo-credits {
-        font-size: 0.7em;
-        color:red;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 365px) {
+@media screen and (max-width: 1200px) {
   //Library Section (Root)
   .Library {
     .credits {
@@ -24,12 +9,12 @@
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
   //Library Section (Root)
   .Library {
     .credits {
       .photo-credits {
-        font-size: 1.2em;
+        font-size: 1em;
       }
     }
   }

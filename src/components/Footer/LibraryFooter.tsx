@@ -5,11 +5,13 @@ const LibraryFooter:React.FC = () => {
     return(
         <Card className="text-center mt-lg-5">
             <Card.Footer className="text-muted">
-                <Card.Title>My Library</Card.Title>
-                <Card.Text>
+                <Card.Title className="footer-title">My Library</Card.Title>
+                <Card.Text className="footer-text">
                     React Base Industrial Training Program (Apr) - <a href="https://www.softvessel.com"> SoftVessel (Pvt) Ltd </a>
                 </Card.Text>
-                &copy; {new Date().getFullYear()} Copyright: Team Reactors
+                    <span className="footer-copyright">
+                        &copy; {new Date().getFullYear()} Copyright: Team Reactors
+                    </span>
             </Card.Footer>
         </Card>
     );

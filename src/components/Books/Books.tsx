@@ -116,11 +116,11 @@ const Books: FC<BooksProps> = (props) => {
                 closeModal={closeCreateInProgressModal}
             />
             <Row className="Books">
-                <Col xs={12}>
+                <Col xl={12} lg={12} md={12} sm={12} xs={12}>
                     <p className="title">Books</p>
                 </Col>
                 {(booksList.length === 0) && <NoBooks />}
-                <Col xs={12}>
+                <Col xl={12} lg={12} md={12} sm={12} xs={12}>
                     <ul className="book-list px-0">
                         {booksList.map(
                             (book: IBook) => {
@@ -139,7 +139,7 @@ const Books: FC<BooksProps> = (props) => {
                         )}
                     </ul>
                 </Col>
-                <Col xs={12}>
+                <Col xl={12} lg={12} md={12} sm={12} xs={12}>
                     <p className="add-book pt-3">
                         <Plus color="#034fa5" className="plus" onClick={() => handleClickAddBookEvent()} />
                         <span className="add-book-text" onClick={() => handleClickAddBookEvent()} >
@@ -147,7 +147,7 @@ const Books: FC<BooksProps> = (props) => {
                         </span>
                     </p>
                 </Col>
-                <Col xs={12}>
+                <Col xl={12} lg={12} md={12} sm={12} xs={12}>
                     {
                         isVisibleBookForm
                             &&

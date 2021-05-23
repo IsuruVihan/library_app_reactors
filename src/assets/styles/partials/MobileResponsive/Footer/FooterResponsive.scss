@@ -1,0 +1,41 @@
+@media screen and (max-width: 991px) {
+  .footer-title {
+    font-size: 1.4em;
+  }
+
+  .footer-text {
+    font-size: 1em;
+  }
+
+  .footer-copyright {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer-title {
+    font-size: 1.3em;
+  }
+
+  .footer-text {
+    font-size: 0.9em;
+  }
+
+  .footer-copyright {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .footer-title {
+    font-size: 1.2em;
+  }
+
+  .footer-text {
+    font-size: 0.8em;
+  }
+
+  .footer-copyright {
+    font-size: 0.6em;
+  }
+}
