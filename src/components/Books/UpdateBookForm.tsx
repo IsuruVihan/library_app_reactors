@@ -1,7 +1,7 @@
 import React, {FC, useState} from 'react';
 import {Col, Container, Row, Button, Form} from "react-bootstrap";
 import '../../assets/styles/partials/UpdateBookForm.scss';
-import { XCircle } from 'react-feather';
+import {XCircle} from 'react-feather';
 import IAuthor from "../../interfaces/IAuthor";
 import * as CurrencyFormat from 'react-currency-format';
 
@@ -44,7 +44,7 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
         event.preventDefault()
         event.stopPropagation()
         setValidated(true);
-        if(enteredTitle === "" || enteredPrice === "") {
+        if (enteredTitle === "" || enteredPrice === "") {
             return;
         }
 
@@ -57,7 +57,7 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
         return props.updateBook(event, bookTitleToBeUpdated, bookPriceToBeUpdated, bookAuthorToBeUpdated);
     }
 
-    return(
+    return (
         <Container className="ub-form-container" fluid={true}>
             <Row>
                 <Col md={9} xs={12}>
@@ -66,12 +66,12 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                             <p className="ub-title-text">Update Book</p>
                         </Col>
                         <Col className="close-btn" md={1} xs={2} onClick={() => props.closeForm()}>
-                            <XCircle className="close-icon" />
+                            <XCircle className="close-icon"/>
                         </Col>
                     </Row>
                 </Col>
-                <Col md={3} />
-                <Col md={1} />
+                <Col md={3}/>
+                <Col md={1}/>
                 <Col md={9} xs={12}>
                     <Form
                         noValidate
@@ -129,10 +129,10 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                             >
                                 {
                                     (props.authors().length !== 0)
-                                        &&
+                                    &&
                                     props.authors().map(
                                         (author: IAuthor) => {
-                                            return(
+                                            return (
                                                 <option
                                                     value={author.authorName}
                                                     key={author.authorName}
@@ -149,7 +149,7 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group className="update-btn-container">
-                            <Button className="update-btn" variant="primary" type="submit" size="sm" >
+                            <Button className="update-btn" variant="primary" type="submit" size="sm">
                                 Update
                             </Button>
                         </Form.Group>

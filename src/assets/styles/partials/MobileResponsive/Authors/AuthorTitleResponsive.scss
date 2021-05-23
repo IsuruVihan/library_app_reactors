@@ -1,35 +1,35 @@
 @media screen and (max-width: 991px) {
-	.Authors {
-		.title {
-			font-size: 1.8rem;
-		}
+  .Authors {
+    .title {
+      font-size: 1.8rem;
+    }
 
-		.no-authors, .add-author {
-			font-size: 1em;
-		}
-	}
+    .no-authors, .add-author {
+      font-size: 1em;
+    }
+  }
 }
 
 @media screen and (max-width: 767px) {
-	.Authors {
-		.title {
-			font-size: 1.7rem;
-		}
+  .Authors {
+    .title {
+      font-size: 1.7rem;
+    }
 
-		.no-authors, .add-author {
-			font-size: 0.9em;
-		}
-	}
+    .no-authors, .add-author {
+      font-size: 0.9em;
+    }
+  }
 }
 
 @media screen and (max-width: 575px) {
-	.Authors {
-		.title {
-			font-size: 1.4rem;
-		}
+  .Authors {
+    .title {
+      font-size: 1.4rem;
+    }
 
-		.no-authors, .add-author {
-			font-size: 0.7em;
-		}
-	}
+    .no-authors, .add-author {
+      font-size: 0.7em;
+    }
+  }
 }

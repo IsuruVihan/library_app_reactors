@@ -1,9 +1,9 @@
 import React, {FC, useState} from 'react';
 import {Row, Col, Container} from "react-bootstrap";
 import '../../assets/styles/partials/Authors.scss';
-import AddAuthorForm from"./AddAuthorForm"
+import AddAuthorForm from "./AddAuthorForm"
 import UpdateAuthorForm from "./UpdateAuthorForm";
-import { Plus } from 'react-feather';
+import {Plus} from 'react-feather';
 import IAuthor from '../../interfaces/IAuthor';
 import AuthorListLine from "./AuthorListLine";
 import NoAuthors from "./NoAuthors";
@@ -33,11 +33,11 @@ const Authors: FC<AuthorsProps> = (props) => {
 
     // Set 'AddAuthor' form visible
     const handleClickAddAuthorEvent = () => {
-        if(isVisibleAuthorForm) {
+        if (isVisibleAuthorForm) {
             setIsVisibleCreateInProgressModal(true);
             return;
         }
-        if(isVisibleUpdateAuthorForm) {
+        if (isVisibleUpdateAuthorForm) {
             setIsVisibleUpdateInProgressModal(true);
             return;
         }
@@ -62,7 +62,7 @@ const Authors: FC<AuthorsProps> = (props) => {
     // Add an 'Author'
     const handleCreateAuthorEvent = (event: React.FormEvent, name: string) => {
         event.preventDefault();
-        const newAuthor: IAuthor = { authorName: name };
+        const newAuthor: IAuthor = {authorName: name};
         const authors = authorsList.slice();
         authors.push(newAuthor);
         setAuthorsList(authors);
@@ -74,7 +74,7 @@ const Authors: FC<AuthorsProps> = (props) => {
     // Delete an 'Author'
     const handleDeleteAuthorEvent = (id: number) => {
         const authors: IAuthor[] = authorsList.slice();
-        authors.splice(id-1, 1);
+        authors.splice(id - 1, 1);
         setAuthorsList(authors);
         setIsVisibleUpdateAuthorForm(false);
 
@@ -83,11 +83,11 @@ const Authors: FC<AuthorsProps> = (props) => {
     }
     // Update an 'Author'
     const handleUpdateAuthorRequestEvent = (id: number) => {
-        if(isVisibleUpdateAuthorForm) {
+        if (isVisibleUpdateAuthorForm) {
             setIsVisibleUpdateInProgressModal(true);
             return;
         }
-        if(isVisibleAuthorForm) {
+        if (isVisibleAuthorForm) {
             setIsVisibleCreateInProgressModal(true);
             return;
         }
@@ -95,13 +95,13 @@ const Authors: FC<AuthorsProps> = (props) => {
         setAuthorToBeUpdate(id);
     }
     const handleUpdateAuthorEvent = (event: React.FormEvent, name: string) => {
-        if(authorToBeUpdate === null) {
+        if (authorToBeUpdate === null) {
             return;
         }
 
         const authors = authorsList.slice();
         const newAuthor: IAuthor = {authorName: name};
-        authors.splice(authorToBeUpdate-1, 1, newAuthor);
+        authors.splice(authorToBeUpdate - 1, 1, newAuthor);
         setAuthorsList(authors);
         setAuthorToBeUpdate(null);
         setIsVisibleUpdateAuthorForm(false);
@@ -111,7 +111,7 @@ const Authors: FC<AuthorsProps> = (props) => {
         props.returnAvailableAuthors(authors);
     }
 
-    return(
+    return (
         <Container fluid>
             <UpdateInProgressModal
                 isVisible={isVisibleUpdateInProgressModal}
@@ -125,12 +125,12 @@ const Authors: FC<AuthorsProps> = (props) => {
                 <Col md={12}>
                     <p className="title">Authors</p>
                 </Col>
-                {(authorsList.length === 0) && <NoAuthors />}
+                {(authorsList.length === 0) && <NoAuthors/>}
                 <Col md={12}>
                     <ul className="author-list px-0">
                         {authorsList.map(
                             (author: IAuthor) => {
-                                return(
+                                return (
                                     <AuthorListLine
                                         name={author.authorName}
                                         id={authorId++}
@@ -145,8 +145,8 @@ const Authors: FC<AuthorsProps> = (props) => {
                 </Col>
                 <Col md={12}>
                     <p className="add-author pt-3">
-                        <Plus color="#034fa5" className="plus" onClick={() => handleClickAddAuthorEvent()} />
-                        <span className="add-author-text" onClick={() => handleClickAddAuthorEvent()} >
+                        <Plus color="#034fa5" className="plus" onClick={() => handleClickAddAuthorEvent()}/>
+                        <span className="add-author-text" onClick={() => handleClickAddAuthorEvent()}>
                             Add Author
                         </span>
                     </p>
@@ -154,7 +154,7 @@ const Authors: FC<AuthorsProps> = (props) => {
                 <Col md={12}>
                     {
                         isVisibleAuthorForm
-                            &&
+                        &&
                         <AddAuthorForm
                             closeForm={handleClickCloseFormEvent}
                             createAuthor={handleCreateAuthorEvent}
@@ -162,9 +162,9 @@ const Authors: FC<AuthorsProps> = (props) => {
                     }
                     {
                         isVisibleUpdateAuthorForm
-                            &&
+                        &&
                         <UpdateAuthorForm
-                            currentAuthorName={authorToBeUpdate ? authorsList[authorToBeUpdate-1].authorName : ""}
+                            currentAuthorName={authorToBeUpdate ? authorsList[authorToBeUpdate - 1].authorName : ""}
                             closeForm={handleClickCloseUpdateFormEvent}
                             updateAuthor={handleUpdateAuthorEvent}
                         />

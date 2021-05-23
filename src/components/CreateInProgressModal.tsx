@@ -7,7 +7,7 @@ type CreateInProgressModalProps = {
 };
 
 const CreateInProgressModal: FC<CreateInProgressModalProps> = (props) => {
-    return(
+    return (
         <Modal
             show={props.isVisible}
             onHide={() => props.closeModal()}

@@ -1,7 +1,7 @@
 import React, {FC, useState} from 'react';
 import {Col, Container, Row, Button, Form} from "react-bootstrap";
 import '../../assets/styles/partials/UpdateAuthorForm.scss';
-import { XCircle } from 'react-feather';
+import {XCircle} from 'react-feather';
 import '../../assets/styles/partials/MobileResponsive/Authors/UpdateAuthorFormResponsive.scss';
 
 type UpdateAuthorFormProps = {
@@ -25,7 +25,7 @@ const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
         event.preventDefault();
         event.stopPropagation()
         setValidated(true);
-        if(enteredAuthor === "") {
+        if (enteredAuthor === "") {
             return;
         }
 
@@ -34,7 +34,7 @@ const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
         return props.updateAuthor(event, authorToBeUpdated);
     }
 
-    return(
+    return (
         <Container className="ua-form-container" fluid={true}>
             <Row>
                 <Col className="top" md={8}>
@@ -43,7 +43,7 @@ const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
                             <p className="ua-title-text">Update Author</p>
                         </Col>
                         <Col className="close-btn" md={1} xs={1}>
-                            <XCircle className="close-icon" onClick={() => props.closeForm()} />
+                            <XCircle className="close-icon" onClick={() => props.closeForm()}/>
                         </Col>
                     </Row>
                 </Col>

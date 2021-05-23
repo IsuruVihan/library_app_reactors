@@ -1,7 +1,7 @@
 import React, {FC, useState} from 'react';
 import {Col, Container, Row, Button, Form} from "react-bootstrap";
 import '../../assets/styles/partials/AddAuthorForm.scss';
-import { XCircle } from 'react-feather';
+import {XCircle} from 'react-feather';
 
 type AddAuthorFormProps = {
     closeForm: () => void,
@@ -24,7 +24,7 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
         event.stopPropagation();
         setValidated(true);
 
-        if(enteredAuthor === "") {
+        if (enteredAuthor === "") {
             return;
         }
         const authorToBeAdded = enteredAuthor;
@@ -32,7 +32,7 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
         return props.createAuthor(event, authorToBeAdded);
     }
 
-    return(
+    return (
         <Container className="aa-form-container" fluid={true}>
             <Row>
                 <Col className="top" md={9}>
@@ -41,12 +41,12 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
                             <p className="ca-title-text">Create Author</p>
                         </Col>
                         <Col className="close-btn" lg={1} md={1} xs={2}>
-                            <XCircle className="close-icon" onClick={() => props.closeForm()} />
+                            <XCircle className="close-icon" onClick={() => props.closeForm()}/>
                         </Col>
                     </Row>
                 </Col>
-                <Col md={3} />
-                <Col md={1} />
+                <Col md={3}/>
+                <Col md={1}/>
                 <Col md={8}>
                     <Form
                         noValidate
@@ -72,7 +72,7 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group className="create-btn-container">
-                            <Button className="create-btn" variant="primary" type="submit" size="sm" >
+                            <Button className="create-btn" variant="primary" type="submit" size="sm">
                                 Create
                             </Button>
                         </Form.Group>

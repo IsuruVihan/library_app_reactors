@@ -2,48 +2,49 @@
 
 //max width 376px (iPhone 6/7/8 Vertical)
 @media screen and (max-width: 376px) {
-	.aa-form-container {
-		.top {
-			width: 17em;
-			.ca-title {
-				font-size: medium;
-				width: 79%;
+  .aa-form-container {
+    .top {
+      width: 17em;
 
-				.ca-title-text {
-					min-width: 8em;
-				}
-			}
+      .ca-title {
+        font-size: medium;
+        width: 79%;
 
-			.close-btn {
-				min-width: 10vw;
+        .ca-title-text {
+          min-width: 8em;
+        }
+      }
 
-				.close-icon {
-					margin-left: 3em;
-				}
-			}
-		}
+      .close-btn {
+        min-width: 10vw;
 
-		.aa-form {
-			.author-name-label {
-				font-size: 10px;
-				margin-left: 25px
-			}
+        .close-icon {
+          margin-left: 3em;
+        }
+      }
+    }
 
-			.author-name-input {
-				width: 26em;
-				font-size: 10px;
-				margin-left: 25px;
-			}
+    .aa-form {
+      .author-name-label {
+        font-size: 10px;
+        margin-left: 25px
+      }
 
-			.create-btn-container {
-				width: 100%;
-				margin-top: 2em;
-				margin-bottom: 10em;
+      .author-name-input {
+        width: 26em;
+        font-size: 10px;
+        margin-left: 25px;
+      }
 
-				.create-btn {
-					float: right;
-				}
-			}
-		}
-	}
+      .create-btn-container {
+        width: 100%;
+        margin-top: 2em;
+        margin-bottom: 10em;
+
+        .create-btn {
+          float: right;
+        }
+      }
+    }
+  }
 }

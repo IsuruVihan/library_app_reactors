@@ -11,17 +11,20 @@ li {
   .delete-btn, .edit-btn {
     display: none;
   }
+
   &:hover {
     .delete-btn {
       display: inline;
       color: $delete_btn_color;
       cursor: pointer;
     }
+
     .edit-btn {
       display: inline;
       color: $edit_btn_color;
       cursor: pointer;
     }
+
     background-color: $book_list_hover_color;
   }
 }

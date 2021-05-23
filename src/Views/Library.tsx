@@ -21,14 +21,14 @@ const Library: FC = () => {
         return fullAuthorList;
     }
 
-    return(
+    return (
         <Container className="Library px-0 mx-0" fluid={true}>
             <Row>
                 <Col xs={12}>
                     <h1 className="text-center py-2">My Library</h1>
                 </Col>
                 <Col className="px-0" xs={12}>
-                    <img src={libraryImg} alt="Library" />
+                    <img src={libraryImg} alt="Library"/>
                 </Col>
             </Row>
             <Row className="credits">
@@ -40,7 +40,7 @@ const Library: FC = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md={{ order: 'first',span:6 }} xs={{ order: 'last',span:12 }} className="book-container">
+                <Col md={{order: 'first', span: 6}} xs={{order: 'last', span: 12}} className="book-container">
                     <Books
                         authorsAvailable={sendAvailableAuthors}
                     />

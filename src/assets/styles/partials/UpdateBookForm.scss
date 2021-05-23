@@ -20,6 +20,7 @@ $update_btn_color: #00579c;
       max-width: 6.3em;
     }
   }
+
   .close-btn {
     padding-top: 0.4em;
 
@@ -35,11 +36,13 @@ $update_btn_color: #00579c;
       font-size: 12px;
       font-weight: 500;
     }
+
     .book-title-input, .book-price-input, .book-author-input {
       width: 28vw;
       border: 2px solid $input_field_border_color;
       border-radius: 0;
     }
+
     .update-btn-container {
       padding-left: 1.5em;
       margin-top: 2em;

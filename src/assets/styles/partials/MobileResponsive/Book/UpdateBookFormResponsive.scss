@@ -2,36 +2,38 @@
 
 //max width 1025px (iPhone 6/7/8 Vertical)
 @media screen and (max-width: 1025px) {
-	.ub-form-container {
+  .ub-form-container {
 
-		.ub-title {
-			.ub-title-text {
-				border-bottom-width: 3px;
-				max-width: 6.4em;
-			}
-		}
+    .ub-title {
+      .ub-title-text {
+        border-bottom-width: 3px;
+        max-width: 6.4em;
+      }
+    }
 
-		.close-btn {
-			.close-icon {
-			}
-		}
+    .close-btn {
+      .close-icon {
+      }
+    }
 
-		.ub-form {
-			padding-left: 2em;
+    .ub-form {
+      padding-left: 2em;
 
-			.book-title-label, .book-price-label, .book-author-label {
-			}
-			.book-title-input, .book-price-input, .book-author-input {
-				width: 100%;
-			}
-			.update-btn-container {
-				margin-left: 6em;
-				margin-right: 0;
+      .book-title-label, .book-price-label, .book-author-label {
+      }
 
-				.update-btn {
-					margin-left: 5em;
-				}
-			}
-		}
-	}
+      .book-title-input, .book-price-input, .book-author-input {
+        width: 100%;
+      }
+
+      .update-btn-container {
+        margin-left: 6em;
+        margin-right: 0;
+
+        .update-btn {
+          margin-left: 5em;
+        }
+      }
+    }
+  }
 }

@@ -1,37 +1,75 @@
 //Book Add Form
 
-//max width 1025px (iPhone 6/7/8 Vertical)
-@media screen and (max-width: 1025px) {
-	.ab-form-container {
+@media screen and (min-width: 1200px) {
+  .ab-form-container {
 
-		.cb-title {
-			.cb-title-text {
-				border-bottom-width: 3px;
-				max-width: 0.6em;
-			}
-		}
+    .cb-title {
+      .cb-title-text {
+        //border-bottom-width: 3px;
+        //max-width: 0.6em;
+      }
+    }
 
-		.close-btn {
-			.close-icon {
-			}
-		}
+    .close-btn {
+      .close-icon {
+      }
+    }
 
-		.ab-form {
-			padding-left: 2em;
+    .ab-form {
+      //padding-left: 2em;
 
-			.book-title-label, .book-price-label, .book-author-label {
-			}
-			.book-title-input, .book-price-input, .book-author-input {
-				width: 100%;
-			}
-			.create-btn-container {
-				margin-left: 6em;
-				margin-right: 0;
+      .book-title-label, .book-price-label, .book-author-label {
+      }
 
-				.create-btn {
-					margin-left: 5em;
-				}
-			}
-		}
-	}
+      .book-title-input, .book-price-input, .book-author-input {
+        //width: 100%;
+      }
+
+      .create-btn-container {
+        //margin-left: 6em;
+        padding-right: 2vw;
+
+        .create-btn {
+          //margin-left: 5em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .ab-form-container {
+
+    .cb-title {
+      .cb-title-text {
+        //border-bottom-width: 3px;
+        //max-width: 0.6em;
+      }
+    }
+
+    .close-btn {
+      .close-icon {
+      }
+    }
+
+    .ab-form {
+      //padding-left: 2em;
+
+      .book-title-label, .book-price-label, .book-author-label {
+      }
+
+      .book-title-input, .book-price-input, .book-author-input {
+        //width: 100%;
+      }
+
+      .create-btn-container {
+        //margin-left: 6em;
+        margin-right: 1.5vw;
+
+        .create-btn {
+          //margin-left: 5em;
+        }
+      }
+    }
+  }
 }

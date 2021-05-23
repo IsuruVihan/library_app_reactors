@@ -9,7 +9,7 @@ type DeleteBookModalProps = {
 };
 
 const DeleteBookModal: FC<DeleteBookModalProps> = (props) => {
-    return(
+    return (
         <Modal
             show={props.isVisible}
             onHide={props.closeModal}

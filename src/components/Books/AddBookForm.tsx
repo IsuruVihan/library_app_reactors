@@ -57,22 +57,21 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
     return (
         <Container className="ab-form-container" fluid={true}>
             <Row>
-                <Col md={9} xs={12}>
+                <Col xl={9} lg={9} md={9} xs={12}>
                     <Row>
-                        <Col className="cb-title" md={11} xs={10}>
+                        <Col className="cb-title" md={5} xs={10}>
                             <p className="cb-title-text">Create Book</p>
                         </Col>
                         <Col
-                            className="close-btn"
-                            md={1} xs={2}
+                            className="close-btn" md={{offset: 5}} xs={2}
                         >
                             <XCircle className="close-icon" onClick={() => props.closeForm()}/>
                         </Col>
                     </Row>
                 </Col>
-                <Col md={3}/>
-                <Col md={1}/>
-                <Col md={9} xs={12}>
+                <Col xl={3} lg={3} md={3}/>
+                <Col xl={1} lg={1} md={1}/>
+                <Col xl={9} lg={9} md={9} xs={12}>
                     <Form
                         noValidate
                         className="ab-form"

@@ -28,34 +28,34 @@ const AuthorListLine: FC<AuthorListLineProps> = (props) => {
         props.delete(props.id);
         setShowDeleteAuthorModal(false);
     }
-    const showEditOverlay = (props:any) => (
+    const showEditOverlay = (props: any) => (
         <Tooltip id="button-tooltip" {...props}>
             Edit author name
         </Tooltip>
     );
-    const showDeleteOverlay = (props:any) => (
+    const showDeleteOverlay = (props: any) => (
         <Tooltip id="button-tooltip" {...props}>
             Delete author name
         </Tooltip>
     );
-    return(
+    return (
         <li>
             <Row>
                 <Col className="AddedAuthor" xs={6} sm={6} md={6} lg={6} xl={6}>{props.id}. {props.name}</Col>
                 <Col xs={{offset: 2}} sm={{offset: 3}} md={{offset: 2}} lg={{offset: 3}} xl={{offset: 3}}>
                     <OverlayTrigger
                         placement="left"
-                        delay={{ show: 250, hide: 400 }}
+                        delay={{show: 250, hide: 400}}
                         overlay={showEditOverlay}
                     >
-                        <Edit className="edit-btn mx-3" onClick={() => props.updateRequest(props.id)} />
+                        <Edit className="edit-btn mx-3" onClick={() => props.updateRequest(props.id)}/>
                     </OverlayTrigger>
                     <OverlayTrigger
                         placement="bottom"
-                        delay={{ show: 250, hide: 400 }}
+                        delay={{show: 250, hide: 400}}
                         overlay={showDeleteOverlay}
                     >
-                        <Trash2 className="delete-btn" onClick={() => openDeleteAuthorModal()} />
+                        <Trash2 className="delete-btn" onClick={() => openDeleteAuthorModal()}/>
                     </OverlayTrigger>
                 </Col>
             </Row>

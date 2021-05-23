@@ -2,7 +2,7 @@ import React, {FC, useState} from 'react';
 import {Row, Col, Container} from "react-bootstrap";
 import '../../assets/styles/partials/Books.scss';
 import AddBookForm from "./AddBookForm";
-import { Plus } from 'react-feather';
+import {Plus} from 'react-feather';
 import UpdateBookForm from './UpdateBookForm';
 import BookListLine from './BookListLine';
 import IBook from '../../interfaces/IBook';
@@ -63,7 +63,7 @@ const Books: FC<BooksProps> = (props) => {
     // Add a 'Book'
     const handleCreateBookEvent = (event: React.FormEvent, title: string, isbn: string, author: string) => {
         event.preventDefault();
-        const newBook: IBook = { bookTitle: title, bookIsbn: isbn, bookAuthor: author };
+        const newBook: IBook = {bookTitle: title, bookIsbn: isbn, bookAuthor: author};
         const books = booksList.slice();
         books.push(newBook);
         setBooksList(books);
@@ -73,17 +73,17 @@ const Books: FC<BooksProps> = (props) => {
     // Delete a 'Book'
     const handleDeleteBookEvent = (id: number) => {
         const books: IBook[] = booksList.slice();
-        books.splice(id-1, 1);
+        books.splice(id - 1, 1);
         setBooksList(books);
         setIsVisibleUpdateBookForm(false);
     }
     // Update a 'Book'
     const handleUpdateBookRequestEvent = (id: number) => {
-        if(isVisibleUpdateBookForm) {
+        if (isVisibleUpdateBookForm) {
             setIsVisibleUpdateInProgressModal(true);
             return;
         }
-        if(isVisibleBookForm) {
+        if (isVisibleBookForm) {
             setIsVisibleCreateInProgressModal(true);
             return;
         }
@@ -92,20 +92,20 @@ const Books: FC<BooksProps> = (props) => {
         setBookToBeUpdate(id);
     }
     const handleUpdateBookEvent = (event: React.FormEvent, title: string, isbn: string, author: string) => {
-        if(bookToBeUpdate === null) {
+        if (bookToBeUpdate === null) {
             return;
         }
 
         const books = booksList.slice();
         const newBook: IBook = {bookTitle: title, bookIsbn: isbn, bookAuthor: author};
-        books.splice(bookToBeUpdate-1, 1, newBook);
+        books.splice(bookToBeUpdate - 1, 1, newBook);
         setBooksList(books);
         setBookToBeUpdate(null);
         setIsVisibleUpdateBookForm(false);
         event.preventDefault();
     }
 
-    return(
+    return (
         <Container fluid>
             <UpdateInProgressModal
                 isVisible={isVisibleUpdateInProgressModal}
@@ -119,12 +119,12 @@ const Books: FC<BooksProps> = (props) => {
                 <Col xl={12} lg={12} md={12} sm={12} xs={12}>
                     <p className="title">Books</p>
                 </Col>
-                {(booksList.length === 0) && <NoBooks />}
+                {(booksList.length === 0) && <NoBooks/>}
                 <Col xl={12} lg={12} md={12} sm={12} xs={12}>
                     <ul className="book-list px-0">
                         {booksList.map(
                             (book: IBook) => {
-                                return(
+                                return (
                                     <BookListLine
                                         title={book.bookTitle}
                                         isbn={book.bookIsbn}
@@ -141,8 +141,8 @@ const Books: FC<BooksProps> = (props) => {
                 </Col>
                 <Col xl={12} lg={12} md={12} sm={12} xs={12}>
                     <p className="add-book pt-3">
-                        <Plus color="#034fa5" className="plus" onClick={() => handleClickAddBookEvent()} />
-                        <span className="add-book-text" onClick={() => handleClickAddBookEvent()} >
+                        <Plus color="#034fa5" className="plus" onClick={() => handleClickAddBookEvent()}/>
+                        <span className="add-book-text" onClick={() => handleClickAddBookEvent()}>
                             Add Book
                         </span>
                     </p>
@@ -150,7 +150,7 @@ const Books: FC<BooksProps> = (props) => {
                 <Col xl={12} lg={12} md={12} sm={12} xs={12}>
                     {
                         isVisibleBookForm
-                            &&
+                        &&
                         <AddBookForm
                             closeForm={handleClickCloseFormEvent}
                             createBook={handleCreateBookEvent}
@@ -159,11 +159,11 @@ const Books: FC<BooksProps> = (props) => {
                     }
                     {
                         isVisibleUpdateBookForm
-                            &&
+                        &&
                         <UpdateBookForm
-                            currentTitle={bookToBeUpdate === null ? "" : booksList[bookToBeUpdate-1].bookTitle}
-                            currentIsbn={bookToBeUpdate === null ? "" : booksList[bookToBeUpdate-1].bookIsbn}
-                            currentAuthor={bookToBeUpdate === null ? "" : booksList[bookToBeUpdate-1].bookAuthor}
+                            currentTitle={bookToBeUpdate === null ? "" : booksList[bookToBeUpdate - 1].bookTitle}
+                            currentIsbn={bookToBeUpdate === null ? "" : booksList[bookToBeUpdate - 1].bookIsbn}
+                            currentAuthor={bookToBeUpdate === null ? "" : booksList[bookToBeUpdate - 1].bookAuthor}
                             closeForm={handleClickCloseUpdateFormEvent}
                             updateBook={handleUpdateBookEvent}
                             authors={props.authorsAvailable}

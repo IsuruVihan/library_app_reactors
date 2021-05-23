@@ -30,17 +30,17 @@ const BookListLine: FC<BookListLineProps> = (props) => {
         props.delete(props.id);
         setShowDeleteBookModal(false);
     }
-    const showEditOverlay = (props:any) => (
+    const showEditOverlay = (props: any) => (
         <Tooltip id="button-tooltip" {...props}>
             Edit book details
         </Tooltip>
     );
-    const showDeleteOverlay = (props:any) => (
+    const showDeleteOverlay = (props: any) => (
         <Tooltip id="button-tooltip" {...props}>
             Delete book
         </Tooltip>
     );
-    return(
+    return (
         <li>
             <Row>
                 <Col className="AddedBook" xs={6} sm={6} md={6} lg={6} xl={6}>
@@ -49,17 +49,17 @@ const BookListLine: FC<BookListLineProps> = (props) => {
                 <Col xs={{offset: 2}} sm={{offset: 3}} md={{offset: 2}} lg={{offset: 3}} xl={{offset: 3}}>
                     <OverlayTrigger
                         placement="left"
-                        delay={{ show: 250, hide: 400 }}
+                        delay={{show: 250, hide: 400}}
                         overlay={showEditOverlay}
                     >
-                        <Edit className="edit-btn mx-3" onClick={() => props.updateRequest(props.id)} />
+                        <Edit className="edit-btn mx-3" onClick={() => props.updateRequest(props.id)}/>
                     </OverlayTrigger>
                     <OverlayTrigger
                         placement="bottom"
-                        delay={{ show: 250, hide: 400 }}
+                        delay={{show: 250, hide: 400}}
                         overlay={showDeleteOverlay}
                     >
-                        <Trash2 className="delete-btn" onClick={() => openDeleteBookModal()} />
+                        <Trash2 className="delete-btn" onClick={() => openDeleteBookModal()}/>
                     </OverlayTrigger>
                 </Col>
             </Row>
