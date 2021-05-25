@@ -1,12 +1,12 @@
 //Book Add Form
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1200px) {
   .ab-form-container {
 
     .cb-title {
       .cb-title-text {
-        //border-bottom-width: 3px;
-        //max-width: 0.6em;
+        border-bottom-width: 3px;
+        max-width: 0.6em;
       }
     }
 
@@ -16,21 +16,21 @@
     }
 
     .ab-form {
-      //padding-left: 2em;
+      padding-left: 2em;
 
       .book-title-label, .book-price-label, .book-author-label {
       }
 
       .book-title-input, .book-price-input, .book-author-input {
-        //width: 100%;
+        width: 100%;
       }
 
       .create-btn-container {
-        //margin-left: 6em;
+        margin-left: 6em;
         padding-right: 2vw;
 
         .create-btn {
-          //margin-left: 5em;
+          margin-left: 5em;
         }
       }
     }
