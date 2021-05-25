@@ -33,29 +33,35 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
     }
 
     return (
-        <Container className="aa-form-container" fluid={true}>
-            <Row>
+        <Container className="aa-form-container px-0" fluid={true}>
+            <Row className="mx-0">
                 <Col className="top" md={9}>
                     <Row>
-                        <Col className="ca-title" lg={11} md={11} xs={10}>
-                            <p className="ca-title-text">Create Author</p>
+                        <Col className="ca-title px-0" sm={10} xs={10}>
+                            <p className="ca-title-text"><u>Create Author</u></p>
                         </Col>
-                        <Col className="close-btn" lg={1} md={1} xs={2}>
+                        <Col className="close-btn px-0">
                             <XCircle className="close-icon" onClick={() => props.closeForm()}/>
                         </Col>
                     </Row>
                 </Col>
                 <Col md={3}/>
                 <Col md={1}/>
-                <Col md={8}>
+                <Col className="px-0" md={8}>
                     <Form
+                        style={{width: '100%'}}
                         noValidate
-                        className="aa-form"
+                        className="aa-form mx-0"
                         validated={validated}
                         onSubmit={(event: React.FormEvent) => submitAuthorForm(event)}
                     >
-                        <Form.Group>
-                            <Form.Label className="author-name-label">Name of Author</Form.Label>
+                        <Form.Group className="mt-3">
+                            <Form.Label
+                                style={{width: '100%'}}
+                                className="author-name-label my-0"
+                            >
+                                Name of Author
+                            </Form.Label>
                             <Form.Control
                                 className="author-name-input"
                                 type="text"
@@ -71,7 +77,7 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
                                 Please provide an author name.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group className="create-btn-container">
+                        <Form.Group className="create-btn-container" style={{width: '100%'}}>
                             <Button className="create-btn" variant="primary" type="submit" size="sm">
                                 Create
                             </Button>

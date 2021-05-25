@@ -35,48 +35,54 @@ const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
     }
 
     return (
-        <Container className="ua-form-container" fluid={true}>
-            <Row>
-                <Col className="top" md={8}>
-                    <Row>
-                        <Col className="ua-title" md={11} xs={10}>
-                            <p className="ua-title-text">Update Author</p>
+        <Container className="ua-form-container px-0" fluid={true}>
+            <Row className="mx-0" >
+                <Col className="top px-0" md={9} xs={12}>
+                    <Row className="mx-0">
+                        <Col className="ua-title my-0 px-0" md={11} xs={10}>
+                            <p className="ua-title-text"><u>Update Author</u></p>
                         </Col>
-                        <Col className="close-btn" md={1} xs={1}>
-                            <XCircle className="close-icon" onClick={() => props.closeForm()}/>
+                        <Col className="close-btn text-right py-2 px-1" md={1} xs={2}>
+                            <XCircle className="close-icon m-0 p-0" onClick={() => props.closeForm()}/>
                         </Col>
                     </Row>
                 </Col>
-                <Col md={9}>
-                    <Form
-                        noValidate
-                        validated={validated}
-                        className="ua-form"
-                        onSubmit={(event: React.FormEvent) => submitUpdateAuthorForm(event)}
-                    >
-                        <Form.Group>
-                            <Form.Label className="author-name-label">Name of Author</Form.Label>
-                            <Form.Control
-                                className="author-name-input"
-                                type="text"
-                                size="sm"
-                                value={enteredAuthor}
-                                onChange={
-                                    (event: React.ChangeEvent<HTMLInputElement>) =>
-                                        handleEnterAuthorChangeEvent(event)
-                                }
-                                required
-                            />
-                            <Form.Control.Feedback type="invalid">
-                                Please provide an author name.
-                            </Form.Control.Feedback>
-                        </Form.Group>
-                        <Form.Group className="update-btn-container">
-                            <Button className="update-btn" variant="primary" type="submit" size="sm">
-                                Update
-                            </Button>
-                        </Form.Group>
-                    </Form>
+                <Col md={9} className="pt-2">
+                    <Row>
+                        <Col xs={1} className="px-0"/>
+                        <Col xs={11} className="px-0">
+                            <Form
+                                style={{width: '100%'}}
+                                noValidate
+                                validated={validated}
+                                className="ua-form"
+                                onSubmit={(event: React.FormEvent) => submitUpdateAuthorForm(event)}
+                            >
+                                <Form.Group className="p-0 m-0">
+                                    <Form.Label className="author-name-label my-0">Name of Author</Form.Label>
+                                    <Form.Control
+                                        className="author-name-input"
+                                        type="text"
+                                        size="sm"
+                                        value={enteredAuthor}
+                                        onChange={
+                                            (event: React.ChangeEvent<HTMLInputElement>) =>
+                                                handleEnterAuthorChangeEvent(event)
+                                        }
+                                        required
+                                    />
+                                    <Form.Control.Feedback type="invalid">
+                                        Please provide an author name.
+                                    </Form.Control.Feedback>
+                                </Form.Group>
+                                <Form.Group className="update-btn-container pt-4">
+                                    <Button className="update-btn" variant="primary" type="submit" size="sm">
+                                        Update
+                                    </Button>
+                                </Form.Group>
+                            </Form>
+                        </Col>
+                    </Row>
                 </Col>
             </Row>
         </Container>
