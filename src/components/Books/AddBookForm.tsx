@@ -55,34 +55,32 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
     }
 
     return (
-        <Container className="ab-form-container px-0" style={{border: '2px solid red'}} fluid={true}>
-            <Row className="mx-0" style={{border: '2px solid blue'}}>
-                <Col md={9} xs={12} style={{border: '2px solid green'}}>
-                    <Row style={{border: '2px solid black'}}>
-                        <Col className="cb-title px-0 my-0" sm={10} xs={10} style={{border: '2px solid magenta'}}>
+        <Container className="ab-form-container px-0" fluid={true}>
+            <Row className="mx-0">
+                <Col md={9} xs={12}>
+                    <Row>
+                        <Col className="cb-title px-0 my-0" xs={10}>
                             <p className="cb-title-text m-0"><u>Create Book</u></p>
                         </Col>
-                        <Col className="close-btn px-0 pt-1" style={{border: '2px solid magenta'}}>
+                        <Col className="close-btn px-0 pt-1">
                             <XCircle className="close-icon" onClick={() => props.closeForm()}/>
                         </Col>
                     </Row>
                 </Col>
-                <Col md={3} style={{border: '2px solid green'}}/>
-                <Col md={1} style={{border: '2px solid green'}}/>
-                <Col md={8} className="px-0" style={{border: '2px solid green'}}>
+                <Col md={3}/>
+                <Col md={1}/>
+                <Col md={8} className="px-0">
                     <Form
-                        style={{border: '2px solid black'}}
                         noValidate
                         className="ab-form mx-0"
                         validated={validated}
                         onSubmit={(event: React.FormEvent) => submitBookForm(event)}
                     >
-                        <Form.Group style={{border: '2px solid magenta'}}>
-                            <Form.Label className="book-title-label m-0" style={{border: '2px solid tomato'}}>
+                        <Form.Group className="pt-3">
+                            <Form.Label className="book-title-label m-0">
                                 Title of the Book
                             </Form.Label>
                             <Form.Control
-                                style={{border: '2px solid tomato'}}
                                 className="book-title-input"
                                 type="text"
                                 size="sm"
@@ -96,16 +94,16 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                 Please provide a book title.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group style={{border: '2px solid magenta'}}>
+                        <Form.Group className="pt-1">
                             <Row className="mx-0">
                                 <Col className="px-0" xs={12}>
-                                    <Form.Label className="book-price-label m-0" style={{border: '2px solid tomato'}}>
+                                    <Form.Label className="book-price-label m-0">
                                         Price
                                     </Form.Label>
                                 </Col>
                                 <Col className="px-0" xs={12}>
                                     <CurrencyFormat
-                                        style={{border: '2px solid tomato', width: '100%'}}
+                                        style={{width: '100%'}}
                                         className="book-price-input"
                                         size="sm"
                                         inputMode="numeric"
@@ -126,12 +124,11 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                 Please provide a Price.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group style={{border: '2px solid magenta'}}>
-                            <Form.Label className="book-author-label m-0" style={{border: '2px solid tomato'}}>
+                        <Form.Group className="pt-1">
+                            <Form.Label className="book-author-label m-0">
                                 Author
                             </Form.Label>
                             <Form.Control
-                                style={{border: '2px solid tomato'}}
                                 className="book-author-input"
                                 size="sm"
                                 as="select"
@@ -158,14 +155,14 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                 Please select a book author.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group className="create-btn-container" style={{border: '2px solid magenta'}}>
-                            <Button className="create-btn" variant="primary" type="submit" size="sm" style={{border: '2px solid tomato'}}>
+                        <Form.Group className="create-btn-container pt-4">
+                            <Button className="create-btn" variant="primary" type="submit" size="sm">
                                 Create
                             </Button>
                         </Form.Group>
                     </Form>
                 </Col>
-                <Col xs={3} style={{border: '2px solid green'}}/>
+                {/*<Col xs={3}/>*/}
             </Row>
         </Container>
     );

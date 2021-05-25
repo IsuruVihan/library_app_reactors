@@ -3,7 +3,7 @@ import {Card} from "react-bootstrap";
 
 const LibraryFooter: React.FC = () => {
     return (
-        <Card className="text-center mt-lg-5">
+        <Card className="text-center mt-5">
             <Card.Footer className="text-muted">
                 <Card.Title className="footer-title">My Library</Card.Title>
                 <Card.Text className="footer-text">

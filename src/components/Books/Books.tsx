@@ -139,7 +139,7 @@ const Books: FC<BooksProps> = (props) => {
                         )}
                     </ul>
                 </Col>
-                <Col xl={12} lg={12} md={12} sm={12} xs={12}>
+                <Col xs={12}>
                     <p className="add-book pt-3">
                         <Plus color="#034fa5" className="plus" onClick={() => handleClickAddBookEvent()}/>
                         <span className="add-book-text" onClick={() => handleClickAddBookEvent()}>
@@ -147,7 +147,7 @@ const Books: FC<BooksProps> = (props) => {
                         </span>
                     </p>
                 </Col>
-                <Col xl={12} lg={12} md={12} sm={12} xs={12}>
+                <Col xs={12} className="pt-5">
                     {
                         isVisibleBookForm
                         &&
