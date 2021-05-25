@@ -107,6 +107,7 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                             <CurrencyFormat
                                 className="book-price-input"
                                 size="sm"
+                                style={{width: '100%'}}
                                 inputMode="numeric"
                                 thousandSeparator={true}
                                 prefix={'$'}
@@ -155,7 +156,7 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                 Please select a book author.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group className="create-btn-container">
+                        <Form.Group className="create-btn-container" style={{border:'2px solid yellow',width: '100%'}}>
                             <Button className="create-btn" variant="primary" type="submit" size="sm">
                                 Create
                             </Button>

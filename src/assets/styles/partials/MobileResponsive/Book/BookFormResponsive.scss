@@ -22,10 +22,11 @@
       }
 
       .book-title-input, .book-price-input, .book-author-input {
-        width: 100%;
+        //width: 100%;
       }
 
       .create-btn-container {
+        width: 100%;
         margin-left: 6em;
         padding-right: 2vw;
 
@@ -37,39 +38,3 @@
   }
 }
 
-@media screen and (min-width: 992px) {
-  .ab-form-container {
-
-    .cb-title {
-      .cb-title-text {
-        //border-bottom-width: 3px;
-        //max-width: 0.6em;
-      }
-    }
-
-    .close-btn {
-      .close-icon {
-      }
-    }
-
-    .ab-form {
-      //padding-left: 2em;
-
-      .book-title-label, .book-price-label, .book-author-label {
-      }
-
-      .book-title-input, .book-price-input, .book-author-input {
-        //width: 100%;
-      }
-
-      .create-btn-container {
-        //margin-left: 6em;
-        margin-right: 1.5vw;
-
-        .create-btn {
-          //margin-left: 5em;
-        }
-      }
-    }
-  }
-}
