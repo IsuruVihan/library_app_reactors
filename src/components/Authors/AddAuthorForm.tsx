@@ -33,33 +33,36 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
     }
 
     return (
-        <Container style={{border: '2px solid red'}} className="aa-form-container px-0" fluid={true}>
-            <Row className="mx-0" style={{border: '2px solid blue'}}>
-                <Col style={{border: '2px solid orange'}} className="top" md={9}>
-                    <Row style={{border: '2px solid green'}}>
-                        <Col style={{border: '2px solid black'}} className="ca-title px-0" sm={10} xs={10}>
+        <Container className="aa-form-container px-0" fluid={true}>
+            <Row className="mx-0">
+                <Col className="top" md={9}>
+                    <Row>
+                        <Col className="ca-title px-0" sm={10} xs={10}>
                             <p className="ca-title-text"><u>Create Author</u></p>
                         </Col>
-                        <Col style={{border: '2px solid black'}} className="close-btn px-0">
+                        <Col className="close-btn px-0">
                             <XCircle className="close-icon" onClick={() => props.closeForm()}/>
                         </Col>
                     </Row>
                 </Col>
-                <Col style={{border: '2px solid orange'}} md={3}/>
-                <Col style={{border: '2px solid orange'}} md={1}/>
-                <Col style={{border: '2px solid orange'}} className="px-0" md={8}>
+                <Col md={3}/>
+                <Col md={1}/>
+                <Col className="px-0" md={8}>
                     <Form
-                        style={{border: '2px solid green', width: '100%'}}
+                        style={{width: '100%'}}
                         noValidate
                         className="aa-form mx-0"
                         validated={validated}
                         onSubmit={(event: React.FormEvent) => submitAuthorForm(event)}
                     >
-                        <Form.Group style={{border: '2px solid black'}}>
-                            <Form.Label style={{border: '2px solid tomato', width: '100%'}}
-                                        className="author-name-label my-0">Name of Author</Form.Label>
+                        <Form.Group className="mt-3">
+                            <Form.Label
+                                style={{width: '100%'}}
+                                className="author-name-label my-0"
+                            >
+                                Name of Author
+                            </Form.Label>
                             <Form.Control
-                                style={{border: '2px solid tomato'}}
                                 className="author-name-input"
                                 type="text"
                                 size="sm"
@@ -74,9 +77,8 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
                                 Please provide an author name.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group className="create-btn-container" style={{border: '2px solid black', width: '100%'}}>
-                            <Button className="create-btn" style={{border: '2px solid tomato'}} variant="primary"
-                                    type="submit" size="sm">
+                        <Form.Group className="create-btn-container" style={{width: '100%'}}>
+                            <Button className="create-btn" variant="primary" type="submit" size="sm">
                                 Create
                             </Button>
                         </Form.Group>
