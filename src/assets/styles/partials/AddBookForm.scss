@@ -1,0 +1,61 @@
+$cb_title_color: #084732;
+$input_field_border_color: #959595;
+$create_btn_color: #00579c;
+
+.ab-form-container {
+  padding-left: 0;
+  margin-top: 3em;
+
+  .cb-title {
+    color: $cb_title_color;
+    //padding-left: 0.6em;
+    margin-bottom: 0.6em;
+    font-weight: 500;
+    font-size: x-large;
+
+    .cb-title-text {
+      border-bottom: 3px solid $cb_title_color;
+      margin: 0;
+      max-height: 1.35em;
+      max-width: 7em;
+      min-width: 6em;
+    }
+  }
+
+  .close-btn {
+    padding-top: 0.4em;
+
+    .close-icon {
+      cursor: pointer;
+    }
+  }
+
+  .ab-form {
+    .book-title-label, .book-price-label, .book-author-label {
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .book-title-input, .book-price-input, .book-author-input {
+      width: 28vw;
+      border: 2px solid $input_field_border_color;
+      border-radius: 0;
+    }
+
+    .create-btn-container {
+      margin-top: 2em;
+      margin-bottom: 10em;
+      float: right;
+      //margin-right: 3em;
+
+      .create-btn {
+        border-radius: 6px;
+        background-color: $create_btn_color;
+        height: 2em;
+        width: 6.8em;
+      }
+    }
+  }
+}

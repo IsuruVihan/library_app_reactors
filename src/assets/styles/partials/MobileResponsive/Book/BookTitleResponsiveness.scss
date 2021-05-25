@@ -1,0 +1,35 @@
+@media screen and (max-width: 991px) {
+  .Books {
+    .title {
+      font-size: 1.8rem;
+    }
+
+    .no-books, .add-book {
+      font-size: 1em;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .Books {
+    .title {
+      font-size: 1.7rem;
+    }
+
+    .no-books, .add-book {
+      font-size: 0.9em;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .Books {
+    .title {
+      font-size: 1.4rem;
+    }
+
+    .no-books, .add-book {
+      font-size: 0.7em;
+    }
+  }
+}

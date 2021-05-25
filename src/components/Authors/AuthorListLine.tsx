@@ -1,51 +1,47 @@
 import React, {FC, useState} from 'react';
 import {Col, OverlayTrigger, Row, Tooltip} from "react-bootstrap";
 import {Edit, Trash2} from "react-feather";
-import '../../assets/styles/partials/BookListLine.scss';
-import DeleteBookModal from "./DeleteBookModal";
+import '../../assets/styles/partials/AuthorListLine.scss';
+import DeleteAuthorModal from "./DeleteAuthorModal";
 
-type BookListLineProps = {
-    title: string,
-    isbn: string,
-    author: string,
+type AuthorListLineProps = {
+    name: string,
     id: number,
     delete: (id: number) => void,
     updateRequest: (id: number) => void
 };
 
-const BookListLine: FC<BookListLineProps> = (props) => {
-    // Visibility of delete book modal
-    const [showDeleteBookModal, setShowDeleteBookModal] = useState<boolean>(false);
+const AuthorListLine: FC<AuthorListLineProps> = (props) => {
+    // Visibility of delete author modal
+    const [showDeleteAuthorModal, setShowDeleteAuthorModal] = useState<boolean>(false);
 
-    // Display delete book modal
-    const openDeleteBookModal = () => {
-        setShowDeleteBookModal(true);
+    // Display delete author modal
+    const openDeleteAuthorModal = () => {
+        setShowDeleteAuthorModal(true);
     }
     // When click 'Close'
-    const refuseDeleteBookAction = () => {
-        setShowDeleteBookModal(false);
+    const refuseDeleteAuthorAction = () => {
+        setShowDeleteAuthorModal(false);
     }
     // When click 'Yes, Delete'
-    const acceptDeleteBookAction = () => {
+    const acceptDeleteAuthorAction = () => {
         props.delete(props.id);
-        setShowDeleteBookModal(false);
+        setShowDeleteAuthorModal(false);
     }
     const showEditOverlay = (props: any) => (
         <Tooltip id="button-tooltip" {...props}>
-            Edit book details
+            Edit author name
         </Tooltip>
     );
     const showDeleteOverlay = (props: any) => (
         <Tooltip id="button-tooltip" {...props}>
-            Delete book
+            Delete author name
         </Tooltip>
     );
     return (
         <li>
             <Row>
-                <Col className="AddedBook" xs={6} sm={6} md={6} lg={6} xl={6}>
-                    {props.id}. {props.title}
-                </Col>
+                <Col className="AddedAuthor" xs={6} sm={6} md={6} lg={6} xl={6}>{props.id}. {props.name}</Col>
                 <Col xs={{offset: 2}} sm={{offset: 3}} md={{offset: 2}} lg={{offset: 3}} xl={{offset: 3}}>
                     <OverlayTrigger
                         placement="left"
@@ -59,18 +55,18 @@ const BookListLine: FC<BookListLineProps> = (props) => {
                         delay={{show: 250, hide: 400}}
                         overlay={showDeleteOverlay}
                     >
-                        <Trash2 className="delete-btn" onClick={() => openDeleteBookModal()}/>
+                        <Trash2 className="delete-btn" onClick={() => openDeleteAuthorModal()}/>
                     </OverlayTrigger>
                 </Col>
             </Row>
-            <DeleteBookModal
-                bookToDelete={props.title}
-                isVisible={showDeleteBookModal}
-                closeModal={refuseDeleteBookAction}
-                acceptDeleteAction={acceptDeleteBookAction}
+            <DeleteAuthorModal
+                authorToDelete={props.name}
+                isVisible={showDeleteAuthorModal}
+                closeModal={refuseDeleteAuthorAction}
+                acceptDeleteAction={acceptDeleteAuthorAction}
             />
         </li>
     );
 }
 
-export default BookListLine;
+export default AuthorListLine;

@@ -1,0 +1,34 @@
+$title_font_color: #2c302f;
+$add_author_font_color: #1f2024;
+
+.Authors {
+  font-family: 'Raleway', sans-serif;
+  margin-left: 1vw;
+
+  .title {
+    color: $title_font_color;
+    font-weight: 600;
+    font-size: 2em;
+    border-bottom: 2px solid $title_font_color;
+    padding-left: 0;
+    margin-bottom: 0.7em;
+  }
+
+  .add-author {
+    color: $add_author_font_color;
+    font-weight: 500;
+
+    .add-author-text {
+      cursor: pointer;
+    }
+
+    .plus {
+      cursor: pointer;
+      margin-right: 8px;
+    }
+  }
+
+  .author-list {
+    list-style-type: none;
+  }
+}

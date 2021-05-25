@@ -1,0 +1,71 @@
+$title_font_color: #2c302f;
+$no_books_listed_font_color: #25292c;
+$add_book_font_color: #1f2024;
+$book_list_hover_color: #f5f5f5;
+$edit_btn_color: #ef921b;
+$delete_btn_color: #9d292a;
+
+.Books {
+  font-family: 'Raleway', sans-serif;
+  margin-left: 1vw;
+
+  .book-list {
+    li {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      font-weight: 500;
+      font-size: x-large;
+
+      .delete-btn, .edit-btn {
+        display: none;
+      }
+
+      &:hover {
+        .delete-btn {
+          display: inline;
+          color: $delete_btn_color;
+          cursor: pointer;
+        }
+
+        .edit-btn {
+          display: inline;
+          color: $edit_btn_color;
+          cursor: pointer;
+        }
+
+        background-color: $book_list_hover_color;
+      }
+    }
+  }
+
+  .title {
+    color: $title_font_color;
+    font-weight: 600;
+    font-size: 2em;
+    border-bottom: 2px solid $title_font_color;
+    padding-left: 0;
+    margin-bottom: 0.7em;
+  }
+
+  .no-books {
+    color: $no_books_listed_font_color;
+  }
+
+  .add-book {
+    color: $add_book_font_color;
+    font-weight: 500;
+
+    .add-book-text {
+      cursor: pointer;
+    }
+
+    .plus {
+      cursor: pointer;
+      margin-right: 8px;
+    }
+  }
+
+  .book-list {
+    list-style-type: none;
+  }
+}
