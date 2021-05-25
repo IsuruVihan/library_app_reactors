@@ -55,31 +55,35 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
     }
 
     return (
-        <Container className="ab-form-container" fluid={true}>
-            <Row>
-                <Col xl={9} lg={9} md={9} xs={12}>
-                    <Row>
-                        <Col className="cb-title" md={5} xs={10}>
-                            <p className="cb-title-text">Create Book</p>
+        <Container className="ab-form-container px-0" style={{border:'2px solid green'}} fluid={true}>
+            <Row  className="mx-0" style={{border:'2px solid black'}}>
+                <Col style={{border:'2px solid red'}} md={9} xs={12}>
+                    <Row style={{border:'2px solid yellow'}}>
+                        <Col style={{border:'2px solid magenta'}} className="cb-title px-0" sm={10} xs={10}>
+                            <p className="cb-title-text ">Create Book</p>
                         </Col>
                         <Col
-                            className="close-btn" md={{offset: 5}} xs={2}
+                            className="close-btn px-0"
+                            style={{border:'2px solid magenta'}}
                         >
                             <XCircle className="close-icon" onClick={() => props.closeForm()}/>
                         </Col>
                     </Row>
                 </Col>
-                <Col xl={3} lg={3} md={3}/>
-                <Col xl={1} lg={1} md={1}/>
-                <Col xl={9} lg={9} md={9} xs={12}>
+                <Col md={3}/>
+                <Col md={1}/>
+                <Col md={8}  className="px-0" style={{border:'2px solid blue'}}>
                     <Form
                         noValidate
-                        className="ab-form"
+                        className="ab-form mx-0"
                         validated={validated}
                         onSubmit={(event: React.FormEvent) => submitBookForm(event)}
                     >
                         <Form.Group>
-                            <Form.Label className="book-title-label">Title of the Book</Form.Label>
+                            <Form.Label
+                                style={{border:'2px solid tomato',width: '100%'}}
+                                className="book-title-label">Title of the Book
+                            </Form.Label>
                             <Form.Control
                                 className="book-title-input"
                                 type="text"
@@ -94,7 +98,10 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                                 Please provide a book title.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Label className="book-price-label">Price</Form.Label>
+                        <Form.Label className="book-price-label"
+                            style={{border:'2px solid tomato',width: '100%'}}>
+                            Price
+                        </Form.Label>
                         <Form.Group>
                             {/*Book Price currency-format*/}
                             <CurrencyFormat
@@ -117,7 +124,10 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label className="book-author-label">Author</Form.Label>
+                            <Form.Label className="book-author-label"
+                                style={{border:'2px solid tomato',width: '100%'}}>
+                                Author
+                            </Form.Label>
                             <Form.Control
                                 className="book-author-input"
                                 size="sm"
