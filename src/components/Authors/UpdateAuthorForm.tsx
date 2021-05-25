@@ -35,34 +35,32 @@ const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
     }
 
     return (
-        <Container style={{border: '2px solid red'}} className="ua-form-container px-0" fluid={true}>
-            <Row className="mx-0" style={{border: '2px solid blue'}}>
-                <Col style={{border: '2px solid green'}} className="top px-0" md={9} xs={12}>
-                    <Row style={{border: '2px solid cyan'}} className="mx-0">
-                        <Col style={{border: '2px solid magenta'}} className="ua-title my-0 px-0" md={11} xs={10}>
+        <Container className="ua-form-container px-0" fluid={true}>
+            <Row className="mx-0" >
+                <Col className="top px-0" md={9} xs={12}>
+                    <Row className="mx-0">
+                        <Col className="ua-title my-0 px-0" md={11} xs={10}>
                             <p className="ua-title-text"><u>Update Author</u></p>
                         </Col>
-                        <Col style={{border: '2px solid magenta'}} className="close-btn text-right py-2 px-1" md={1} xs={2}>
+                        <Col className="close-btn text-right py-2 px-1" md={1} xs={2}>
                             <XCircle className="close-icon m-0 p-0" onClick={() => props.closeForm()}/>
                         </Col>
                     </Row>
                 </Col>
-                <Col style={{border: '2px solid green'}} md={3} xs={0} />
-                <Col style={{border: '2px solid green'}} md={9}>
-                    <Row style={{border: '2px solid cyan'}}>
-                        <Col xs={1} style={{border: '2px solid brown'}} className="px-0"/>
-                        <Col xs={11} style={{border: '2px solid brown'}} className="px-0">
+                <Col md={9} className="pt-2">
+                    <Row>
+                        <Col xs={1} className="px-0"/>
+                        <Col xs={11} className="px-0">
                             <Form
-                                style={{border: '2px solid orange', width: '100%'}}
+                                style={{width: '100%'}}
                                 noValidate
                                 validated={validated}
                                 className="ua-form"
                                 onSubmit={(event: React.FormEvent) => submitUpdateAuthorForm(event)}
                             >
-                                <Form.Group style={{border: '2px solid magenta'}} className="p-0 m-0">
-                                    <Form.Label style={{border: '2px solid black'}} className="author-name-label my-0">Name of Author</Form.Label>
+                                <Form.Group className="p-0 m-0">
+                                    <Form.Label className="author-name-label my-0">Name of Author</Form.Label>
                                     <Form.Control
-                                        style={{border: '2px solid black'}}
                                         className="author-name-input"
                                         type="text"
                                         size="sm"
@@ -77,8 +75,8 @@ const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
                                         Please provide an author name.
                                     </Form.Control.Feedback>
                                 </Form.Group>
-                                <Form.Group style={{border: '2px solid magenta'}} className="update-btn-container pt-4">
-                                    <Button style={{border: '2px solid black'}} className="update-btn" variant="primary" type="submit" size="sm">
+                                <Form.Group className="update-btn-container pt-4">
+                                    <Button className="update-btn" variant="primary" type="submit" size="sm">
                                         Update
                                     </Button>
                                 </Form.Group>
@@ -86,7 +84,6 @@ const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
                         </Col>
                     </Row>
                 </Col>
-                <Col xs={3} style={{border: '2px solid green'}} />
             </Row>
         </Container>
     );
