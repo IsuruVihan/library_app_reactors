@@ -8,8 +8,6 @@ $update_btn_color: #00579c;
 
   .ub-title {
     color: $ub_title_color;
-    padding-left: 0.6em;
-    margin-bottom: 0.6em;
     font-weight: 500;
     font-size: x-large;
 
@@ -23,7 +21,7 @@ $update_btn_color: #00579c;
 
   .close-btn {
     padding-top: 0.4em;
-
+    text-align: right;
     .close-icon {
       cursor: pointer;
     }
@@ -38,17 +36,14 @@ $update_btn_color: #00579c;
     }
 
     .book-title-input, .book-price-input, .book-author-input {
-      width: 28vw;
       border: 2px solid $input_field_border_color;
       border-radius: 0;
     }
 
     .update-btn-container {
-      padding-left: 1.5em;
       margin-top: 2em;
       margin-bottom: 10em;
-      float: right;
-      margin-right: 3em;
+      text-align: right;
 
       .update-btn {
         border-radius: 6px;

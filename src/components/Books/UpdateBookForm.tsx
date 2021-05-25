@@ -58,29 +58,32 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
     }
 
     return (
-        <Container className="ub-form-container" fluid={true}>
-            <Row>
-                <Col md={9} xs={12}>
+        <Container className="ub-form-container px-0" fluid={true}>
+            <Row className="mx-0">
+                <Col md={9} xs={12} style={{width: '100%'}}>
                     <Row>
-                        <Col className="ub-title" md={11} xs={10}>
+                        <Col className="ub-title px-0" sm={10} xs={10}>
                             <p className="ub-title-text">Update Book</p>
                         </Col>
-                        <Col className="close-btn" md={1} xs={2} onClick={() => props.closeForm()}>
+                        <Col className="close-btn px-0" onClick={() => props.closeForm()}>
                             <XCircle className="close-icon"/>
                         </Col>
                     </Row>
                 </Col>
                 <Col md={3}/>
                 <Col md={1}/>
-                <Col md={9} xs={12}>
+                <Col md={8} className="px-0" style={{width: '100%'}}>
                     <Form
                         noValidate
                         validated={validated}
-                        className="ub-form"
+                        className="ub-form mx-0"
                         onSubmit={(event: React.FormEvent) => submitUpdateBookForm(event)}
                     >
                         <Form.Group>
-                            <Form.Label className="book-title-label">Title of the Book</Form.Label>
+                            <Form.Label style={{width: '100%'}}
+                                        className="book-title-label">
+                                Title of the Book
+                            </Form.Label>
                             <Form.Control
                                 className="book-title-input"
                                 type="text"
@@ -96,9 +99,13 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                                 Please provide a book title.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Label className="book-price-label">Price</Form.Label>
+                        <Form.Label style={{width: '100%'}}
+                                    className="book-price-label">
+                            Price
+                        </Form.Label>
                         <Form.Group>
                             <CurrencyFormat
+                                style={{width: '100%'}}
                                 className="book-price-input"
                                 size="sm"
                                 inputMode="numeric"
@@ -116,7 +123,10 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label className="book-author-label">Author</Form.Label>
+                            <Form.Label className="book-author-label"
+                                        style={{width: '100%'}}>
+                                        Author
+                            </Form.Label>
                             <Form.Control
                                 className="book-author-input"
                                 size="sm"
@@ -148,7 +158,7 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                                 Please select an author.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group className="update-btn-container">
+                        <Form.Group className="update-btn-container" style={{width: '100%'}}>
                             <Button className="update-btn" variant="primary" type="submit" size="sm">
                                 Update
                             </Button>

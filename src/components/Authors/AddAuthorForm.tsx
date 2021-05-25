@@ -77,7 +77,7 @@ const AddAuthorForm: FC<AddAuthorFormProps> = (props) => {
                                 Please provide an author name.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group className="create-btn-container" style={{width: '100%'}}>
+                        <Form.Group className="create-btn-container"  style={{width: '100%'}}>
                             <Button className="create-btn" variant="primary" type="submit" size="sm">
                                 Create
                             </Button>
