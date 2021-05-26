@@ -3,26 +3,19 @@ $input_field_border_color: #959595;
 $update_btn_color: #00579c;
 
 .ub-form-container {
-  padding-left: 0;
-  margin-top: 3em;
 
   .ub-title {
     color: $ub_title_color;
-    padding-left: 0.6em;
-    margin-bottom: 0.6em;
     font-weight: 500;
     font-size: x-large;
 
     .ub-title-text {
-      border-bottom: 3px solid $ub_title_color;
-      margin: 0;
-      max-height: 1.35em;
-      max-width: 6.3em;
+      text-underline-position: under;
     }
   }
 
   .close-btn {
-    padding-top: 0.4em;
+    text-align: right;
 
     .close-icon {
       cursor: pointer;
@@ -31,24 +24,17 @@ $update_btn_color: #00579c;
 
   .ub-form {
     .book-title-label, .book-price-label, .book-author-label {
-      margin-top: 1.5em;
-      margin-bottom: 0.5em;
       font-size: 12px;
       font-weight: 500;
     }
 
     .book-title-input, .book-price-input, .book-author-input {
-      width: 28vw;
       border: 2px solid $input_field_border_color;
       border-radius: 0;
     }
 
     .update-btn-container {
-      padding-left: 1.5em;
-      margin-top: 2em;
-      margin-bottom: 10em;
-      float: right;
-      margin-right: 3em;
+      text-align: right;
 
       .update-btn {
         border-radius: 6px;
