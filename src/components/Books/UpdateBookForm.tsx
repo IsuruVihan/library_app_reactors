@@ -58,21 +58,23 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
     }
 
     return (
-        <Container className="ub-form-container" fluid={true}>
-            <Row>
+        <Container className="ub-form-container px-0" fluid={true}>
+            <Row className="mx-0">
                 <Col md={9} xs={12}>
                     <Row>
-                        <Col className="ub-title" md={11} xs={10}>
-                            <p className="ub-title-text">Update Book</p>
+                        <Col className="ub-title px-0" md={11} xs={10}>
+                            <p className="ub-title-text p-0 m-0">
+                                <u>Update Book</u>
+                            </p>
                         </Col>
-                        <Col className="close-btn" md={1} xs={2} onClick={() => props.closeForm()}>
-                            <XCircle className="close-icon"/>
+                        <Col className="close-btn px-0 py-1" md={1} xs={2} onClick={() => props.closeForm()}>
+                            <XCircle className="close-icon p-0 m-0"/>
                         </Col>
                     </Row>
                 </Col>
-                <Col md={3}/>
-                <Col md={1}/>
-                <Col md={9} xs={12}>
+                <Col md={3} xs={0} />
+                <Col xs={1} />
+                <Col className="px-0" md={8} xs={11}>
                     <Form
                         noValidate
                         validated={validated}
@@ -80,7 +82,7 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                         onSubmit={(event: React.FormEvent) => submitUpdateBookForm(event)}
                     >
                         <Form.Group>
-                            <Form.Label className="book-title-label">Title of the Book</Form.Label>
+                            <Form.Label className="book-title-label my-0">Title of the Book</Form.Label>
                             <Form.Control
                                 className="book-title-input"
                                 type="text"
@@ -96,9 +98,10 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                                 Please provide a book title.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Label className="book-price-label">Price</Form.Label>
+                        <Form.Label className="book-price-label my-0">Price</Form.Label>
                         <Form.Group>
                             <CurrencyFormat
+                                style={{width: '100%'}}
                                 className="book-price-input"
                                 size="sm"
                                 inputMode="numeric"
@@ -116,7 +119,7 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label className="book-author-label">Author</Form.Label>
+                            <Form.Label className="book-author-label my-0">Author</Form.Label>
                             <Form.Control
                                 className="book-author-input"
                                 size="sm"
@@ -148,7 +151,7 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                                 Please select an author.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group className="update-btn-container">
+                        <Form.Group className="update-btn-container pt-4">
                             <Button className="update-btn" variant="primary" type="submit" size="sm">
                                 Update
                             </Button>
