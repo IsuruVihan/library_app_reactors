@@ -58,32 +58,32 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
     }
 
     return (
-        <Container style={{border: '2px solid red'}} className="ub-form-container px-0" fluid={true}>
-            <Row className="mx-0" style={{border: '2px solid blue'}}>
-                <Col style={{border: '2px solid orange'}} md={9} xs={12}>
-                    <Row style={{border: '2px solid green'}}>
-                        <Col style={{border: '2px solid black'}} className="ub-title px-0" md={11} xs={10}>
-                            <p style={{border: '2px solid cyan'}} className="ub-title-text p-0 m-0"><u>Update Book</u></p>
+        <Container className="ub-form-container px-0" fluid={true}>
+            <Row className="mx-0">
+                <Col md={9} xs={12}>
+                    <Row>
+                        <Col className="ub-title px-0" md={11} xs={10}>
+                            <p className="ub-title-text p-0 m-0">
+                                <u>Update Book</u>
+                            </p>
                         </Col>
-                        <Col style={{border: '2px solid black'}} className="close-btn px-0 py-1" md={1} xs={2} onClick={() => props.closeForm()}>
-                            <XCircle style={{border: '2px solid cyan'}} className="close-icon p-0 m-0"/>
+                        <Col className="close-btn px-0 py-1" md={1} xs={2} onClick={() => props.closeForm()}>
+                            <XCircle className="close-icon p-0 m-0"/>
                         </Col>
                     </Row>
                 </Col>
-                <Col style={{border: '2px solid orange'}} md={3} xs={0} />
-                <Col style={{border: '2px solid orange'}} xs={1} />
-                <Col className="px-0" style={{border: '2px solid orange'}} md={8} xs={11}>
+                <Col md={3} xs={0}/>
+                <Col xs={1}/>
+                <Col className="px-0" md={9} xs={11}>
                     <Form
-                        style={{border: '2px solid green'}}
                         noValidate
                         validated={validated}
                         className="ub-form"
                         onSubmit={(event: React.FormEvent) => submitUpdateBookForm(event)}
                     >
-                        <Form.Group style={{border: '2px solid black'}}>
-                            <Form.Label style={{border: '2px solid cyan'}} className="book-title-label my-0">Title of the Book</Form.Label>
+                        <Form.Group>
+                            <Form.Label className="book-title-label my-0">Title of the Book</Form.Label>
                             <Form.Control
-                                style={{border: '2px solid cyan'}}
                                 className="book-title-input"
                                 type="text"
                                 size="sm"
@@ -98,10 +98,10 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                                 Please provide a book title.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Label style={{border: '2px solid black'}} className="book-price-label my-0">Price</Form.Label>
-                        <Form.Group style={{border: '2px solid black'}}>
+                        <Form.Label className="book-price-label my-0">Price</Form.Label>
+                        <Form.Group>
                             <CurrencyFormat
-                                style={{border: '2px solid cyan', width: '100%'}}
+                                style={{width: '100%'}}
                                 className="book-price-input"
                                 size="sm"
                                 inputMode="numeric"
@@ -118,10 +118,9 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                                 Please provide an price number.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group style={{border: '2px solid black'}}>
-                            <Form.Label style={{border: '2px solid cyan'}} className="book-author-label my-0">Author</Form.Label>
+                        <Form.Group>
+                            <Form.Label className="book-author-label my-0">Author</Form.Label>
                             <Form.Control
-                                style={{border: '2px solid cyan'}}
                                 className="book-author-input"
                                 size="sm"
                                 as="select"
@@ -152,14 +151,13 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                                 Please select an author.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group style={{border: '2px solid black'}} className="update-btn-container pt-4">
-                            <Button style={{border: '2px solid cyan'}} className="update-btn" variant="primary" type="submit" size="sm">
+                        <Form.Group className="update-btn-container pt-4">
+                            <Button className="update-btn" variant="primary" type="submit" size="sm">
                                 Update
                             </Button>
                         </Form.Group>
                     </Form>
                 </Col>
-                {/*<Col style={{border: '2px solid red'}} md={3} xs={0} />*/}
             </Row>
         </Container>
     );
