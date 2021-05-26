@@ -72,9 +72,9 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                         </Col>
                     </Row>
                 </Col>
-                <Col md={3} xs={0}/>
-                <Col xs={1}/>
-                <Col className="px-0" md={9} xs={11}>
+                <Col md={3} xs={0} />
+                <Col xs={1} />
+                <Col className="px-0" md={8} xs={11}>
                     <Form
                         noValidate
                         validated={validated}
