@@ -72,13 +72,13 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                         </Col>
                     </Row>
                 </Col>
-                <Col md={3} xs={0} />
-                <Col xs={1} />
+                <Col md={3} xs={0}/>
+                <Col xs={1}/>
                 <Col className="px-0" md={8} xs={11}>
                     <Form
                         noValidate
                         validated={validated}
-                        className="ub-form"
+                        className="ub-form mt-4"
                         onSubmit={(event: React.FormEvent) => submitUpdateBookForm(event)}
                     >
                         <Form.Group>
@@ -98,7 +98,7 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                                 Please provide a book title.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Label className="book-price-label my-0">Price</Form.Label>
+                        <Form.Label className="book-price-label mt-2 mb-0">Price</Form.Label>
                         <Form.Group>
                             <CurrencyFormat
                                 style={{width: '100%'}}
@@ -119,7 +119,7 @@ const UpdateBookForm: FC<UpdateBookFormProps> = (props) => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label className="book-author-label my-0">Author</Form.Label>
+                            <Form.Label className="book-author-label mt-2 mb-0">Author</Form.Label>
                             <Form.Control
                                 className="book-author-input"
                                 size="sm"

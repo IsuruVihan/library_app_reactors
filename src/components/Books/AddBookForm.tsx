@@ -162,7 +162,6 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                         </Form.Group>
                     </Form>
                 </Col>
-                {/*<Col xs={3}/>*/}
             </Row>
         </Container>
     );

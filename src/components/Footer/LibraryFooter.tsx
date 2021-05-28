@@ -11,8 +11,8 @@ const LibraryFooter: React.FC = () => {
                     (Pvt) Ltd </a>
                 </Card.Text>
                 <span className="footer-copyright">
-                        &copy; {new Date().getFullYear()} Copyright: Team Reactors
-                    </span>
+                    &copy; {new Date().getFullYear()} Copyright: Team Reactors
+                </span>
             </Card.Footer>
         </Card>
     );

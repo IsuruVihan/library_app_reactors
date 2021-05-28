@@ -5,7 +5,9 @@ import '../../assets/styles/partials/NoAuthors.scss';
 const NoAuthors: FC = () => {
     return (
         <Col xs={12}>
-            <p className="no-authors"><i>No authors listed here</i></p>
+            <p className="no-authors">
+                <i>No authors listed here</i>
+            </p>
         </Col>
     );
 }

@@ -6,11 +6,7 @@ import {Container, Row, Col} from "react-bootstrap";
 const App: FC = () => {
     return (
         <Container className="px-0" fluid>
-            <Row>
-                <Col>
-                    <Library/>
-                </Col>
-            </Row>
+            <Library/>
         </Container>
     );
 }

@@ -1,32 +1,29 @@
-//Author Add Form
-
-//max width 376px (iPhone 6/7/8 Vertical)
 @media screen and (max-width: 376px) {
-	.aa-form-container {
-		.top {
-			.ca-title {
-				font-size: medium;
-			}
-		}
+  .aa-form-container {
+    .top {
+      .ca-title {
+        font-size: medium;
+      }
+    }
 
-		.aa-form {
-			.author-name-label {
-				font-size: 10px;
-			}
+    .aa-form {
+      .author-name-label {
+        font-size: 10px;
+      }
 
-			.author-name-input {
-				font-size: 10px;
-			}
+      .author-name-input {
+        font-size: 10px;
+      }
 
-			.create-btn-container {
-				width: 100%;
-				margin-top: 2em;
-				margin-bottom: 10em;
+      .create-btn-container {
+        width: 100%;
+        margin-top: 2em;
+        margin-bottom: 10em;
 
-				.create-btn {
-					float: right;
-				}
-			}
-		}
-	}
+        .create-btn {
+          float: right;
+        }
+      }
+    }
+  }
 }

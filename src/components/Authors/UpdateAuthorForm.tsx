@@ -36,7 +36,7 @@ const UpdateAuthorForm: FC<UpdateAuthorFormProps> = (props) => {
 
     return (
         <Container className="ua-form-container px-0" fluid={true}>
-            <Row className="mx-0" >
+            <Row className="mx-0">
                 <Col className="top px-0" md={9} xs={12}>
                     <Row className="mx-0">
                         <Col className="ua-title my-0 px-0" md={11} xs={10}>
