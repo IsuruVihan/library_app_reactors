@@ -5,6 +5,7 @@ import {XCircle} from 'react-feather';
 import IAuthor from "../../interfaces/IAuthor";
 import NoAuthorsAdded from "./NoAuthorsAdded";
 import * as CurrencyFormat from 'react-currency-format';
+import Select from 'react-select';
 
 type AddBookFormProps = {
     closeForm: () => void,
@@ -21,7 +22,6 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
     const [bookAuthor, setBookAuthor] = useState<string>("Author 1");
     // Validate
     const [validated, setValidated] = useState<boolean>(false);
-
     // Change book title
     const handleBookTitleChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newBookTitle = event.target.value;
@@ -33,10 +33,24 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
         setPrice(newPrice);
     }
     // Change book Author
-    const handleBookAuthorChangeEvent = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const newBookAuthor = event.target.value;
-        setBookAuthor(newBookAuthor);
+    // const handleBookAuthorChangeEvent = (event) => {
+    //     const newBookAuthor = event.target.value;
+    //     setBookAuthor(newBookAuthor);
+    // }
+    const handleBookAuthorChangeEvent = (value) => {
+        const newBookAuthor = value;
+        setBookAuthor(value);
     }
+
+    const customStyles = {
+        control: (provided) => ({
+            ...provided,
+            border: '2px solid #959595',
+            borderRadius: '0',
+            height: '10%'
+        })
+    }
+
     // submit add book form
     const submitBookForm = (event: React.FormEvent) => {
         event.preventDefault();
@@ -128,29 +142,43 @@ const AddBookForm: FC<AddBookFormProps> = (props) => {
                             <Form.Label className="book-author-label m-0">
                                 Author
                             </Form.Label>
-                            <Form.Control
-                                className="book-author-input"
-                                size="sm"
-                                as="select"
-                                onChange={
-                                    (event: React.ChangeEvent<HTMLSelectElement>) => handleBookAuthorChangeEvent(event)
-                                }
-                                value={bookAuthor}
+                            <Select
                                 required
-                            >
-                                {props.authors().map(
+                                styles={customStyles}
+                                size="sm"
+                                defaultValue={props.authors[0]}
+                                isClearable={true}
+                                isSearchable={true}
+                                onChange={handleBookAuthorChangeEvent}
+                                options={props.authors().map(
                                     (author: IAuthor) => {
-                                        return (
-                                            <option
-                                                value={author.authorName}
-                                                key={author.authorName}
-                                            >
-                                                {author.authorName}
-                                            </option>
-                                        );
+                                        return {value: author.authorName, label: author.authorName}
                                     }
                                 )}
-                            </Form.Control>
+                            />
+                            {/*<Form.Control*/}
+                            {/*    className="book-author-input"*/}
+                            {/*    size="sm"*/}
+                            {/*    as="select"*/}
+                            {/*    onChange={*/}
+                            {/*        (event: React.ChangeEvent<HTMLSelectElement>) => handleBookAuthorChangeEvent(event)*/}
+                            {/*    }*/}
+                            {/*    value={bookAuthor}*/}
+                            {/*    required*/}
+                            {/*>*/}
+                            {/*    {props.authors().map(*/}
+                            {/*        (author: IAuthor) => {*/}
+                            {/*            return (*/}
+                            {/*                <option*/}
+                            {/*                    value={author.authorName}*/}
+                            {/*                    key={author.authorName}*/}
+                            {/*                >*/}
+                            {/*                    {author.authorName}*/}
+                            {/*                </option>*/}
+                            {/*            );*/}
+                            {/*        }*/}
+                            {/*    )}*/}
+                            {/*</Form.Control>*/}
                             <Form.Control.Feedback type="invalid">
                                 Please select a book author.
                             </Form.Control.Feedback>
